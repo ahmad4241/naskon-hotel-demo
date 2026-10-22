@@ -324,7 +324,11 @@
     renderLists(document.body);
     bind(document.body, data);
     setupLinks(); setupBooking(); setupCarousels(); setupLang(); setupMenu(); setupReveal();
-    document.documentElement.classList.add('ready');
+    /* Show the page only once the cover photo is ready (max 2.5 s), so the first thing seen is the hotel, not a blank colour. */
+    var shown = false, show = function () { if (!shown) { shown = true; document.documentElement.classList.add('ready'); } };
+    var heroSrc = data.photos && data.photos.hero;
+    if (heroSrc) { var im = new Image(); im.onload = show; im.onerror = show; im.src = heroSrc; if (im.complete) show(); setTimeout(show, 2500); }
+    else show();
   }
 
   function fail() {
