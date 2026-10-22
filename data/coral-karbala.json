@@ -11,22 +11,22 @@
     "en": "Karbala"
   },
   "eyebrow": {
-    "ar": "كربلاء · طريق الحر",
-    "en": "Karbala · Al-Hur Road"
+    "ar": "كربلاء · فندق أربع نجوم",
+    "en": "Karbala · Four-star hotel"
   },
   "heroLine": {
     "ar": "غرف وأجنحة مريحة، وفطور يومي، واستقبال على مدار الساعة.",
     "en": "Comfortable rooms and suites, daily breakfast, and 24-hour reception."
   },
   "intro": {
-    "ar": "يقدّم فندق كورال كربلاء غرفاً وأجنحة وغرفاً عائلية مريحة. نقدّم الفطور يومياً في مطعمنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
-    "en": "Coral Karbala offers comfortable rooms, suites and family rooms. We serve breakfast daily in our restaurant, and our front desk is at your service around the clock."
+    "ar": "فندق كورال كربلاء فندق من فئة أربع نجوم، يقدّم غرفاً ثنائية وثلاثية وأجنحة مريحة. نقدّم الفطور يومياً في مطعمنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
+    "en": "Coral Karbala is a four-star hotel offering comfortable double, twin and triple rooms and suites. We serve breakfast daily in our restaurant, and our front desk is at your service around the clock."
   },
-  "logo": null,
+  "logo": "img/coral/logo-light.png",
   "colors": {
-    "accent": "#2B2723",
-    "brass": "#9A6F3E",
-    "dark": "#1F1C19"
+    "accent": "#1A1A1A",
+    "brass": "#A87F54",
+    "dark": "#161514"
   },
   "rating": 4.1,
   "reviewsCount": "424",
@@ -266,9 +266,6 @@
     "lat": 32.6158195,
     "lng": 44.0220938
   },
-  "brandWord": "CORAL",
-  "brandSub": "KARBALA HOTEL",
-  "logoMark": "img/coral/mark.png",
   "facts": [
     {
       "icon": "star",
@@ -305,5 +302,6 @@
         "en": "Wi-Fi"
       }
     }
-  ]
+  ],
+  "logoDark": "img/coral/logo-dark.png"
 }
