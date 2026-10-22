@@ -42,8 +42,8 @@
   "checkin": null,
   "checkout": null,
   "photos": {
-    "hero": "img/sample/roof-cafe.webp",
-    "heroSmall": "img/sample/room-twin.webp"
+    "hero": "img/coral/lounge.webp",
+    "heroSmall": "img/coral/room-suite.webp"
   },
   "amenities": [
     {
@@ -75,7 +75,7 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/sample/room-twin.webp",
+      "photo": "img/coral/room-twin.webp",
       "desc": {
         "ar": "تكييف، وتلفاز، وخزنة، وحمّام خاص",
         "en": "Air conditioning, TV, safe and private bathroom"
@@ -88,7 +88,7 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/sample/room-triple.webp",
+      "photo": "img/coral/room-suite.webp",
       "desc": {
         "ar": "مساحة أوسع مع جلسة خاصة",
         "en": "More space with a seating area"
@@ -101,7 +101,7 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/sample/room-quad.webp",
+      "photo": "img/coral/room-family.webp",
       "desc": {
         "ar": "غرفة أوسع تناسب العائلات",
         "en": "A larger room for families"
@@ -118,7 +118,7 @@
         "ar": "فطور يومي، وأطباق محلية وشرقية وعالمية.",
         "en": "Daily breakfast with local, Middle Eastern and international dishes."
       },
-      "photo": "img/sample/restaurant.webp"
+      "photo": "img/coral/restaurant.webp"
     },
     {
       "name": {
@@ -126,10 +126,10 @@
         "en": "Guest lounge"
       },
       "text": {
-        "ar": "مكان هادئ للجلوس والانتظار.",
-        "en": "A quiet place to sit and wait."
+        "ar": "مكان هادئ للجلوس واللقاءات.",
+        "en": "A quiet place to sit and meet."
       },
-      "photo": "img/sample/roof-cafe.webp"
+      "photo": "img/coral/lounge.webp"
     }
   ],
   "reviews": [
