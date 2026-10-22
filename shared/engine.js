@@ -90,8 +90,8 @@
       if (done && done !== root && !root.hasAttribute('data-bound-pending')) return;
       var a;
       if ((a = el.getAttribute('data-if')) !== null) {
-        var neg = a.charAt(0) === '!'; var v = get(scope, neg ? a.slice(1) : a);
-        var ok = has(v); if (neg) ok = !ok; if (!ok) { el.hidden = true; }
+        var ok = a.split(',').every(function (c) { c = c.trim(); var neg = c.charAt(0) === '!'; var r = has(get(scope, neg ? c.slice(1) : c)); return neg ? !r : r; });
+        if (!ok) { el.hidden = true; }
       }
       if ((a = el.getAttribute('data-t')) !== null) el.textContent = L(get(scope, a));
       if ((a = el.getAttribute('data-ui')) !== null) el.textContent = U(a);
@@ -295,6 +295,7 @@
     root.lang = lang; root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     var key = root.getAttribute('data-accent') || 'accent';
     if (data.colors && data.colors[key]) root.style.setProperty('--accent', data.colors[key]);
+    if (data.colors && data.colors.brass) root.style.setProperty('--brass', data.colors.brass);
     if (data.colors && data.colors.accentInk) root.style.setProperty('--accent-ink', data.colors.accentInk);
     document.title = L(data.name) + (data.city ? ' · ' + L(data.city) : '');
     if (data.demo) { var m = document.createElement('meta'); m.name = 'robots'; m.content = 'noindex, nofollow'; document.head.appendChild(m); }

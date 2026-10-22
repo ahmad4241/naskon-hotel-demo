@@ -24,7 +24,8 @@
   },
   "logo": null,
   "colors": {
-    "accent": "#1F4D45"
+    "accent": "#1E2A28",
+    "brass": "#9A6F3E"
   },
   "rating": 4.1,
   "reviewsCount": "424",
@@ -246,5 +247,8 @@
   "geo": {
     "lat": 32.6158195,
     "lng": 44.0220938
-  }
+  },
+  "brandWord": "CORAL",
+  "brandSub": "KARBALA HOTEL",
+  "logoMark": "img/coral/mark.png"
 }
