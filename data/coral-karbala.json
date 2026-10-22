@@ -24,8 +24,9 @@
   },
   "logo": null,
   "colors": {
-    "accent": "#1E2A28",
-    "brass": "#9A6F3E"
+    "accent": "#2B2723",
+    "brass": "#9A6F3E",
+    "dark": "#1F1C19"
   },
   "rating": 4.1,
   "reviewsCount": "424",
@@ -99,7 +100,7 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/coral/room-suite.webp",
+      "photo": "img/coral/room-double.webp",
       "desc": {
         "ar": "سرير مزدوج كبير لشخصين",
         "en": "One large double bed for two"

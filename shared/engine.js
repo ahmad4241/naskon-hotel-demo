@@ -311,6 +311,7 @@
     root.lang = lang; root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     var key = root.getAttribute('data-accent') || 'accent';
     if (data.colors && data.colors[key]) root.style.setProperty('--accent', data.colors[key]);
+    if (data.colors && data.colors.dark) root.style.setProperty('--dark', data.colors.dark);
     if (data.colors && data.colors.brass) root.style.setProperty('--brass', data.colors.brass);
     if (data.colors && data.colors.accentInk) root.style.setProperty('--accent-ink', data.colors.accentInk);
     document.title = L(data.name) + (data.city ? ' · ' + L(data.city) : '');
@@ -327,6 +328,7 @@
   }
 
   function fail() {
+    document.documentElement.classList.add('ready');
     document.body.innerHTML = '<p style="padding:40px;font:16px system-ui;text-align:center">' +
       (lang === 'ar' ? 'تعذّر تحميل بيانات الفندق.' : 'Could not load the hotel details.') + '</p>';
   }
