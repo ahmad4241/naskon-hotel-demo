@@ -15,12 +15,12 @@
     "en": "Karbala · Al-Hur Road"
   },
   "heroLine": {
-    "ar": "١٨٩ غرفة وجناحاً، واستقبال على مدار الساعة، وتوصيل مجاني لضيوفنا.",
-    "en": "189 rooms and suites, 24-hour reception, and a free shuttle for our guests."
+    "ar": "غرف وأجنحة مريحة، واستقبال على مدار الساعة، وتوصيل مجاني لضيوفنا.",
+    "en": "Comfortable rooms and suites, 24-hour reception, and a free shuttle for our guests."
   },
   "intro": {
-    "ar": "فندق كورال كربلاء فندق من فئة أربع نجوم، يضم ١٨٩ غرفة وجناحاً، منها غرف عائلية. نقدّم الفطور يومياً في مطعمنا، ونوفّر توصيلاً مجانياً لضيوفنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
-    "en": "Coral Karbala is a four-star hotel with 189 rooms and suites, including family rooms. We serve breakfast daily in our restaurant, offer our guests a free shuttle, and our front desk is at your service around the clock."
+    "ar": "يقدّم فندق كورال كربلاء غرفاً وأجنحة وغرفاً عائلية مريحة. نقدّم الفطور يومياً في مطعمنا، ونوفّر توصيلاً مجانياً لضيوفنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
+    "en": "Coral Karbala offers comfortable rooms, suites and family rooms. We serve breakfast daily in our restaurant, offer our guests a free shuttle, and our front desk is at your service around the clock."
   },
   "logo": null,
   "colors": {
@@ -29,7 +29,7 @@
   },
   "rating": 4.1,
   "reviewsCount": "424",
-  "roomsTotal": "189",
+  "roomsTotal": null,
   "minutesToCentre": "[0]",
   "phone": "0771 899 8989",
   "whatsapp": "",
