@@ -1,0 +1,307 @@
+{
+  "slug": "coral-preview",
+  "demo": true,
+  "name": {
+    "ar": "كورال كربلاء",
+    "en": "Coral Karbala"
+  },
+  "nameLatin": "Coral Karbala Hotel",
+  "city": {
+    "ar": "كربلاء",
+    "en": "Karbala"
+  },
+  "eyebrow": {
+    "ar": "كربلاء · فندق أربع نجوم",
+    "en": "Karbala · Four-star hotel"
+  },
+  "heroLine": {
+    "ar": "غرف وأجنحة مريحة، وفطور يومي، واستقبال على مدار الساعة.",
+    "en": "Comfortable rooms and suites, daily breakfast, and 24-hour reception."
+  },
+  "intro": {
+    "ar": "فندق كورال كربلاء فندق من فئة أربع نجوم، يقدّم غرفاً ثنائية وثلاثية وأجنحة مريحة. نقدّم الفطور يومياً في مطعمنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
+    "en": "Coral Karbala is a four-star hotel offering comfortable double, twin and triple rooms and suites. We serve breakfast daily in our restaurant, and our front desk is at your service around the clock."
+  },
+  "logo": "img/coral/logo-light.png",
+  "colors": {
+    "accent": "#1A1A1A",
+    "brass": "#A87F54",
+    "dark": "#161514"
+  },
+  "rating": 4.1,
+  "reviewsCount": "424",
+  "roomsTotal": null,
+  "minutesToCentre": "[0]",
+  "phone": "0771 899 8989",
+  "whatsapp": "",
+  "instagram": "",
+  "address": {
+    "ar": "قرب كراج الأحياء، طريق الحر، كربلاء",
+    "en": "Near Al-Ahyaa Garage, Al-Hur Road, Karbala"
+  },
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Coral%20Karbala%20Hotel&query_place_id=ChIJ45ePGDtrWRURiA7gPEDAP7E",
+  "checkin": null,
+  "checkout": null,
+  "photos": {
+    "hero": "img/coral/lounge.webp",
+    "heroSmall": "img/coral/room-suite.webp"
+  },
+  "amenities": [
+    {
+      "icon": "food",
+      "t": {
+        "ar": "مطعم وفطور يومي",
+        "en": "Restaurant & daily breakfast"
+      },
+      "d": {
+        "ar": "أطباق محلية وشرقية وعالمية",
+        "en": "Local, Middle Eastern and international dishes"
+      }
+    },
+    {
+      "icon": "bell",
+      "t": {
+        "ar": "خدمة الغرف",
+        "en": "Room service"
+      },
+      "d": {
+        "ar": "اطلب ما تحتاجه إلى غرفتك",
+        "en": "Order what you need to your room"
+      }
+    },
+    {
+      "icon": "family",
+      "t": {
+        "ar": "غرف ثلاثية وأجنحة",
+        "en": "Triple rooms & suites"
+      },
+      "d": {
+        "ar": "مساحات أوسع للعائلات",
+        "en": "More space for families"
+      }
+    },
+    {
+      "icon": "snow",
+      "t": {
+        "ar": "غرف مكيّفة ومجهّزة",
+        "en": "Air-conditioned rooms"
+      },
+      "d": {
+        "ar": "تلفاز وخزنة وحمّام خاص",
+        "en": "TV, safe and private bathroom"
+      }
+    }
+  ],
+  "rooms": [
+    {
+      "name": {
+        "ar": "غرفة ثنائية مزدوجة",
+        "en": "Double room"
+      },
+      "guests": null,
+      "price": null,
+      "photo": "img/coral/room-double.webp",
+      "desc": {
+        "ar": "سرير مزدوج كبير لشخصين",
+        "en": "One large double bed for two"
+      }
+    },
+    {
+      "name": {
+        "ar": "غرفة ثنائية بسريرين منفصلين",
+        "en": "Twin room"
+      },
+      "guests": null,
+      "price": null,
+      "photo": "img/coral/room-twin.webp",
+      "desc": {
+        "ar": "سريران منفصلان لشخصين",
+        "en": "Two separate beds for two"
+      }
+    },
+    {
+      "name": {
+        "ar": "غرفة ثلاثية",
+        "en": "Triple room"
+      },
+      "guests": null,
+      "price": null,
+      "photo": "img/coral/room-family.webp",
+      "desc": {
+        "ar": "ثلاثة أسرّة منفصلة",
+        "en": "Three separate beds"
+      }
+    },
+    {
+      "name": {
+        "ar": "جناح (سويت)",
+        "en": "Suite"
+      },
+      "guests": null,
+      "price": null,
+      "photo": "img/coral/room-suite.webp",
+      "desc": {
+        "ar": "مساحة أوسع مع جلسة خاصة",
+        "en": "More space with a private seating area"
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "name": {
+        "ar": "المطعم",
+        "en": "The restaurant"
+      },
+      "text": {
+        "ar": "فطور يومي، وأطباق محلية وشرقية وعالمية.",
+        "en": "Daily breakfast with local, Middle Eastern and international dishes."
+      },
+      "photo": "img/coral/restaurant.webp"
+    },
+    {
+      "name": {
+        "ar": "صالة الضيوف",
+        "en": "Guest lounge"
+      },
+      "text": {
+        "ar": "مكان هادئ للجلوس واللقاءات.",
+        "en": "A quiet place to sit and meet."
+      },
+      "photo": "img/coral/lounge.webp"
+    }
+  ],
+  "reviews": [
+    {
+      "text": {
+        "ar": "الغرف نظيفة ومريحة، والفطور ممتاز في جودته وتنوّعه، وخدمة الغرف سريعة ومتعاونة.",
+        "en": "Rooms are clean and cozy, breakfast is excellent in quality and variety, and room service is efficient."
+      },
+      "author": {
+        "ar": "ضيف الفندق",
+        "en": "Hotel guest"
+      },
+      "note": {
+        "ar": "مراجعة مترجمة من Google",
+        "en": "Review on Google"
+      }
+    },
+    {
+      "text": {
+        "ar": "شعرت بالأمان والاهتمام كل يوم. الموظفون لطفاء ويهتمون فعلاً براحة الضيف، وكانت غرفتي نظيفة بإطلالة جميلة على المدينة.",
+        "en": "I felt safe and cared for every single day. The staff are kind and attentive, and my room was clean with a beautiful view over the city."
+      },
+      "author": {
+        "ar": "ضيف الفندق",
+        "en": "Hotel guest"
+      },
+      "note": {
+        "ar": "مراجعة مترجمة من Google",
+        "en": "Review on Google"
+      }
+    },
+    {
+      "text": {
+        "ar": "خيار ممتاز لمن يفضّل إقامة مريحة؛ الفطور ممتاز، والموظفون يفهمون الإنكليزية.",
+        "en": "An excellent place if you prefer a comfortable stay: an excellent breakfast, and staff who understand English."
+      },
+      "author": {
+        "ar": "ضيف الفندق",
+        "en": "Hotel guest"
+      },
+      "note": {
+        "ar": "مراجعة مترجمة من Google",
+        "en": "Review on Google"
+      }
+    }
+  ],
+  "distances": [
+    {
+      "place": {
+        "ar": "وسط المدينة القديم",
+        "en": "Old city centre"
+      },
+      "time": {
+        "ar": "نحو كيلومتر واحد",
+        "en": "About 1 km"
+      }
+    },
+    {
+      "place": {
+        "ar": "مطار النجف الدولي",
+        "en": "Al Najaf International Airport"
+      },
+      "time": {
+        "ar": "نحو ٨٩ كم",
+        "en": "About 89 km"
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل الاستقبال متاح على مدار الساعة؟",
+        "en": "Is reception open 24 hours?"
+      },
+      "a": {
+        "ar": "نعم، الاستقبال يعمل على مدار الساعة طوال أيام الأسبوع.",
+        "en": "Yes, reception is open 24 hours, every day."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يتحدث الموظفون الإنكليزية؟",
+        "en": "Do the staff speak English?"
+      },
+      "a": {
+        "ar": "نعم، يتواصل فريق الفندق مع الضيوف بالعربية والإنكليزية.",
+        "en": "Yes, the team communicates with guests in Arabic and English."
+      }
+    }
+  ],
+  "roomsLine": {
+    "ar": "كل الغرف مكيّفة، وفيها تلفاز بقنوات فضائية، وخزنة، وحمّام خاص.",
+    "en": "Every room has air conditioning, a satellite TV, a safe and a private bathroom."
+  },
+  "geo": {
+    "lat": 32.6158195,
+    "lng": 44.0220938
+  },
+  "facts": [
+    {
+      "icon": "star",
+      "value": "4.1",
+      "label": {
+        "ar": "تقييم الضيوف على Google",
+        "en": "Guest rating on Google"
+      }
+    },
+    {
+      "icon": "chat",
+      "value": "424",
+      "label": {
+        "ar": "مراجعة من ضيوفنا",
+        "en": "Guest reviews"
+      }
+    },
+    {
+      "icon": "clock",
+      "value": "24/7",
+      "label": {
+        "ar": "استقبال على مدار الساعة",
+        "en": "Reception around the clock"
+      }
+    },
+    {
+      "icon": "wifi",
+      "value": {
+        "ar": "مجاناً",
+        "en": "Free"
+      },
+      "label": {
+        "ar": "إنترنت لاسلكي",
+        "en": "Wi-Fi"
+      }
+    }
+  ],
+  "logoDark": "img/coral/logo-dark.png"
+}
