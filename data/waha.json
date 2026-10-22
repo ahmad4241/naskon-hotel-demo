@@ -46,24 +46,36 @@
   },
   "amenities": [
     {
-      "ar": "فطور يومي",
-      "en": "Daily breakfast"
+      "icon": "food",
+      "t": {
+        "ar": "فطور يومي",
+        "en": "Daily breakfast"
+      },
+      "d": null
     },
     {
-      "ar": "استقبال على مدار الساعة",
-      "en": "24-hour reception"
+      "icon": "clock",
+      "t": {
+        "ar": "استقبال على مدار الساعة",
+        "en": "24-hour reception"
+      },
+      "d": null
     },
     {
-      "ar": "إنترنت مجاني",
-      "en": "Free Wi-Fi"
+      "icon": "wifi",
+      "t": {
+        "ar": "إنترنت مجاني",
+        "en": "Free Wi-Fi"
+      },
+      "d": null
     },
     {
-      "ar": "غرف عائلية",
-      "en": "Family rooms"
-    },
-    {
-      "ar": "مطعم ومقهى على السطح",
-      "en": "Restaurant and rooftop café"
+      "icon": "family",
+      "t": {
+        "ar": "غرف عائلية",
+        "en": "Family rooms"
+      },
+      "d": null
     }
   ],
   "rooms": [

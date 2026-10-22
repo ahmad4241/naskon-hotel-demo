@@ -82,12 +82,17 @@ section{scroll-margin-top:24px}
 .intro h2{font-size:clamp(36px,9vw,64px);line-height:1.1}
 .intro h2 span:last-child{color:var(--brass)}
 .intro p{margin:0;font-size:17px;line-height:1.95;color:#3C4846;max-width:58ch}
-.perks{padding-top:72px}
-.perks h2{font-size:clamp(32px,8vw,52px);line-height:1.1;margin:12px 0 18px}
-.perk-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.perk-list li{display:flex;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:500;line-height:1.4}
-.perk-list li::before{content:"";flex:none;width:8px;height:8px;transform:rotate(45deg);background:var(--brass);box-shadow:0 0 0 4px color-mix(in srgb,var(--brass) 16%,transparent)}
-.perk-list li:last-child:nth-of-type(odd){grid-column:1/-1}
+.perks{margin-top:72px;padding-block:60px 64px;background:var(--accent);color:#fff;position:relative;overflow:hidden}
+.perks::before{content:"";position:absolute;inset:auto auto -45% -35%;width:520px;height:520px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--brass) 30%,transparent),transparent);pointer-events:none}
+.perks .wrap{position:relative}
+.perks .kicker{color:#D9B98A}
+.perks h2{font-size:clamp(32px,8vw,52px);line-height:1.1;margin:12px 0 26px;color:#fff}
+.perk-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.perk-list li{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 16px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.04)}
+.perk-list .ico{width:46px;height:46px;border-radius:50%;border:1px solid color-mix(in srgb,#D9B98A 55%,transparent);color:#D9B98A;display:grid;place-items:center;margin-bottom:6px}
+.perk-list .ico svg{width:22px;height:22px}
+.perk-list b{font-size:16px;font-weight:600;line-height:1.35}
+.perk-list span:not(.ico){font-size:13px;line-height:1.6;color:rgba(255,255,255,.68)}
 .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .fact{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px 18px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;box-shadow:0 14px 30px -26px rgba(20,33,31,.4)}
 .fact .ico{width:30px;height:30px;color:var(--brass)}
@@ -258,11 +263,15 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
   .bar .g{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .bar .g button{width:34px;height:34px;border-radius:50%;border:1px solid #D9D5CA;background:transparent;color:var(--ink)}
   .bar .btn{height:auto;border-radius:0;font-size:17px}
-  .perks{padding-top:130px;display:grid;grid-template-columns:4fr 8fr;column-gap:80px;align-items:start}
+  .perks{margin-top:130px;padding-block:110px}
+  .perks .wrap{display:grid;grid-template-columns:4fr 8fr;grid-template-rows:auto 1fr;column-gap:80px;align-items:start}
+  .perks h2{margin-top:16px}
   .perks .kicker,.perks h2{grid-column:1}
   .perks h2{margin-bottom:0}
-  .perk-list{grid-column:2;grid-row:1 / span 2;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
-  .perk-list li{font-size:17px;padding:22px 0}
+  .perk-list{grid-column:2;grid-row:1 / span 2;gap:18px}
+  .perk-list li{padding:28px 26px}
+  .perk-list b{font-size:19px}
+  .perk-list span:not(.ico){font-size:14.5px}
   .intro{padding-top:150px;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
   .intro .lead{grid-column:span 7;gap:20px}
   .intro p{font-size:18px}
@@ -357,10 +366,12 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
     </div>
   </section>
 
-  <section class="wrap perks reveal" data-if="amenities">
-    <span class="kicker" data-ui="services"></span>
-    <h2 data-ui="perks"></h2>
-    <ul class="perk-list"><template data-each="amenities"><li data-t="item"></li></template></ul>
+  <section class="perks" data-if="amenities">
+    <div class="wrap reveal">
+      <span class="kicker" data-ui="services"></span>
+      <h2 data-ui="perks"></h2>
+      <ul class="perk-list"><template data-each="amenities"><li><span class="ico" data-icon-of></span><b data-t="item.t"></b><span data-t="item.d"></span></li></template></ul>
+    </div>
   </section>
 
   <section class="rooms" id="rooms" data-carousel data-if="rooms">

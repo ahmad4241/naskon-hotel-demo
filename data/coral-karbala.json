@@ -47,24 +47,48 @@
   },
   "amenities": [
     {
-      "ar": "استقبال على مدار الساعة",
-      "en": "24-hour front desk"
+      "icon": "food",
+      "t": {
+        "ar": "مطعم وفطور يومي",
+        "en": "Restaurant & daily breakfast"
+      },
+      "d": {
+        "ar": "أطباق محلية وشرقية وعالمية",
+        "en": "Local, Middle Eastern and international dishes"
+      }
     },
     {
-      "ar": "إنترنت لاسلكي مجاني",
-      "en": "Free Wi-Fi"
+      "icon": "bell",
+      "t": {
+        "ar": "خدمة الغرف",
+        "en": "Room service"
+      },
+      "d": {
+        "ar": "اطلب ما تحتاجه إلى غرفتك",
+        "en": "Order what you need to your room"
+      }
     },
     {
-      "ar": "مطعم وفطور يومي",
-      "en": "Restaurant and daily breakfast"
+      "icon": "family",
+      "t": {
+        "ar": "غرف عائلية وأجنحة",
+        "en": "Family rooms & suites"
+      },
+      "d": {
+        "ar": "مساحات أوسع للعائلات",
+        "en": "More space for families"
+      }
     },
     {
-      "ar": "خدمة الغرف",
-      "en": "Room service"
-    },
-    {
-      "ar": "غرف عائلية وأجنحة",
-      "en": "Family rooms and suites"
+      "icon": "snow",
+      "t": {
+        "ar": "غرف مكيّفة ومجهّزة",
+        "en": "Air-conditioned rooms"
+      },
+      "d": {
+        "ar": "تلفاز وخزنة وحمّام خاص",
+        "en": "TV, safe and private bathroom"
+      }
     }
   ],
   "rooms": [
