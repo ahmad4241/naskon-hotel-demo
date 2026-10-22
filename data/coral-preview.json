@@ -43,7 +43,7 @@
   "checkin": null,
   "checkout": null,
   "photos": {
-    "hero": "img/coral/real-lobby.webp",
+    "hero": "img/coral/lounge.webp",
     "heroSmall": "img/coral/real-room-double.webp"
   },
   "amenities": [
