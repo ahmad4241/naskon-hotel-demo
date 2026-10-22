@@ -36,15 +36,15 @@
   "whatsapp": "",
   "instagram": "",
   "address": {
-    "ar": "قرب كراج الأحياء، كربلاء",
-    "en": "Near Al-Ahyaa Garage, Karbala"
+    "ar": "السعدية، شارع الشهداء، كربلاء",
+    "en": "Al-Saadiya, Al-Shuhada Street, Karbala"
   },
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Coral%20Karbala%20Hotel&query_place_id=ChIJ45ePGDtrWRURiA7gPEDAP7E",
   "checkin": null,
   "checkout": null,
   "photos": {
-    "hero": "img/coral/lounge.webp",
-    "heroSmall": "img/coral/room-suite.webp"
+    "hero": "img/coral/real-lobby.webp",
+    "heroSmall": "img/coral/real-room-double.webp"
   },
   "amenities": [
     {
@@ -100,7 +100,7 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/coral/room-double.webp",
+      "photo": "img/coral/real-room-double.webp",
       "desc": {
         "ar": "سرير مزدوج كبير لشخصين",
         "en": "One large double bed for two"
@@ -113,7 +113,7 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/coral/room-twin.webp",
+      "photo": "img/coral/real-room-twin.webp",
       "desc": {
         "ar": "سريران منفصلان لشخصين",
         "en": "Two separate beds for two"
@@ -126,10 +126,10 @@
       },
       "guests": null,
       "price": null,
-      "photo": "img/coral/room-family.webp",
+      "photo": "img/coral/real-room-triple.webp",
       "desc": {
-        "ar": "ثلاثة أسرّة منفصلة",
-        "en": "Three separate beds"
+        "ar": "سرير مزدوج وسرير منفرد مع جلسة",
+        "en": "A double bed, a single bed and a seating area"
       }
     },
     {
@@ -156,18 +156,18 @@
         "ar": "فطور يومي، وأطباق محلية وشرقية وعالمية.",
         "en": "Daily breakfast with local, Middle Eastern and international dishes."
       },
-      "photo": "img/coral/restaurant.webp"
+      "photo": "img/coral/real-restaurant.webp"
     },
     {
       "name": {
-        "ar": "صالة الضيوف",
-        "en": "Guest lounge"
+        "ar": "بهو الاستقبال",
+        "en": "The lobby"
       },
       "text": {
-        "ar": "مكان هادئ للجلوس واللقاءات.",
-        "en": "A quiet place to sit and meet."
+        "ar": "استقبال على مدار الساعة في بهو واسع.",
+        "en": "A spacious lobby with reception open around the clock."
       },
-      "photo": "img/coral/lounge.webp"
+      "photo": "img/coral/real-lobby2.webp"
     }
   ],
   "reviews": [
