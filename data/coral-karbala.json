@@ -71,8 +71,8 @@
     {
       "icon": "family",
       "t": {
-        "ar": "غرف عائلية وأجنحة",
-        "en": "Family rooms & suites"
+        "ar": "غرف ثلاثية وأجنحة",
+        "en": "Triple rooms & suites"
       },
       "d": {
         "ar": "مساحات أوسع للعائلات",
@@ -94,20 +94,46 @@
   "rooms": [
     {
       "name": {
-        "ar": "غرفة",
-        "en": "Room"
+        "ar": "غرفة ثنائية مزدوجة",
+        "en": "Double room"
+      },
+      "guests": null,
+      "price": null,
+      "photo": "img/coral/room-suite.webp",
+      "desc": {
+        "ar": "سرير مزدوج كبير لشخصين",
+        "en": "One large double bed for two"
+      }
+    },
+    {
+      "name": {
+        "ar": "غرفة ثنائية بسريرين منفصلين",
+        "en": "Twin room"
       },
       "guests": null,
       "price": null,
       "photo": "img/coral/room-twin.webp",
       "desc": {
-        "ar": "تكييف، وتلفاز، وخزنة، وحمّام خاص",
-        "en": "Air conditioning, TV, safe and private bathroom"
+        "ar": "سريران منفصلان لشخصين",
+        "en": "Two separate beds for two"
       }
     },
     {
       "name": {
-        "ar": "جناح",
+        "ar": "غرفة ثلاثية",
+        "en": "Triple room"
+      },
+      "guests": null,
+      "price": null,
+      "photo": "img/coral/room-family.webp",
+      "desc": {
+        "ar": "ثلاثة أسرّة منفصلة",
+        "en": "Three separate beds"
+      }
+    },
+    {
+      "name": {
+        "ar": "جناح (سويت)",
         "en": "Suite"
       },
       "guests": null,
@@ -115,20 +141,7 @@
       "photo": "img/coral/room-suite.webp",
       "desc": {
         "ar": "مساحة أوسع مع جلسة خاصة",
-        "en": "More space with a seating area"
-      }
-    },
-    {
-      "name": {
-        "ar": "غرفة عائلية",
-        "en": "Family room"
-      },
-      "guests": null,
-      "price": null,
-      "photo": "img/coral/room-family.webp",
-      "desc": {
-        "ar": "غرفة أوسع تناسب العائلات",
-        "en": "A larger room for families"
+        "en": "More space with a private seating area"
       }
     }
   ],
