@@ -19,8 +19,8 @@
     "en": "189 rooms and suites, 24-hour reception, and a free shuttle for our guests."
   },
   "intro": {
-    "ar": "فندق كورال كربلاء فندق من فئة أربع نجوم في حي الولاية. نوفر غرفاً وأجنحة وغرفاً عائلية، ومطعماً يقدّم الفطور يومياً، وفريق استقبال يعمل على مدار الساعة.",
-    "en": "Coral Karbala is a four-star hotel in Al Wilaya District, offering rooms, suites and family rooms, a restaurant serving daily breakfast, and a front desk open around the clock."
+    "ar": "فندق كورال كربلاء فندق من فئة أربع نجوم، يضم ١٨٩ غرفة وجناحاً، منها غرف عائلية. نقدّم الفطور يومياً في مطعمنا، ونوفّر توصيلاً مجانياً لضيوفنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
+    "en": "Coral Karbala is a four-star hotel with 189 rooms and suites, including family rooms. We serve breakfast daily in our restaurant, offer our guests a free shuttle, and our front desk is at your service around the clock."
   },
   "logo": null,
   "colors": {
@@ -46,24 +46,24 @@
   },
   "amenities": [
     {
-      "ar": "توصيل مجاني",
-      "en": "Free shuttle"
+      "ar": "توصيل مجاني للضيوف",
+      "en": "Free guest shuttle"
     },
     {
       "ar": "استقبال على مدار الساعة",
-      "en": "24-hour reception"
+      "en": "24-hour front desk"
     },
     {
-      "ar": "إنترنت مجاني",
+      "ar": "إنترنت لاسلكي مجاني",
       "en": "Free Wi-Fi"
     },
     {
-      "ar": "غرف عائلية وأجنحة",
-      "en": "Family rooms and suites"
+      "ar": "مطعم وفطور يومي",
+      "en": "Restaurant and daily breakfast"
     },
     {
-      "ar": "مطعم وخدمة الغرف",
-      "en": "Restaurant and room service"
+      "ar": "خدمة الغرف",
+      "en": "Room service"
     }
   ],
   "rooms": [
@@ -72,12 +72,12 @@
         "ar": "غرفة",
         "en": "Room"
       },
-      "guests": 2,
+      "guests": null,
       "price": null,
       "photo": "img/sample/room-twin.webp",
       "desc": {
-        "ar": "سريران أو سرير كبير",
-        "en": "Twin or king bed"
+        "ar": "تكييف، وتلفاز، وخزنة، وحمّام خاص",
+        "en": "Air conditioning, TV, safe and private bathroom"
       }
     },
     {
@@ -85,11 +85,11 @@
         "ar": "جناح",
         "en": "Suite"
       },
-      "guests": 3,
+      "guests": null,
       "price": null,
       "photo": "img/sample/room-triple.webp",
       "desc": {
-        "ar": "مساحة أوسع وجلسة خاصة",
+        "ar": "مساحة أوسع مع جلسة خاصة",
         "en": "More space with a seating area"
       }
     },
@@ -98,12 +98,12 @@
         "ar": "غرفة عائلية",
         "en": "Family room"
       },
-      "guests": 4,
+      "guests": null,
       "price": null,
       "photo": "img/sample/room-quad.webp",
       "desc": {
-        "ar": "مساحة أوسع لأربعة ضيوف",
-        "en": "More space for four guests"
+        "ar": "غرفة أوسع تناسب العائلات",
+        "en": "A larger room for families"
       }
     }
   ],
@@ -238,5 +238,13 @@
         "en": "Yes, the team communicates with guests in Arabic and English."
       }
     }
-  ]
+  ],
+  "roomsLine": {
+    "ar": "كل الغرف مكيّفة، وفيها تلفاز بقنوات فضائية، وخزنة، وحمّام خاص.",
+    "en": "Every room has air conditioning, a satellite TV, a safe and a private bathroom."
+  },
+  "geo": {
+    "lat": 32.6158195,
+    "lng": 44.0220938
+  }
 }

@@ -23,7 +23,7 @@
       from: 'من', per_night: '/ الليلة', book_room: 'احجز هذه الغرفة', details: 'التفاصيل والحجز',
       directions: 'الاتجاهات على خرائط Google', reception: 'الاستقبال', whatsapp: 'واتساب', instagram: 'إنستغرام',
       rating_google: 'تقييم الضيوف على Google', on_google: 'على Google', rooms_label: 'غرفة وجناح', to_centre: 'دقائق إلى مركز المدينة', reception_24: 'ساعة استقبال',
-      guests_said: 'ماذا قال ضيوفنا', all_reviews: 'اقرأ جميع المراجعات على Google', translated: 'مراجعة مترجمة من Google',
+      guests_said: 'ماذا قال ضيوفنا', perks: 'كل ما تحتاجه لإقامتك', services: 'الخدمات', rooms_sub: 'غرف وأجنحة وغرف عائلية، بتجهيزات كاملة.', near_t: 'في قلب كربلاء', all_reviews: 'اقرأ جميع المراجعات على Google', translated: 'مراجعة مترجمة من Google',
       menu_book: 'احجز إقامتك', call: 'اتصل بالاستقبال', foot_cta: 'إقامتك القادمة\nتبدأ برسالة.', foot_contact: 'تواصل معنا',
       foot_address: 'العنوان', foot_stay: 'الإقامة', reception_always: 'الاستقبال على مدار الساعة', rights: 'جميع الحقوق محفوظة',
       made_by: 'صمّم الموقع بواسطة ناسكون', lang_switch: 'EN', menu: 'القائمة', close: 'إغلاق',
@@ -47,7 +47,7 @@
       from: 'From', per_night: '/ night', book_room: 'Book this room', details: 'Details & booking',
       directions: 'Directions on Google Maps', reception: 'Reception', whatsapp: 'WhatsApp', instagram: 'Instagram',
       rating_google: 'Guest rating on Google', on_google: 'on Google', rooms_label: 'Rooms & suites', to_centre: 'Minutes to the city centre', reception_24: 'Hour reception',
-      guests_said: 'What our guests say', all_reviews: 'Read all reviews on Google', translated: 'Review on Google',
+      guests_said: 'What our guests say', perks: 'Everything your stay needs', services: 'Services', rooms_sub: 'Rooms, suites and family rooms, fully equipped.', near_t: 'In the heart of Karbala', all_reviews: 'Read all reviews on Google', translated: 'Review on Google',
       menu_book: 'Book your stay', call: 'Call reception', foot_cta: 'Your next stay\nstarts with a message.', foot_contact: 'Contact',
       foot_address: 'Address', foot_stay: 'Your stay', reception_always: 'Reception open 24 hours', rights: 'All rights reserved',
       made_by: 'Website by Naskon', lang_switch: 'ع', menu: 'Menu', close: 'Close',
@@ -125,7 +125,7 @@
 
   /* Per-item extras: guests label, price, room booking buttons. */
   function decorate(el, item, i) {
-    Array.prototype.slice.call(el.querySelectorAll('[data-guests]')).forEach(function (g) { g.textContent = U('guests_n')(item.guests || 2); });
+    Array.prototype.slice.call(el.querySelectorAll('[data-guests]')).forEach(function (g) { if (item.guests) g.textContent = U('guests_n')(item.guests); else g.hidden = true; });
     Array.prototype.slice.call(el.querySelectorAll('[data-price]')).forEach(function (p) {
       p.textContent = item.price ? (U('from') + ' ' + L(item.price) + ' ' + U('per_night')) : U('price_on_request');
     });
@@ -231,6 +231,12 @@
       if (k === 'ig') el.textContent = data.instagram || '';
       if (k === 'rating') el.textContent = data.rating ? Number(data.rating).toFixed(1) : '';
       if (k === 'reviews_n') el.textContent = data.reviewsCount ? U('reviews_n')(data.reviewsCount) : '';
+      if (k === 'map' && data.geo && data.geo.lat) {
+        var f = document.createElement('iframe');
+        f.src = 'https://maps.google.com/maps?q=' + data.geo.lat + ',' + data.geo.lng + '&z=15&hl=' + lang + '&output=embed';
+        f.loading = 'lazy'; f.title = L(data.name); f.referrerPolicy = 'no-referrer-when-downgrade';
+        el.textContent = ''; el.appendChild(f); el.classList.add('live');
+      }
       if (k === 'year') el.textContent = new Date().getFullYear();
       if (k === 'rooms_total') el.textContent = data.roomsTotal || '';
       if (k === 'hero') el.textContent = L(data.heroTitle) || U(el.getAttribute('data-default'));
