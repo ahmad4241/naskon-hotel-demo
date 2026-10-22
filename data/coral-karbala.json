@@ -15,12 +15,12 @@
     "en": "Karbala · Al-Hur Road"
   },
   "heroLine": {
-    "ar": "غرف وأجنحة مريحة، واستقبال على مدار الساعة، وتوصيل مجاني لضيوفنا.",
-    "en": "Comfortable rooms and suites, 24-hour reception, and a free shuttle for our guests."
+    "ar": "غرف وأجنحة مريحة، وفطور يومي، واستقبال على مدار الساعة.",
+    "en": "Comfortable rooms and suites, daily breakfast, and 24-hour reception."
   },
   "intro": {
-    "ar": "يقدّم فندق كورال كربلاء غرفاً وأجنحة وغرفاً عائلية مريحة. نقدّم الفطور يومياً في مطعمنا، ونوفّر توصيلاً مجانياً لضيوفنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
-    "en": "Coral Karbala offers comfortable rooms, suites and family rooms. We serve breakfast daily in our restaurant, offer our guests a free shuttle, and our front desk is at your service around the clock."
+    "ar": "يقدّم فندق كورال كربلاء غرفاً وأجنحة وغرفاً عائلية مريحة. نقدّم الفطور يومياً في مطعمنا، وفريق الاستقبال في خدمتكم على مدار الساعة.",
+    "en": "Coral Karbala offers comfortable rooms, suites and family rooms. We serve breakfast daily in our restaurant, and our front desk is at your service around the clock."
   },
   "logo": null,
   "colors": {
@@ -47,10 +47,6 @@
   },
   "amenities": [
     {
-      "ar": "توصيل مجاني للضيوف",
-      "en": "Free guest shuttle"
-    },
-    {
       "ar": "استقبال على مدار الساعة",
       "en": "24-hour front desk"
     },
@@ -65,6 +61,10 @@
     {
       "ar": "خدمة الغرف",
       "en": "Room service"
+    },
+    {
+      "ar": "غرف عائلية وأجنحة",
+      "en": "Family rooms and suites"
     }
   ],
   "rooms": [
@@ -163,8 +163,8 @@
     },
     {
       "text": {
-        "ar": "خيار ممتاز لمن يفضّل إقامة مريحة؛ التوصيل مجاني، والفطور ممتاز، والموظفون يفهمون الإنكليزية.",
-        "en": "An excellent place if you prefer a comfortable stay: free transport, an excellent breakfast, and staff who understand English."
+        "ar": "خيار ممتاز لمن يفضّل إقامة مريحة؛ الفطور ممتاز، والموظفون يفهمون الإنكليزية.",
+        "en": "An excellent place if you prefer a comfortable stay: an excellent breakfast, and staff who understand English."
       },
       "author": {
         "ar": "ضيف الفندق",
@@ -189,16 +189,6 @@
     },
     {
       "place": {
-        "ar": "توصيل مجاني للضيوف",
-        "en": "Free guest shuttle"
-      },
-      "time": {
-        "ar": "كل ساعة",
-        "en": "Every hour"
-      }
-    },
-    {
-      "place": {
         "ar": "مطار النجف الدولي",
         "en": "Al Najaf International Airport"
       },
@@ -209,16 +199,6 @@
     }
   ],
   "faq": [
-    {
-      "q": {
-        "ar": "هل يوفّر الفندق توصيلاً للضيوف؟",
-        "en": "Does the hotel offer transport?"
-      },
-      "a": {
-        "ar": "نعم، يوفّر الفندق خدمة توصيل مجانية لضيوفه.",
-        "en": "Yes, the hotel offers a free shuttle for its guests."
-      }
-    },
     {
       "q": {
         "ar": "هل الاستقبال متاح على مدار الساعة؟",
@@ -277,14 +257,14 @@
       }
     },
     {
-      "icon": "shuttle",
+      "icon": "wifi",
       "value": {
         "ar": "مجاناً",
         "en": "Free"
       },
       "label": {
-        "ar": "توصيل للضيوف",
-        "en": "Guest shuttle"
+        "ar": "إنترنت لاسلكي",
+        "en": "Wi-Fi"
       }
     }
   ]
