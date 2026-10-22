@@ -124,7 +124,21 @@
   }
 
   /* Per-item extras: guests label, price, room booking buttons. */
+  /* Line icons for fact cards (stroke = currentColor). */
+  var ICONS = {
+    star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+    chat: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+    clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+    shuttle: '<rect x="3.5" y="5" width="17" height="11" rx="2.5"/><path d="M3.5 11h17M8 16v2.5M16 16v2.5"/><circle cx="7.5" cy="13.5" r=".6"/><circle cx="16.5" cy="13.5" r=".6"/>',
+    wifi: '<path d="M3 9.5a13 13 0 0 1 18 0M6 13a8.5 8.5 0 0 1 12 0M9 16.4a4 4 0 0 1 6 0"/><circle cx="12" cy="19" r=".8"/>',
+    family: '<circle cx="8" cy="6.5" r="2.3"/><circle cx="16" cy="6.5" r="2.3"/><path d="M4.5 20v-6.5a3.5 3.5 0 0 1 7 0V20M12.5 20v-6.5a3.5 3.5 0 0 1 7 0V20"/>',
+    bed: '<path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3"/><circle cx="7" cy="10.5" r="1.6"/>',
+    food: '<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 1.5-3 4-3 7h3v11"/>'
+  };
   function decorate(el, item, i) {
+    Array.prototype.slice.call(el.querySelectorAll('[data-icon-of]')).forEach(function (s) {
+      var d = ICONS[item.icon]; if (d) s.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+    });
     Array.prototype.slice.call(el.querySelectorAll('[data-guests]')).forEach(function (g) { if (item.guests) g.textContent = U('guests_n')(item.guests); else g.hidden = true; });
     Array.prototype.slice.call(el.querySelectorAll('[data-price]')).forEach(function (p) {
       p.textContent = item.price ? (U('from') + ' ' + L(item.price) + ' ' + U('per_night')) : U('price_on_request');

@@ -250,5 +250,42 @@
   },
   "brandWord": "CORAL",
   "brandSub": "KARBALA HOTEL",
-  "logoMark": "img/coral/mark.png"
+  "logoMark": "img/coral/mark.png",
+  "facts": [
+    {
+      "icon": "star",
+      "value": "4.1",
+      "label": {
+        "ar": "تقييم الضيوف على Google",
+        "en": "Guest rating on Google"
+      }
+    },
+    {
+      "icon": "chat",
+      "value": "424",
+      "label": {
+        "ar": "مراجعة من ضيوفنا",
+        "en": "Guest reviews"
+      }
+    },
+    {
+      "icon": "clock",
+      "value": "24/7",
+      "label": {
+        "ar": "استقبال على مدار الساعة",
+        "en": "Reception around the clock"
+      }
+    },
+    {
+      "icon": "shuttle",
+      "value": {
+        "ar": "مجاناً",
+        "en": "Free"
+      },
+      "label": {
+        "ar": "توصيل للضيوف",
+        "en": "Guest shuttle"
+      }
+    }
+  ]
 }
