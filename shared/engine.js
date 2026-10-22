@@ -23,6 +23,9 @@
       from: 'من', per_night: '/ الليلة', book_room: 'احجز هذه الغرفة', details: 'التفاصيل والحجز',
       directions: 'الاتجاهات على خرائط Google', reception: 'الاستقبال', whatsapp: 'واتساب', instagram: 'إنستغرام',
       rating_google: 'تقييم الضيوف على Google', on_google: 'على Google', rooms_label: 'غرفة وجناح', to_centre: 'دقائق إلى مركز المدينة', reception_24: 'ساعة استقبال',
+      guests_said: 'ماذا قال ضيوفنا', all_reviews: 'اقرأ جميع المراجعات على Google', translated: 'مراجعة مترجمة من Google',
+      menu_book: 'احجز إقامتك', call: 'اتصل بالاستقبال', foot_cta: 'إقامتك القادمة\nتبدأ برسالة.', foot_contact: 'تواصل معنا',
+      foot_address: 'العنوان', foot_stay: 'الإقامة', reception_always: 'الاستقبال على مدار الساعة', rights: 'جميع الحقوق محفوظة',
       made_by: 'صمّم الموقع بواسطة ناسكون', lang_switch: 'EN', menu: 'القائمة', close: 'إغلاق',
       prev: 'السابق', next: 'التالي', breakfast_included: 'الفطور مشمول', price_on_request: 'السعر عند الطلب',
       wa_note: 'يُفتح واتساب برسالة جاهزة تتضمن تفاصيل طلبك، ويؤكد الفندق الحجز معك مباشرة.',
@@ -44,6 +47,9 @@
       from: 'From', per_night: '/ night', book_room: 'Book this room', details: 'Details & booking',
       directions: 'Directions on Google Maps', reception: 'Reception', whatsapp: 'WhatsApp', instagram: 'Instagram',
       rating_google: 'Guest rating on Google', on_google: 'on Google', rooms_label: 'Rooms & suites', to_centre: 'Minutes to the city centre', reception_24: 'Hour reception',
+      guests_said: 'What our guests say', all_reviews: 'Read all reviews on Google', translated: 'Review on Google',
+      menu_book: 'Book your stay', call: 'Call reception', foot_cta: 'Your next stay\nstarts with a message.', foot_contact: 'Contact',
+      foot_address: 'Address', foot_stay: 'Your stay', reception_always: 'Reception open 24 hours', rights: 'All rights reserved',
       made_by: 'Website by Naskon', lang_switch: 'ع', menu: 'Menu', close: 'Close',
       prev: 'Previous', next: 'Next', breakfast_included: 'Breakfast included', price_on_request: 'Price on request',
       wa_note: 'WhatsApp opens with a ready message containing your request, and the hotel confirms with you directly.',
@@ -214,6 +220,7 @@
       if (k === 'wa' && waNumber()) href = 'https://wa.me/' + waNumber();
       if (k === 'ig' && data.instagram) href = 'https://instagram.com/' + data.instagram.replace(/^@/, '');
       if (k === 'maps' && data.mapsUrl) href = data.mapsUrl;
+      if (k === 'reviews' && (data.reviewsUrl || data.mapsUrl)) href = data.reviewsUrl || data.mapsUrl;
       if (k === 'naskon') href = 'https://naskon.com';
       if (href) { a.href = href; if (/^https/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; } }
       else a.hidden = true;
@@ -224,6 +231,7 @@
       if (k === 'ig') el.textContent = data.instagram || '';
       if (k === 'rating') el.textContent = data.rating ? Number(data.rating).toFixed(1) : '';
       if (k === 'reviews_n') el.textContent = data.reviewsCount ? U('reviews_n')(data.reviewsCount) : '';
+      if (k === 'year') el.textContent = new Date().getFullYear();
       if (k === 'rooms_total') el.textContent = data.roomsTotal || '';
       if (k === 'hero') el.textContent = L(data.heroTitle) || U(el.getAttribute('data-default'));
       if (k === 'checkin_a') el.textContent = fill(U('checkin_a'), { 'in': data.checkin || '', out: data.checkout || '' });

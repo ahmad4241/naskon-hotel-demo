@@ -90,15 +90,25 @@ section{scroll-margin-top:24px}
 .tile>*{position:relative}
 .tile h3{font-size:32px}
 .tile p{margin:4px 0 0;font-size:14.5px;color:rgba(255,255,255,.9)}
-.reviews{margin-top:80px;padding-block:56px;background:var(--band)}
-.quote-mark{font-family:var(--display);font-size:96px;line-height:.5;color:var(--brass);height:44px;display:block}
-.quotes{display:grid;gap:28px}
-.quotes blockquote{margin:0;display:flex;flex-direction:column;gap:10px}
-.quotes p{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(24px,5.6vw,34px);line-height:1.45}
-.quotes cite{font-style:normal;font-size:13px;color:var(--muted)}
-.quotes blockquote+blockquote{padding-top:24px;border-top:1px solid #D3CFC3}
-.rating-line{margin-top:20px;padding-top:16px;border-top:1px solid #D3CFC3;font-size:14px;display:flex;gap:10px;align-items:center}
-.rating-line .stars{color:var(--brass);letter-spacing:2px}
+.reviews{margin-top:80px;padding-block:64px 56px;background:var(--band);overflow:hidden}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:2px;color:var(--brass)}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+.rv-head{display:grid;gap:24px;margin-bottom:28px}
+.rv-head h2{font-size:clamp(40px,10vw,76px);line-height:1;margin-top:10px}
+.score{display:flex;align-items:center;gap:16px;padding:16px 18px;background:var(--surface);border-radius:18px;border:1px solid #DDD9CE;justify-self:start}
+.score>b{font-family:var(--latin);font-style:italic;font-weight:500;font-size:54px;line-height:.9;color:var(--accent)}
+.score div{display:grid;gap:2px;font-size:13px;color:var(--muted)}
+.score .stars{color:var(--brass);letter-spacing:3px;font-size:15px}
+.rv-track{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,420px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 10px;scroll-padding-inline:var(--gutter);scrollbar-width:none}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-card{scroll-snap-align:start;margin:0;background:var(--surface);border-radius:22px;padding:26px 22px 20px;display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 0 #DDD9CE,0 18px 40px -28px rgba(20,33,31,.35)}
+.rv-card .qm{font-family:var(--display);font-size:72px;line-height:.4;height:26px;color:var(--brass)}
+.rv-card blockquote{margin:0;font-family:var(--display);font-weight:500;font-size:23px;line-height:1.5;flex:1}
+.rv-card figcaption{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line);font-size:13px}
+.rv-card .av{width:38px;height:38px;border-radius:50%;background:var(--band);color:var(--accent);display:grid;place-items:center;font-family:var(--latin);font-style:italic;font-size:18px;flex:none}
+.rv-card figcaption span:last-child{display:grid;gap:1px}
+.rv-card small{color:var(--muted);font-size:12px}
+.rv-all{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
 .location{padding-top:72px;display:grid;gap:18px}
 .map{height:200px;border-radius:20px;background:#E3E5DE;background-image:linear-gradient(#D5D9D0 1px,transparent 1px),linear-gradient(90deg,#D5D9D0 1px,transparent 1px);background-size:26px 26px;position:relative;overflow:hidden;display:block}
 .map::after{content:"";position:absolute;inset-inline-start:50%;top:50%;width:42px;height:42px;margin:-21px;border-radius:50%;background:var(--accent);border:5px solid #F7F6F2}
@@ -111,11 +121,27 @@ section{scroll-margin-top:24px}
 .faq summary::after{content:"+";font-size:20px;line-height:1;color:var(--muted)}
 .faq details[open] summary::after{content:"−"}
 .faq p{margin:10px 0 0;color:#3C4846;font-size:15px}
-footer{margin-top:80px;padding-block:44px calc(116px + env(safe-area-inset-bottom,0px));background:var(--dark);color:#E6ECE9}
-footer .brand b{font-size:40px}
-.contact{display:grid;gap:12px;margin-top:22px;font-size:15px}
-.contact a{color:#E6ECE9;text-decoration:none}
-.credit{display:block;margin-top:26px;padding-top:18px;border-top:1px solid rgba(230,236,233,.15);font-size:12px;color:#9FB0AA;text-decoration:none}
+footer{margin-top:80px;padding-block:0 calc(100px + env(safe-area-inset-bottom,0px));background:var(--dark);color:#E6ECE9;position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;inset:-40% -30% auto auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 55%,transparent),transparent);opacity:.55;pointer-events:none}
+footer>.wrap{position:relative}
+footer a{color:inherit;text-decoration:none}
+.f-cta{padding-block:64px 44px;border-bottom:1px solid rgba(230,236,233,.14);display:grid;gap:26px}
+.f-cta h2{font-size:clamp(42px,11vw,88px);line-height:1.02;white-space:pre-line;color:#fff}
+.f-cta .acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+.f-grid{display:grid;gap:30px;padding-block:40px 34px}
+.f-brand b{display:block;font-family:var(--display);font-weight:600;font-size:44px;line-height:1;color:#fff}
+.f-brand i{font-family:var(--latin);font-size:19px;color:#B9C6C1}
+.f-brand p{margin:14px 0 0;font-size:14px;line-height:1.7;color:#9FB0AA;max-width:34ch}
+.f-col{display:grid;gap:10px;align-content:start;font-size:15px}
+.f-col h3{font-family:var(--body);font-size:11.5px;letter-spacing:2px;font-weight:600;color:var(--brass-l,#C9A86A);margin-bottom:4px}
+.f-col a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.f-col .muted{color:#9FB0AA}
+.f-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 20px;padding-block:20px;border-top:1px solid rgba(230,236,233,.14);font-size:12.5px;color:#9FB0AA}
+.f-bottom .ghost{height:36px;padding:0 14px;border:1px solid rgba(230,236,233,.25);border-radius:999px;font-size:13px}
+.credit{color:#9FB0AA}
+.credit b{color:#fff;font-weight:600}
 
 /* Sticky booking bar (phones) */
 .sticky{position:fixed;inset-inline:0;bottom:0;z-index:20;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(20,33,31,.08);display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -139,9 +165,29 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
 .note{font-size:12px;color:var(--muted);text-align:center;margin:0}
 
 /* Menu */
-#menu .panel{position:absolute;inset:0;background:var(--dark);color:#fff;padding:calc(20px + env(safe-area-inset-top,0px)) 24px;display:flex;flex-direction:column;gap:8px}
-#menu .panel a{color:#fff;text-decoration:none;font-family:var(--display);font-size:38px;padding:6px 0}
-#menu .close{align-self:flex-end;background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+#menu .panel{position:absolute;inset:0;background:var(--dark);color:#fff;padding:calc(18px + env(safe-area-inset-top,0px)) var(--gutter) calc(22px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;overflow:auto}
+#menu .panel::before{content:"";position:absolute;inset:auto -40% -30% auto;width:480px;height:480px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 60%,transparent),transparent);opacity:.6;pointer-events:none}
+#menu .panel>*{position:relative}
+.m-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.m-brand b{display:block;font-family:var(--display);font-weight:600;font-size:26px;line-height:1}
+.m-brand i{font-family:var(--latin);font-size:14px;color:#B9C6C1}
+#menu .close{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);flex:none}
+.m-links{counter-reset:m;display:grid;margin-block:14px auto}
+.m-links a{counter-increment:m;display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08);color:#fff;text-decoration:none;font-family:var(--display);font-size:34px;line-height:1.1}
+.m-links a::before{content:counter(m,decimal-leading-zero);font-family:var(--latin);font-style:italic;font-size:16px;color:#C9A86A;min-width:24px}
+.m-links a::after{content:"←";margin-inline-start:auto;font-family:var(--body);font-size:18px;color:rgba(255,255,255,.45)}
+[dir="ltr"] .m-links a::after{content:"→"}
+.m-foot{display:grid;gap:14px;padding-top:22px}
+.m-foot .btn{width:100%;height:56px;font-size:16px}
+.m-row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.m-row a{color:#fff;text-decoration:none;display:grid;gap:2px}
+.m-row a small{color:#9FB0AA;font-size:11.5px}
+.m-row .ghost{height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:#fff}
+.m-addr{font-size:12.5px;color:#9FB0AA}
+#menu[open] .m-links a{animation:m-in .5s cubic-bezier(.2,.7,.2,1) both}
+#menu[open] .m-links a:nth-child(2){animation-delay:.04s}#menu[open] .m-links a:nth-child(3){animation-delay:.08s}#menu[open] .m-links a:nth-child(4){animation-delay:.12s}#menu[open] .m-links a:nth-child(5){animation-delay:.16s}
+@keyframes m-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#menu[open] .m-links a{animation:none}}
 
 /* Reveal */
 .js-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -183,20 +229,23 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
   .tile,.tile:first-child{min-height:560px;padding:36px}
   .tile h3{font-size:44px}
   .tile p{font-size:17px}
-  .reviews{margin-top:140px;padding-block:110px;text-align:center}
-  .quote-mark{font-size:140px;height:60px}
-  .quotes{max-width:900px;margin-inline:auto}
-  .quotes blockquote:not(:first-child){display:none}
-  .quotes p{font-size:44px}
-  .rating-line{justify-content:center;border:0}
+  .reviews{margin-top:140px;padding-block:110px}
+  .rv-head{grid-template-columns:1fr auto;align-items:end;margin-bottom:44px}
+  .score{padding:20px 26px}
+  .score>b{font-size:72px}
+  .rv-track{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1440px;margin-inline:auto;padding-inline:80px;overflow:visible}
+  .rv-card{padding:34px 30px 24px}
+  .rv-card blockquote{font-size:26px}
+  .rv-all{margin-top:34px}
   .location{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
   .location .info{grid-column:span 5;display:grid;gap:18px}
   .location .map{grid-column:7 / span 6;height:460px;grid-row:1 / span 2}
   .faq-grid{display:grid;grid-template-columns:5fr 6fr;column-gap:8%}
-  footer{margin-top:140px;padding-block:72px 60px}
-  footer .row{display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
-  footer .brand b{font-size:64px}
-  .contact{margin-top:0}
+  footer{margin-top:140px;padding-block:0}
+  footer::before{width:900px;height:900px}
+  .f-cta{grid-template-columns:1fr auto;align-items:end;padding-block:110px 72px}
+  .f-grid{grid-template-columns:5fr 3fr 3fr 3fr;gap:48px;padding-block:64px 56px}
+  .f-brand b{font-size:60px}
   .sticky{display:none}
 }
 </style>
@@ -284,15 +333,16 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
   </section>
 
   <section class="reviews" id="reviews" data-if="reviews">
-    <div class="wrap reveal">
-      <span class="quote-mark" aria-hidden="true">“</span>
-      <div class="quotes">
-        <template data-each="reviews" data-limit="3">
-          <blockquote><p data-t="item.text"></p><cite><span data-t="item.author"></span> · Google</cite></blockquote>
-        </template>
-      </div>
-      <div class="rating-line" data-if="rating"><span class="stars" data-show="stars"></span><b data-show="rating"></b><span data-show="reviews_n"></span></div>
+    <div class="wrap rv-head reveal">
+      <div><span class="kicker" data-ui="reviews"></span><h2 data-ui="guests_said"></h2></div>
+      <div class="score" data-if="rating"><b data-show="rating" dir="ltr"></b><div><span class="stars" data-show="stars"></span><span data-show="reviews_n"></span><span data-ui="on_google"></span></div></div>
     </div>
+    <div class="rv-track reveal">
+      <template data-each="reviews" data-limit="3">
+        <figure class="rv-card"><span class="qm" aria-hidden="true">“</span><blockquote data-t="item.text"></blockquote><figcaption><span class="av" aria-hidden="true">G</span><span><b data-t="item.author"></b><small data-t="item.note"></small></span></figcaption></figure>
+      </template>
+    </div>
+    <div class="wrap"><a class="rv-all" data-link="reviews"><span data-ui="all_reviews"></span><span aria-hidden="true">↗</span></a></div>
   </section>
 
   <section class="wrap location" id="location">
@@ -320,15 +370,39 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
 
 <footer>
   <div class="wrap">
-    <div class="row">
-      <a class="brand" href="#top" style="color:#fff"><b data-t="name"></b><i data-t="nameLatin" dir="ltr"></i></a>
-      <div class="contact">
+    <div class="f-cta reveal">
+      <h2 data-ui="foot_cta"></h2>
+      <div class="acts">
+        <button class="btn light" type="button" data-open-booking><span data-ui="book_now"></span></button>
+        <a class="btn line" data-link="tel"><span data-ui="call"></span></a>
+      </div>
+    </div>
+    <div class="f-grid">
+      <div class="f-brand"><b data-t="name"></b><i data-t="nameLatin" dir="ltr"></i><p data-t="heroLine"></p></div>
+      <div class="f-col">
+        <h3 data-ui="foot_contact"></h3>
         <a data-link="tel"><span data-ui="reception"></span>: <span data-show="phone" dir="ltr"></span></a>
         <a data-link="wa" data-ui="whatsapp"></a>
         <a data-link="ig"><span data-ui="instagram"></span>: <span data-show="ig" dir="ltr"></span></a>
       </div>
+      <div class="f-col">
+        <h3 data-ui="foot_address"></h3>
+        <span class="muted" data-t="address"></span>
+        <a data-link="maps" data-ui="directions"></a>
+      </div>
+      <div class="f-col">
+        <h3 data-ui="foot_stay"></h3>
+        <span class="muted" data-ui="reception_always"></span>
+        <span class="muted" data-if="checkin" data-show="checkin_a"></span>
+        <a href="#rooms" data-ui="rooms"></a>
+        <a href="#faq" data-ui="faq"></a>
+      </div>
     </div>
-    <a class="credit" data-link="naskon" data-ui="made_by"></a>
+    <div class="f-bottom">
+      <span>© <span data-show="year"></span> <span data-t="name"></span> · <span data-ui="rights"></span></span>
+      <button class="ghost" type="button" data-action="lang" data-ui="lang_switch"></button>
+      <a class="credit" data-link="naskon" data-ui="made_by"></a>
+    </div>
   </div>
 </footer>
 
@@ -358,12 +432,25 @@ dialog::backdrop{background:rgba(20,33,31,.5)}
 
 <dialog id="menu" aria-label="Menu">
   <div class="panel">
-    <button class="close" type="button" data-close-menu data-aria="close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <a href="#rooms" data-ui="rooms"></a>
-    <a href="#inside" data-ui="inside"></a>
-    <a href="#reviews" data-ui="reviews"></a>
-    <a href="#location" data-ui="location"></a>
-    <a href="#faq" data-ui="faq"></a>
+    <div class="m-top">
+      <span class="m-brand"><b data-t="name"></b><i data-t="nameLatin" dir="ltr"></i></span>
+      <button class="close" type="button" data-close-menu data-aria="close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <nav class="m-links">
+      <a href="#rooms" data-ui="rooms"></a>
+      <a href="#inside" data-ui="inside" data-if="spaces"></a>
+      <a href="#reviews" data-ui="reviews" data-if="reviews"></a>
+      <a href="#location" data-ui="location"></a>
+      <a href="#faq" data-ui="faq"></a>
+    </nav>
+    <div class="m-foot">
+      <button class="btn light" type="button" data-open-booking data-close-menu><span data-ui="menu_book"></span></button>
+      <div class="m-row">
+        <a data-link="tel"><small data-ui="call"></small><span data-show="phone" dir="ltr"></span></a>
+        <button class="ghost" type="button" data-action="lang" data-ui="lang_switch"></button>
+      </div>
+      <span class="m-addr" data-t="address"></span>
+    </div>
   </div>
 </dialog>
 

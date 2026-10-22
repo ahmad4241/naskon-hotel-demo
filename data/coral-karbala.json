@@ -11,8 +11,8 @@
     "en": "Karbala"
   },
   "eyebrow": {
-    "ar": "كربلاء · حي الولاية",
-    "en": "Karbala · Al Wilaya District"
+    "ar": "كربلاء · طريق الحر",
+    "en": "Karbala · Al-Hur Road"
   },
   "heroLine": {
     "ar": "١٨٩ غرفة وجناحاً، واستقبال على مدار الساعة، وتوصيل مجاني لضيوفنا.",
@@ -34,12 +34,12 @@
   "whatsapp": "",
   "instagram": "",
   "address": {
-    "ar": "حي الولاية، شارع السعدية، كربلاء",
-    "en": "Al Saediya St, Al Wilaya District, Karbala"
+    "ar": "قرب كراج الأحياء، طريق الحر، كربلاء",
+    "en": "Near Al-Ahyaa Garage, Al-Hur Road, Karbala"
   },
-  "mapsUrl": "",
-  "checkin": "[00:00]",
-  "checkout": "[00:00]",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Coral%20Karbala%20Hotel&query_place_id=ChIJ45ePGDtrWRURiA7gPEDAP7E",
+  "checkin": null,
+  "checkout": null,
   "photos": {
     "hero": "img/sample/roof-cafe.webp",
     "heroSmall": "img/sample/room-twin.webp"
@@ -134,27 +134,68 @@
   "reviews": [
     {
       "text": {
-        "ar": "[مقتطف من مراجعة حقيقية للفندق على Google]",
-        "en": "[A real Google review excerpt]"
+        "ar": "الغرف نظيفة ومريحة، والفطور ممتاز في جودته وتنوّعه، وخدمة الغرف سريعة ومتعاونة.",
+        "en": "Rooms are clean and cozy, breakfast is excellent in quality and variety, and room service is efficient."
       },
-      "author": "[اسم الضيف]"
+      "author": {
+        "ar": "ضيف الفندق",
+        "en": "Hotel guest"
+      },
+      "note": {
+        "ar": "مراجعة مترجمة من Google",
+        "en": "Review on Google"
+      }
     },
     {
       "text": {
-        "ar": "[مقتطف من مراجعة حقيقية ثانية]",
-        "en": "[A second real review]"
+        "ar": "شعرت بالأمان والاهتمام كل يوم. الموظفون لطفاء ويهتمون فعلاً براحة الضيف، وكانت غرفتي نظيفة بإطلالة جميلة على المدينة.",
+        "en": "I felt safe and cared for every single day. The staff are kind and attentive, and my room was clean with a beautiful view over the city."
       },
-      "author": "[اسم الضيف]"
+      "author": {
+        "ar": "ضيف الفندق",
+        "en": "Hotel guest"
+      },
+      "note": {
+        "ar": "مراجعة مترجمة من Google",
+        "en": "Review on Google"
+      }
     },
     {
       "text": {
-        "ar": "[مقتطف من مراجعة حقيقية ثالثة]",
-        "en": "[A third real review]"
+        "ar": "خيار ممتاز لمن يفضّل إقامة مريحة؛ التوصيل مجاني، والفطور ممتاز، والموظفون يفهمون الإنكليزية.",
+        "en": "An excellent place if you prefer a comfortable stay: free transport, an excellent breakfast, and staff who understand English."
       },
-      "author": "[اسم الضيف]"
+      "author": {
+        "ar": "ضيف الفندق",
+        "en": "Hotel guest"
+      },
+      "note": {
+        "ar": "مراجعة مترجمة من Google",
+        "en": "Review on Google"
+      }
     }
   ],
   "distances": [
+    {
+      "place": {
+        "ar": "وسط المدينة القديم",
+        "en": "Old city centre"
+      },
+      "time": {
+        "ar": "نحو كيلومتر واحد",
+        "en": "About 1 km"
+      }
+    },
+    {
+      "place": {
+        "ar": "توصيل مجاني للضيوف",
+        "en": "Free guest shuttle"
+      },
+      "time": {
+        "ar": "كل ساعة",
+        "en": "Every hour"
+      }
+    },
     {
       "place": {
         "ar": "مطار النجف الدولي",
@@ -164,57 +205,37 @@
         "ar": "نحو ٨٩ كم",
         "en": "About 89 km"
       }
-    },
-    {
-      "place": {
-        "ar": "[مركز المدينة]",
-        "en": "[City centre]"
-      },
-      "time": {
-        "ar": "[0] دقائق مشيًا",
-        "en": "[0] min walk"
-      }
-    },
-    {
-      "place": {
-        "ar": "[أقرب سوق]",
-        "en": "[Nearest market]"
-      },
-      "time": {
-        "ar": "[0] دقائق مشيًا",
-        "en": "[0] min walk"
-      }
     }
   ],
   "faq": [
     {
       "q": {
-        "ar": "هل الفطور مشمول بالسعر؟",
-        "en": "Is breakfast included?"
+        "ar": "هل يوفّر الفندق توصيلاً للضيوف؟",
+        "en": "Does the hotel offer transport?"
       },
       "a": {
-        "ar": "[الإجابة]",
-        "en": "[Answer]"
+        "ar": "نعم، يوفّر الفندق خدمة توصيل مجانية لضيوفه.",
+        "en": "Yes, the hotel offers a free shuttle for its guests."
       }
     },
     {
       "q": {
-        "ar": "هل يوجد موقف للسيارات؟",
-        "en": "Is there parking?"
+        "ar": "هل الاستقبال متاح على مدار الساعة؟",
+        "en": "Is reception open 24 hours?"
       },
       "a": {
-        "ar": "[الإجابة]",
-        "en": "[Answer]"
+        "ar": "نعم، الاستقبال يعمل على مدار الساعة طوال أيام الأسبوع.",
+        "en": "Yes, reception is open 24 hours, every day."
       }
     },
     {
       "q": {
-        "ar": "ما طرق الدفع المتاحة؟",
-        "en": "Which payment methods are accepted?"
+        "ar": "هل يتحدث الموظفون الإنكليزية؟",
+        "en": "Do the staff speak English?"
       },
       "a": {
-        "ar": "[الإجابة]",
-        "en": "[Answer]"
+        "ar": "نعم، يتواصل فريق الفندق مع الضيوف بالعربية والإنكليزية.",
+        "en": "Yes, the team communicates with guests in Arabic and English."
       }
     }
   ]
