@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>فندق</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<style>
+/* Template 1 · Calm. Mobile first; the layout widens at 960px. */
+:root{
+  --bg:#F2F1EC; --surface:#FFFFFF; --band:#E7E5DD; --ink:#14211F; --muted:#5A6764; --line:#DAD7CD;
+  --accent:#1F4D45; --accent-ink:#FFFFFF; --brass:#8A6A35; --dark:#14211F;
+  --display:"Markazi Text","Amiri",Georgia,serif; --body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif; --latin:"Cormorant Garamond",Georgia,serif;
+  --gutter:max(22px,env(safe-area-inset-left,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:100%;padding-inline:max(22px,env(safe-area-inset-left,0px)) max(22px,env(safe-area-inset-right,0px));max-width:1440px;margin-inline:auto}
+.eyebrow{font-size:12.5px;letter-spacing:2px;color:var(--brass)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:14px;border:0;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none}
+.btn-line{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+.icon{width:20px;height:20px;flex:none}
+
+/* Hero */
+.hero{position:relative;min-height:min(92svh,820px);display:flex;flex-direction:column;color:#fff;background:#24302D center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,20,.55) 0%,rgba(14,22,20,0) 22%,rgba(14,22,20,0) 45%,rgba(14,22,20,.84) 100%)}
+.hero>*{position:relative}
+.top{display:flex;align-items:center;justify-content:space-between;padding-top:calc(16px + env(safe-area-inset-top,0px))}
+.brand{display:flex;flex-direction:column;line-height:1.05;color:inherit;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:700;font-size:30px}
+.brand i{font-family:var(--latin);font-size:13px;opacity:.85;letter-spacing:.5px}
+.brand img{height:48px;width:auto}
+.top nav{display:none}
+.top-actions{display:flex;align-items:center;gap:4px}
+.ghost{height:44px;min-width:44px;padding:0 8px;border:0;background:transparent;color:inherit;display:inline-flex;align-items:center;justify-content:center}
+.demo-pill{align-self:center;margin-top:8px;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.16);font-size:11.5px}
+.hero-body{margin-top:auto;padding-bottom:34px;display:flex;flex-direction:column;gap:14px;max-width:720px}
+.hero .eyebrow{color:#E9DDC4;display:flex;align-items:center;gap:10px}
+.hero .eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(48px,13vw,104px);line-height:1;white-space:pre-line}
+.hero p{margin:0;color:rgba(255,255,255,.88);max-width:420px}
+.date-pill{margin-top:8px;height:60px;padding:0 8px 0 18px;border-radius:999px;background:rgba(255,255,255,.96);color:var(--ink);display:flex;align-items:center;justify-content:space-between;text-decoration:none;border:0;width:100%;max-width:420px;text-align:start}
+.date-pill span{display:flex;flex-direction:column;line-height:1.3}
+.date-pill small{font-size:11.5px;color:var(--muted)}
+.date-pill .go{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff}
+[dir=ltr] .date-pill .go svg{transform:scaleX(-1)}
+
+/* Desktop booking bar */
+.bar{display:none}
+
+/* Sections */
+section{scroll-margin-top:24px}
+.intro{padding-top:64px;display:grid;gap:22px}
+.intro p{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(26px,6.6vw,42px);line-height:1.42}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line)}
+.facts div{padding:18px 0;display:flex;flex-direction:column;gap:2px}
+.facts div+div{padding-inline-start:16px;border-inline-start:1px solid var(--line)}
+.facts b{font-family:var(--display);font-weight:600;font-size:34px;line-height:1}
+.facts span{font-size:12px;color:var(--muted)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px}
+.sec-head h2{font-size:clamp(38px,9vw,72px);line-height:1}
+.rooms{padding-top:72px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-inline:max(22px,env(safe-area-inset-left,0px));scroll-padding-inline:22px}
+.track::-webkit-scrollbar{display:none}
+.room{flex:none;width:min(78vw,330px);scroll-snap-align:start;display:flex;flex-direction:column;gap:14px;color:var(--ink);text-decoration:none}
+.room img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:20px}
+.room .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.room h3{font-size:27px}
+.room small{font-size:13px;color:var(--muted)}
+.room .foot{padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.room .foot b{color:var(--accent);font-weight:600}
+.arrows{display:none;gap:8px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);background:transparent;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+[dir=ltr] .arrows svg{transform:scaleX(-1)}
+.inside{padding-top:80px}
+.tiles{display:grid;gap:12px}
+.tile{position:relative;min-height:300px;border-radius:22px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;background:#2a3330 center/cover no-repeat}
+.tile:first-child{min-height:420px}
+.tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,20,0) 45%,rgba(14,22,20,.8) 100%)}
+.tile>*{position:relative}
+.tile h3{font-size:32px}
+.tile p{margin:4px 0 0;font-size:14.5px;color:rgba(255,255,255,.9)}
+.reviews{margin-top:80px;padding-block:56px;background:var(--band)}
+.quote-mark{font-family:var(--display);font-size:96px;line-height:.5;color:var(--brass);height:44px;display:block}
+.quotes{display:grid;gap:28px}
+.quotes blockquote{margin:0;display:flex;flex-direction:column;gap:10px}
+.quotes p{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(24px,5.6vw,34px);line-height:1.45}
+.quotes cite{font-style:normal;font-size:13px;color:var(--muted)}
+.quotes blockquote+blockquote{padding-top:24px;border-top:1px solid #D3CFC3}
+.rating-line{margin-top:20px;padding-top:16px;border-top:1px solid #D3CFC3;font-size:14px;display:flex;gap:10px;align-items:center}
+.rating-line .stars{color:var(--brass);letter-spacing:2px}
+.location{padding-top:72px;display:grid;gap:18px}
+.map{height:200px;border-radius:20px;background:#E3E5DE;background-image:linear-gradient(#D5D9D0 1px,transparent 1px),linear-gradient(90deg,#D5D9D0 1px,transparent 1px);background-size:26px 26px;position:relative;overflow:hidden;display:block}
+.map::after{content:"";position:absolute;inset-inline-start:50%;top:50%;width:42px;height:42px;margin:-21px;border-radius:50%;background:var(--accent);border:5px solid #F7F6F2}
+.dist div{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.dist span:last-child{color:var(--muted)}
+.faq{padding-top:72px}
+.faq details{padding:18px 0;border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-size:20px;line-height:1;color:var(--muted)}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:10px 0 0;color:#3C4846;font-size:15px}
+footer{margin-top:80px;padding-block:44px calc(116px + env(safe-area-inset-bottom,0px));background:var(--dark);color:#E6ECE9}
+footer .brand b{font-size:40px}
+.contact{display:grid;gap:12px;margin-top:22px;font-size:15px}
+.contact a{color:#E6ECE9;text-decoration:none}
+.credit{display:block;margin-top:26px;padding-top:18px;border-top:1px solid rgba(230,236,233,.15);font-size:12px;color:#9FB0AA;text-decoration:none}
+
+/* Sticky booking bar (phones) */
+.sticky{position:fixed;inset-inline:0;bottom:0;z-index:20;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(20,33,31,.08);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky .lbl{display:flex;flex-direction:column;line-height:1.3;font-size:14px}
+.sticky small{font-size:11.5px;color:var(--muted)}
+
+/* Booking sheet */
+dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;margin:0}
+dialog::backdrop{background:rgba(20,33,31,.5)}
+.sheet{position:absolute;inset-inline:0;bottom:0;background:var(--bg);border-radius:26px 26px 0 0;padding:12px 18px calc(22px + env(safe-area-inset-bottom,0px));display:grid;gap:14px;max-width:560px;margin-inline:auto;max-height:92svh;overflow:auto}
+.grab{width:44px;height:5px;border-radius:3px;background:#CFCBC0;justify-self:center}
+.sheet-head{display:flex;justify-content:space-between;align-items:center}
+.sheet-head h2{font-size:28px}
+.close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.field{display:flex;flex-direction:column;gap:4px;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;font-size:12px;color:var(--muted)}
+.field input,.field select{border:0;background:transparent;padding:2px 0;font:600 16px var(--body);color:var(--ink);width:100%;min-height:28px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stepper{display:flex;align-items:center;justify-content:space-between;padding:6px 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.stepper div{display:flex;align-items:center;gap:12px}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1px solid #D9D5CA;background:transparent;font-size:20px;color:var(--ink)}
+.note{font-size:12px;color:var(--muted);text-align:center;margin:0}
+
+/* Menu */
+#menu .panel{position:absolute;inset:0;background:var(--dark);color:#fff;padding:calc(20px + env(safe-area-inset-top,0px)) 24px;display:flex;flex-direction:column;gap:8px}
+#menu .panel a{color:#fff;text-decoration:none;font-family:var(--display);font-size:38px;padding:6px 0}
+#menu .close{align-self:flex-end;background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* Reveal */
+.js-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js-reveal .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js-reveal .reveal{opacity:1;transform:none;transition:none}}
+
+/* Laptop and up */
+@media (min-width:960px){
+  body{padding-bottom:0}
+  .wrap{padding-inline:80px}
+  .top nav{display:flex;gap:38px;font-size:16px}
+  .top nav a{color:#fff;text-decoration:none}
+  .top [data-action=menu]{display:none}
+  .top-actions .btn{background:#fff;color:var(--ink);border-radius:999px;height:50px}
+  .hero{min-height:860px}
+  .hero-body{padding-bottom:150px;max-width:1440px}
+  .hero h1{max-width:900px}
+  .hero p{font-size:19px}
+  .date-pill{display:none}
+  .bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.2fr) 260px;position:relative;z-index:2;margin:-58px 80px 0;background:var(--surface);border-radius:22px;box-shadow:0 24px 60px rgba(20,33,31,.18);overflow:hidden;max-width:1280px}
+  .bar label{display:flex;flex-direction:column;gap:6px;padding:22px 26px;border-inline-end:1px solid #ECE9E1;font-size:13px;color:var(--muted)}
+  .bar input,.bar select{border:0;background:transparent;padding:0;font:600 17px var(--body);color:var(--ink);width:100%}
+  .bar .g{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .bar .g button{width:34px;height:34px;border-radius:50%;border:1px solid #D9D5CA;background:transparent;color:var(--ink)}
+  .bar .btn{height:auto;border-radius:0;font-size:17px}
+  .intro{padding-top:150px;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:end}
+  .intro .lead{grid-column:span 7;display:grid;gap:22px}
+  .facts{grid-column:9 / span 4;grid-template-columns:1fr;border:0}
+  .facts div,.facts div+div{flex-direction:row;justify-content:space-between;align-items:baseline;padding:18px 0;border:0;border-top:1px solid var(--line)}
+  .facts div:last-child{border-bottom:1px solid var(--line)}
+  .facts b{font-size:40px;order:2}
+  .facts span{font-size:14px}
+  .rooms,.inside,.location,.faq{padding-top:140px}
+  .track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;overflow:visible;padding-inline:80px;max-width:1440px;margin-inline:auto}
+  .room{width:auto}
+  .room img{aspect-ratio:4/5;border-radius:22px}
+  .room h3{font-size:32px}
+  .tiles{grid-template-columns:7fr 5fr;gap:24px}
+  .tile,.tile:first-child{min-height:560px;padding:36px}
+  .tile h3{font-size:44px}
+  .tile p{font-size:17px}
+  .reviews{margin-top:140px;padding-block:110px;text-align:center}
+  .quote-mark{font-size:140px;height:60px}
+  .quotes{max-width:900px;margin-inline:auto}
+  .quotes blockquote:not(:first-child){display:none}
+  .quotes p{font-size:44px}
+  .rating-line{justify-content:center;border:0}
+  .location{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
+  .location .info{grid-column:span 5;display:grid;gap:18px}
+  .location .map{grid-column:7 / span 6;height:460px;grid-row:1 / span 2}
+  .faq-grid{display:grid;grid-template-columns:5fr 6fr;column-gap:8%}
+  footer{margin-top:140px;padding-block:72px 60px}
+  footer .row{display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+  footer .brand b{font-size:64px}
+  .contact{margin-top:0}
+  .sticky{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" data-bg="photos.hero" id="top">
+  <div class="wrap top">
+    <a class="brand" href="#top">
+      <img data-src="logo" data-alt="name" alt="">
+      <b data-if="!logo" data-t="name"></b>
+      <i data-if="!logo" data-t="nameLatin" dir="ltr"></i>
+    </a>
+    <nav aria-label="الأقسام">
+      <a href="#rooms" data-ui="rooms"></a>
+      <a href="#inside" data-ui="inside" data-if="spaces"></a>
+      <a href="#reviews" data-ui="reviews" data-if="reviews"></a>
+      <a href="#location" data-ui="location"></a>
+    </nav>
+    <div class="top-actions">
+      <button class="ghost" type="button" data-action="lang" data-ui="lang_switch"></button>
+      <button class="ghost" type="button" data-action="menu" data-aria="menu"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M8 16h12"/></svg></button>
+      <a class="btn" href="#bar" data-open-booking data-ui="book_now" hidden></a>
+    </div>
+  </div>
+  <span class="demo-pill" data-if="demo" data-ui="demo"></span>
+  <div class="wrap hero-body">
+    <span class="eyebrow" data-t="eyebrow"></span>
+    <h1 data-show="hero" data-default="hero_t1"></h1>
+    <p data-t="heroLine"></p>
+    <button class="date-pill" type="button" data-open-booking>
+      <span><small data-ui="checkin"></small><b data-ui="check_avail"></b></span>
+      <span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
+    </button>
+  </div>
+</header>
+
+<form class="bar" id="bar" data-booking>
+  <label><span data-ui="checkin"></span><input type="date" name="in" required></label>
+  <label><span data-ui="checkout"></span><input type="date" name="out" required></label>
+  <label><span data-ui="guests"></span><span class="g"><button type="button" data-step="-1" aria-label="−">−</button><b data-guest-count></b><button type="button" data-step="1" aria-label="+">+</button></span></label>
+  <label><span data-ui="room"></span><select name="room"></select></label>
+  <button class="btn" type="submit" data-ui="book_wa"></button>
+</form>
+
+<main>
+  <section class="wrap intro reveal" data-if="intro">
+    <div class="lead">
+      <span class="eyebrow" data-ui="welcome"></span>
+      <p data-t="intro"></p>
+    </div>
+    <div class="facts">
+      <div data-if="rating"><b data-show="rating"></b><span data-ui="rating_google"></span></div>
+      <div data-if="roomsTotal"><b data-show="rooms_total"></b><span data-ui="rooms_label"></span></div>
+      <div><b>24</b><span data-ui="reception_24"></span></div>
+    </div>
+  </section>
+
+  <section class="rooms" id="rooms" data-carousel data-if="rooms">
+    <div class="wrap sec-head reveal">
+      <h2 data-ui="rooms"></h2>
+    </div>
+    <div class="track" data-track>
+      <template data-each="rooms">
+        <a class="room reveal" href="#bar" data-pick-room>
+          <img data-src="item.photo" data-alt="item.name" alt="" loading="lazy">
+          <span class="row"><h3 data-t="item.name"></h3><small data-guests></small></span>
+          <small data-t="item.desc"></small>
+          <span class="foot"><span data-price></span><b data-ui="book_room"></b></span>
+        </a>
+      </template>
+    </div>
+  </section>
+
+  <section class="wrap inside" id="inside" data-if="spaces">
+    <div class="sec-head reveal"><div style="display:grid;gap:10px"><span class="eyebrow" data-ui="inside"></span><h2 data-ui="inside_title"></h2></div></div>
+    <div class="tiles">
+      <template data-each="spaces" data-limit="2">
+        <article class="tile reveal" data-bg="item.photo">
+          <h3 data-t="item.name"></h3>
+          <p data-t="item.text"></p>
+        </article>
+      </template>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" data-if="reviews">
+    <div class="wrap reveal">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <div class="quotes">
+        <template data-each="reviews" data-limit="3">
+          <blockquote><p data-t="item.text"></p><cite><span data-t="item.author"></span> · Google</cite></blockquote>
+        </template>
+      </div>
+      <div class="rating-line" data-if="rating"><span class="stars" data-show="stars"></span><b data-show="rating"></b><span data-show="reviews_n"></span></div>
+    </div>
+  </section>
+
+  <section class="wrap location" id="location">
+    <div class="info reveal">
+      <h2 class="sec-h" data-ui="near" style="font-size:clamp(38px,9vw,72px);line-height:1"></h2>
+      <div class="dist">
+        <template data-each="distances"><div><span data-t="item.place"></span><span data-t="item.time"></span></div></template>
+      </div>
+      <span data-t="address"></span>
+      <a data-link="maps" data-ui="directions" style="font-weight:600"></a>
+    </div>
+    <div class="map reveal" aria-hidden="true"></div>
+  </section>
+
+  <section class="wrap faq" id="faq">
+    <div class="faq-grid">
+      <h2 class="reveal" data-ui="faq" style="font-size:clamp(38px,9vw,72px);line-height:1;margin-bottom:14px"></h2>
+      <div class="reveal">
+        <details open data-if="checkin"><summary data-ui="checkin_q"></summary><p data-show="checkin_a"></p></details>
+        <template data-each="faq"><details><summary data-t="item.q"></summary><p data-t="item.a"></p></details></template>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a class="brand" href="#top" style="color:#fff"><b data-t="name"></b><i data-t="nameLatin" dir="ltr"></i></a>
+      <div class="contact">
+        <a data-link="tel"><span data-ui="reception"></span>: <span data-show="phone" dir="ltr"></span></a>
+        <a data-link="wa" data-ui="whatsapp"></a>
+        <a data-link="ig"><span data-ui="instagram"></span>: <span data-show="ig" dir="ltr"></span></a>
+      </div>
+    </div>
+    <a class="credit" data-link="naskon" data-ui="made_by"></a>
+  </div>
+</footer>
+
+<div class="sticky">
+  <span class="lbl"><b data-ui="check_avail"></b><small data-if="breakfastIncluded" data-ui="breakfast_included"></small></span>
+  <button class="btn" type="button" data-open-booking>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/></svg>
+    <span data-ui="book_now"></span>
+  </button>
+</div>
+
+<dialog id="booking" aria-labelledby="bk-title">
+  <form class="sheet" data-booking>
+    <span class="grab" aria-hidden="true"></span>
+    <div class="sheet-head"><h2 id="bk-title" data-ui="book_now"></h2><button class="close" type="button" data-close-booking data-aria="close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="two">
+      <label class="field"><span data-ui="checkin"></span><input type="date" name="in" required></label>
+      <label class="field"><span data-ui="checkout"></span><input type="date" name="out" required></label>
+    </div>
+    <label class="field"><span data-ui="room"></span><select name="room"></select></label>
+    <div class="stepper"><span data-ui="guests"></span><div><button type="button" data-step="-1" aria-label="−">−</button><b data-guest-count></b><button type="button" data-step="1" aria-label="+">+</button></div></div>
+    <p class="note"><span data-nights></span></p>
+    <button class="btn" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/></svg><span data-ui="send_wa"></span></button>
+    <p class="note" data-ui="wa_note"></p>
+  </form>
+</dialog>
+
+<dialog id="menu" aria-label="Menu">
+  <div class="panel">
+    <button class="close" type="button" data-close-menu data-aria="close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <a href="#rooms" data-ui="rooms"></a>
+    <a href="#inside" data-ui="inside"></a>
+    <a href="#reviews" data-ui="reviews"></a>
+    <a href="#location" data-ui="location"></a>
+    <a href="#faq" data-ui="faq"></a>
+  </div>
+</dialog>
+
+<script src="shared/engine.js"></script>
+<script>
+  /* Desktop shows a "Book now" button in the header. */
+  (function(){var b=document.querySelector('.top-actions .btn');if(b&&matchMedia('(min-width:960px)').matches)b.hidden=false;})();
+  NaskonHotel.boot();
+</script>
+</body>
+</html>

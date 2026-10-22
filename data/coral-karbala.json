@@ -1,0 +1,221 @@
+{
+  "slug": "coral-karbala",
+  "demo": true,
+  "name": {
+    "ar": "كورال كربلاء",
+    "en": "Coral Karbala"
+  },
+  "nameLatin": "Coral Karbala Hotel",
+  "city": {
+    "ar": "كربلاء",
+    "en": "Karbala"
+  },
+  "eyebrow": {
+    "ar": "كربلاء · حي الولاية",
+    "en": "Karbala · Al Wilaya District"
+  },
+  "heroLine": {
+    "ar": "١٨٩ غرفة وجناحاً، واستقبال على مدار الساعة، وتوصيل مجاني لضيوفنا.",
+    "en": "189 rooms and suites, 24-hour reception, and a free shuttle for our guests."
+  },
+  "intro": {
+    "ar": "فندق كورال كربلاء فندق من فئة أربع نجوم في حي الولاية. نوفر غرفاً وأجنحة وغرفاً عائلية، ومطعماً يقدّم الفطور يومياً، وفريق استقبال يعمل على مدار الساعة.",
+    "en": "Coral Karbala is a four-star hotel in Al Wilaya District, offering rooms, suites and family rooms, a restaurant serving daily breakfast, and a front desk open around the clock."
+  },
+  "logo": null,
+  "colors": {
+    "accent": "#1F4D45"
+  },
+  "rating": 4.1,
+  "reviewsCount": "424",
+  "roomsTotal": "189",
+  "minutesToCentre": "[0]",
+  "phone": "0771 899 8989",
+  "whatsapp": "",
+  "instagram": "",
+  "address": {
+    "ar": "حي الولاية، شارع السعدية، كربلاء",
+    "en": "Al Saediya St, Al Wilaya District, Karbala"
+  },
+  "mapsUrl": "",
+  "checkin": "[00:00]",
+  "checkout": "[00:00]",
+  "photos": {
+    "hero": "img/sample/roof-cafe.webp",
+    "heroSmall": "img/sample/room-twin.webp"
+  },
+  "amenities": [
+    {
+      "ar": "توصيل مجاني",
+      "en": "Free shuttle"
+    },
+    {
+      "ar": "استقبال على مدار الساعة",
+      "en": "24-hour reception"
+    },
+    {
+      "ar": "إنترنت مجاني",
+      "en": "Free Wi-Fi"
+    },
+    {
+      "ar": "غرف عائلية وأجنحة",
+      "en": "Family rooms and suites"
+    },
+    {
+      "ar": "مطعم وخدمة الغرف",
+      "en": "Restaurant and room service"
+    }
+  ],
+  "rooms": [
+    {
+      "name": {
+        "ar": "غرفة",
+        "en": "Room"
+      },
+      "guests": 2,
+      "price": null,
+      "photo": "img/sample/room-twin.webp",
+      "desc": {
+        "ar": "سريران أو سرير كبير",
+        "en": "Twin or king bed"
+      }
+    },
+    {
+      "name": {
+        "ar": "جناح",
+        "en": "Suite"
+      },
+      "guests": 3,
+      "price": null,
+      "photo": "img/sample/room-triple.webp",
+      "desc": {
+        "ar": "مساحة أوسع وجلسة خاصة",
+        "en": "More space with a seating area"
+      }
+    },
+    {
+      "name": {
+        "ar": "غرفة عائلية",
+        "en": "Family room"
+      },
+      "guests": 4,
+      "price": null,
+      "photo": "img/sample/room-quad.webp",
+      "desc": {
+        "ar": "مساحة أوسع لأربعة ضيوف",
+        "en": "More space for four guests"
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "name": {
+        "ar": "المطعم",
+        "en": "The restaurant"
+      },
+      "text": {
+        "ar": "فطور يومي، وأطباق محلية وشرقية وعالمية.",
+        "en": "Daily breakfast with local, Middle Eastern and international dishes."
+      },
+      "photo": "img/sample/restaurant.webp"
+    },
+    {
+      "name": {
+        "ar": "صالة الضيوف",
+        "en": "Guest lounge"
+      },
+      "text": {
+        "ar": "مكان هادئ للجلوس والانتظار.",
+        "en": "A quiet place to sit and wait."
+      },
+      "photo": "img/sample/roof-cafe.webp"
+    }
+  ],
+  "reviews": [
+    {
+      "text": {
+        "ar": "[مقتطف من مراجعة حقيقية للفندق على Google]",
+        "en": "[A real Google review excerpt]"
+      },
+      "author": "[اسم الضيف]"
+    },
+    {
+      "text": {
+        "ar": "[مقتطف من مراجعة حقيقية ثانية]",
+        "en": "[A second real review]"
+      },
+      "author": "[اسم الضيف]"
+    },
+    {
+      "text": {
+        "ar": "[مقتطف من مراجعة حقيقية ثالثة]",
+        "en": "[A third real review]"
+      },
+      "author": "[اسم الضيف]"
+    }
+  ],
+  "distances": [
+    {
+      "place": {
+        "ar": "مطار النجف الدولي",
+        "en": "Al Najaf International Airport"
+      },
+      "time": {
+        "ar": "نحو ٨٩ كم",
+        "en": "About 89 km"
+      }
+    },
+    {
+      "place": {
+        "ar": "[مركز المدينة]",
+        "en": "[City centre]"
+      },
+      "time": {
+        "ar": "[0] دقائق مشيًا",
+        "en": "[0] min walk"
+      }
+    },
+    {
+      "place": {
+        "ar": "[أقرب سوق]",
+        "en": "[Nearest market]"
+      },
+      "time": {
+        "ar": "[0] دقائق مشيًا",
+        "en": "[0] min walk"
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "ar": "هل الفطور مشمول بالسعر؟",
+        "en": "Is breakfast included?"
+      },
+      "a": {
+        "ar": "[الإجابة]",
+        "en": "[Answer]"
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يوجد موقف للسيارات؟",
+        "en": "Is there parking?"
+      },
+      "a": {
+        "ar": "[الإجابة]",
+        "en": "[Answer]"
+      }
+    },
+    {
+      "q": {
+        "ar": "ما طرق الدفع المتاحة؟",
+        "en": "Which payment methods are accepted?"
+      },
+      "a": {
+        "ar": "[الإجابة]",
+        "en": "[Answer]"
+      }
+    }
+  ]
+}

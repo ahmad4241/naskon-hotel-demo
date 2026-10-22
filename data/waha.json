@@ -1,0 +1,58 @@
+{
+  "slug": "waha",
+  "demo": true,
+  "name": { "ar": "الواحة", "en": "Al Waha" },
+  "nameLatin": "Al Waha Hotel",
+  "city": { "ar": "كربلاء", "en": "Karbala" },
+  "eyebrow": { "ar": "كربلاء · مركز المدينة", "en": "Karbala · City centre" },
+  "heroLine": { "ar": "غرف مريحة، وفطور كل صباح، وسطح مفتوح على المدينة.", "en": "Comfortable rooms, breakfast every morning, and a rooftop open to the city." },
+  "intro": { "ar": "فندق صغير بروح كبيرة. نستقبلكم كضيوف في بيتنا، ونهتم بالتفاصيل التي تجعل إقامتكم أسهل: غرفة نظيفة، وفطور طازج، وفريق يجيب على رسالتكم خلال دقائق.", "en": "A small hotel with a big heart. We welcome you as guests in our home and take care of the details that make your stay easier: a clean room, a fresh breakfast, and a team that answers your message within minutes." },
+  "logo": null,
+  "colors": { "accent": "#1F4D45" },
+  "rating": 4.6,
+  "reviewsCount": "[عدد]",
+  "roomsTotal": "[00]",
+  "minutesToCentre": "[0]",
+  "phone": "[رقم الفندق]",
+  "whatsapp": "",
+  "instagram": "",
+  "address": { "ar": "[عنوان الفندق، الشارع والمنطقة]", "en": "[Hotel address]" },
+  "mapsUrl": "",
+  "checkin": "[00:00]",
+  "checkout": "[00:00]",
+  "photos": {
+    "hero": "img/sample/roof-cafe.webp",
+    "heroSmall": "img/sample/room-twin.webp"
+  },
+  "amenities": [
+    { "ar": "فطور يومي", "en": "Daily breakfast" },
+    { "ar": "استقبال على مدار الساعة", "en": "24-hour reception" },
+    { "ar": "إنترنت مجاني", "en": "Free Wi-Fi" },
+    { "ar": "غرف عائلية", "en": "Family rooms" },
+    { "ar": "مطعم ومقهى على السطح", "en": "Restaurant and rooftop café" }
+  ],
+  "rooms": [
+    { "name": { "ar": "غرفة مزدوجة", "en": "Double room" }, "guests": 2, "price": null, "photo": "img/sample/room-twin.webp", "desc": { "ar": "سريران أو سرير كبير", "en": "Twin or king bed" } },
+    { "name": { "ar": "غرفة ثلاثية", "en": "Triple room" }, "guests": 3, "price": null, "photo": "img/sample/room-triple.webp", "desc": { "ar": "مناسبة للأصدقاء والعائلات الصغيرة", "en": "For friends and small families" } },
+    { "name": { "ar": "غرفة عائلية", "en": "Family room" }, "guests": 4, "price": null, "photo": "img/sample/room-quad.webp", "desc": { "ar": "مساحة أوسع لأربعة ضيوف", "en": "More space for four guests" } }
+  ],
+  "spaces": [
+    { "name": { "ar": "المطعم", "en": "The restaurant" }, "text": { "ar": "فطور مفتوح كل صباح، وعشاء بإطلالة على المدينة.", "en": "Open breakfast every morning and dinner with a city view." }, "photo": "img/sample/restaurant.webp" },
+    { "name": { "ar": "مقهى السطح", "en": "Rooftop café" }, "text": { "ar": "أجمل وقت فيه بعد الغروب.", "en": "Best enjoyed after sunset." }, "photo": "img/sample/roof-cafe.webp" }
+  ],
+  "reviews": [
+    { "text": { "ar": "[مقتطف من مراجعة حقيقية للفندق على Google]", "en": "[A real Google review excerpt]" }, "author": "[اسم الضيف]" },
+    { "text": { "ar": "[مقتطف من مراجعة حقيقية ثانية]", "en": "[A second real review]" }, "author": "[اسم الضيف]" },
+    { "text": { "ar": "[مقتطف من مراجعة حقيقية ثالثة]", "en": "[A third real review]" }, "author": "[اسم الضيف]" }
+  ],
+  "distances": [
+    { "place": { "ar": "[مركز المدينة]", "en": "[City centre]" }, "time": { "ar": "[0] دقائق مشيًا", "en": "[0] min walk" } },
+    { "place": { "ar": "[أقرب سوق]", "en": "[Nearest market]" }, "time": { "ar": "[0] دقائق مشيًا", "en": "[0] min walk" } },
+    { "place": { "ar": "[المطار أو الكراج]", "en": "[Airport or bus station]" }, "time": { "ar": "[0] دقيقة بالسيارة", "en": "[0] min drive" } }
+  ],
+  "faq": [
+    { "q": { "ar": "هل الفطور مشمول بالسعر؟", "en": "Is breakfast included?" }, "a": { "ar": "[الإجابة]", "en": "[Answer]" } },
+    { "q": { "ar": "هل يوجد موقف للسيارات؟", "en": "Is there parking?" }, "a": { "ar": "[الإجابة]", "en": "[Answer]" } },
+    { "q": { "ar": "ما طرق الدفع المتاحة؟", "en": "Which payment methods are accepted?" }, "a": { "ar": "[الإجابة]", "en": "[Answer]" } }
+  ]
+}
