@@ -63,7 +63,7 @@
   };
 
   /* Naskon's own WhatsApp: demo booking requests go here, never to the hotel. */
-  var NASKON_WA = '';
+  var NASKON_WA = '9647848705042';
 
   var data = null;
   function L(v) { if (v == null) return ''; if (typeof v === 'object' && !Array.isArray(v)) return v[lang] || v.ar || v.en || ''; return String(v); }
