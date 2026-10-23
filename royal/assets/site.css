@@ -507,3 +507,4 @@ section.sec{padding:104px 0 0}
 @keyframes rko{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.rkl.anim.go *{animation-duration:.01s!important;animation-delay:0s!important}}
 .brand svg.blogo{width:47px;height:54px;border-radius:0}.ft svg.rkf{width:230px;height:auto;margin:0 auto 10px;filter:drop-shadow(0 14px 30px #0009)}
+.brand img.blogo{width:47px;height:54px;border-radius:0;object-fit:contain}.ft img.rkf{display:block;width:230px;height:auto;margin:0 auto 10px;filter:drop-shadow(0 14px 30px #0009)}

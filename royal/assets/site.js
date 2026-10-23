@@ -32,3 +32,4 @@ function go(s){s.classList.add("go")}
 if(!("IntersectionObserver" in window)){L.forEach(go);return}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{threshold:.35});
 L.forEach(function(s){io.observe(s)})})();
+(function(){document.documentElement.classList.remove("lw");var f=document.querySelector("img.rkf[data-src]");if(!f)return;function go(){f.src=f.getAttribute("data-src");f.removeAttribute("data-src")}if(!("IntersectionObserver" in window)){go();return}var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();io.disconnect()}},{threshold:.3});io.observe(f)})();
