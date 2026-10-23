@@ -296,7 +296,7 @@ section.sec{padding:104px 0 0}
 .h5{display:block;color:var(--gl);letter-spacing:.35em;font-size:13px;margin-bottom:10px;text-shadow:0 2px 12px #0008}
 /* rooftop */
 .roof{position:relative;margin-top:96px;min-height:min(86vh,720px);display:flex;align-items:flex-end;color:var(--cream);overflow:hidden;isolation:isolate}
-.roof-bg{position:absolute;inset:0;background:url('ph/rooftop.webp') 72% center/cover no-repeat;transform:scale(1.04);z-index:-2}
+.roof-bg{position:absolute;inset:0;background:url('ph/rooftop-hd.webp') 72% center/cover no-repeat;transform:scale(1.04);z-index:-2}
 .roof::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#141B2733 0%,#141B2700 30%,#141B27cc 72%,#141B27f2 100%);z-index:-1}
 .roof-in{padding-bottom:64px;max-width:760px}
 .roof .t{color:#fff}.roof .lede{color:#F8F6F0d9}.roof .k{color:var(--gl)}
