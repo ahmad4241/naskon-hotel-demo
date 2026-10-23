@@ -327,6 +327,7 @@ section.sec{padding:104px 0 0}
 .roof-in{padding-bottom:64px;max-width:760px}
 .roof .t{color:#fff}.roof .lede{color:#F8F6F0d9}.roof .k{color:var(--gl)}
 .roof .btn{margin-top:22px}
+@media (max-width:759px){.roof{flex-direction:column;align-items:stretch;min-height:0;background:#141B27}.roof-bg{position:relative;inset:auto;width:100%;aspect-ratio:1376/768;background-position:center;transform:none;z-index:0;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}.roof::after{display:none}.roof-in{padding-top:6px;padding-bottom:110px}}
 /* dining */
 .dine{margin-top:96px;padding:88px 0;background:var(--ink);color:var(--cream)}
 .dine .t{color:#fff}.dine .lede{color:#F8F6F0cc}.dine .k{color:var(--gl)}
@@ -768,6 +769,6 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 </script>
 <script>(function(){var g=document.querySelector(".rklogo");if(!g)return;if(!("IntersectionObserver" in window)){g.classList.add("in");return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){g.classList.add("in");io.disconnect()}})},{threshold:.3});io.observe(g)})();</script>
 <script>(function(){var d=document.getElementById("drawer");[].forEach.call(document.querySelectorAll("[data-drawer]"),function(b){b.addEventListener("click",function(){d.classList.toggle("on");document.body.style.overflow=d.classList.contains("on")?"hidden":""})});[].forEach.call(d.querySelectorAll("a[href^='#']"),function(a){a.addEventListener("click",function(){d.classList.remove("on");document.body.style.overflow=""})})})();</script>
-<script src="assets/booking.js?v=1"></script>
+<script src="assets/booking.js?v=2"></script>
 </body>
 </html>
