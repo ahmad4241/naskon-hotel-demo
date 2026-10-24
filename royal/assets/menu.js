@@ -29,8 +29,25 @@ list.addEventListener("click",function(e){var b=e.target.closest(".mi");if(!b)re
  ds.classList.add("on");document.body.style.overflow="hidden"});
 function cl(){ds.classList.remove("on");document.body.style.overflow=""}
 ds.addEventListener("click",function(e){if(e.target.closest("[data-x]"))cl()});addEventListener("keydown",function(e){if(e.key==="Escape")cl()});
-document.body.classList.add("mnu-page");var GR="https://search.google.com/local/writereview?placeid=ChIJUVNDzo1rWRURJ9hLD7Smes0",rv=document.createElement("a");rv.className="rvbar";rv.href=GR;rv.target="_blank";rv.rel="noopener";
+document.body.classList.add("mnu-page");var GR="https://search.google.com/local/writereview?placeid=ChIJUVNDzo1rWRURJ9hLD7Smes0",MGR="9647848705042",rv=document.createElement("button");rv.type="button";rv.className="rvbar";
 rv.innerHTML='<span class="rvbar-tx"><i class="rvbar-st" aria-hidden="true">★★★★★</i><b data-t="rvT"></b><span data-t="rvS"></span></span><span class="rvbar-b"><span data-t="rvB"></span></span>';document.body.appendChild(rv);setTimeout(function(){rv.classList.add("show")},600);
+var STAR='<svg viewBox="0 0 24 24"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/></svg>';
+function starsH(){var h="";for(var i=1;i<=5;i++)h+='<button type="button" data-n="'+i+'" aria-label="'+i+'">'+STAR+'</button>';return h}
+$("rcS").innerHTML=starsH();
+var rsh=document.createElement("div");rsh.className="rsh";rsh.innerHTML='<div class="rsh-bd" data-rx></div><div class="rsh-pn" role="dialog" aria-modal="true"><h3 data-t="rateT"></h3><div class="rst" id="rsS"></div><p class="rmsg" id="rMsg"></p><div id="rAct"></div></div>';document.body.appendChild(rsh);
+var toastEl=document.createElement("div");toastEl.className="rtoast";document.body.appendChild(toastEl);var tT;
+function toast(m){toastEl.textContent=m;toastEl.classList.add("on");clearTimeout(tT);tT=setTimeout(function(){toastEl.classList.remove("on")},2800)}
+function rClose(){rsh.classList.remove("on");document.body.style.overflow=""}
+function rDone(){rClose();$("rcd").classList.add("done");rv.classList.add("gone")}
+function rateOpen(n0){$("rsS").innerHTML=starsH();$("rMsg").textContent="";$("rAct").innerHTML="";rsh.querySelector("h3").textContent=t("rateT");rsh.classList.add("on");document.body.style.overflow="hidden";if(n0)pick(n0)}
+function pick(n){var hi=n>=4;[].forEach.call($("rsS").children,function(x){x.classList.toggle("on",+x.dataset.n<=n)});$("rMsg").textContent=hi?t("rHi"):t("rLo");
+ $("rAct").innerHTML='<textarea class="fbk" id="fbk" rows="3" placeholder="'+esc(hi?t("phHi"):t("phLo"))+'"></textarea>'+(hi?'<a class="rbig" id="rGo" href="'+GR+'" target="_blank" rel="noopener">'+STAR+esc(t("gBtn"))+'</a>':'<a class="rbig" id="rGo" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>'+esc(t("mBtn"))+'</a><a class="rgl" href="'+GR+'" target="_blank" rel="noopener">'+esc(t("gSmall"))+'</a>')+'<p class="rneed" id="rNeed"></p>';
+ var fb=$("fbk"),go=$("rGo");function need(){var c=fb.value.trim(),ok=c.length>1;go.classList.toggle("dis",!ok);$("rNeed").textContent=ok?"":t("need");if(!hi)go.href="https://wa.me/"+MGR+"?text="+encodeURIComponent(t("rWa")+" "+"★".repeat(n)+"☆".repeat(5-n)+"\n"+c)}
+ fb.oninput=need;need();setTimeout(function(){fb.focus()},250);
+ go.onclick=function(){var c=fb.value.trim();if(hi){try{navigator.clipboard&&navigator.clipboard.writeText(c)}catch(_){}toast(t("copied"))}else toast(t("thx"));setTimeout(rDone,300)}}
+rsh.addEventListener("click",function(e){var b=e.target.closest("#rsS button");if(b){pick(+b.dataset.n);return}if(e.target.closest("[data-rx]"))rClose()});
+$("rcS").addEventListener("click",function(e){var b=e.target.closest("button");if(b)rateOpen(+b.dataset.n)});
+rv.addEventListener("click",function(){rateOpen()});
 function txt(){[].forEach.call(rv.querySelectorAll("[data-t]"),function(e){e.textContent=t(e.dataset.t)});q.placeholder=t("mnSearch");var r=$("mnR");if(r)r.href="https://wa.me/"+WA+"?text="+encodeURIComponent(t("mnResMsg"));render()}
 new MutationObserver(txt).observe(root,{attributes:true,attributeFilter:["lang"]});txt();
 })();
