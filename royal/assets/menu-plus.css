@@ -1,6 +1,6 @@
 .mhs{position:relative;height:min(68vh,560px);overflow:hidden;background:#0F1420;touch-action:pan-y}
 .mhs-tr{direction:ltr;display:flex;height:100%;transition:transform .7s cubic-bezier(.22,.8,.2,1);will-change:transform}
-[dir="rtl"] .mhs-sl{direction:rtl}.mhs-dt{direction:ltr}
+[dir="rtl"] .mhs-sl{direction:rtl}.mhs-dt{direction:ltr}.mhs-dt:has(button:only-child){display:none}
 .mhs-sl{flex:0 0 100%;position:relative;height:100%;overflow:hidden}
 .mhs-sl img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);transition:transform 6s ease-out}
 .mhs-sl.on img{transform:scale(1)}

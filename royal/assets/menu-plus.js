@@ -1,6 +1,6 @@
 (function(){var T=window.RK,S={"tryW": ["جرّب معه", "Goes well with", "با این امتحان کنید", "اس کے ساتھ آزمائیں"], "brw": ["تصفّح القسم", "Browse", "مشاهده", "دیکھیں"], "sw": ["اسحب يميناً أو يساراً للتنقل بين الأقسام", "Swipe left or right to move between sections", "برای جابه‌جایی بین بخش‌ها به چپ یا راست بکشید", "سیکشنز کے درمیان جانے کے لیے دائیں یا بائیں سوائپ کریں"]},L=["ar","en","fa","ur"];for(var k in S)L.forEach(function(l,i){if(T[l])T[l][k]=S[k][i]})})();
 (function(){"use strict";
-var D=window.RKMENU||[],T=window.RK,root=document.documentElement,LS=["ar","en","fa","ur"],PAIR={"0": [15, 14, 18], "1": [15, 18, 16], "2": [11, 16, 18], "3": [16, 18, 13], "4": [18, 16, 15], "5": [17, 13, 18], "6": [18, 16, 17], "7": [0, 8, 2], "8": [10, 11, 12], "9": [0, 7, 14], "10": [11, 8, 12], "11": [10, 8, 12], "12": [10, 3, 11], "13": [10, 3, 2], "14": [0, 6, 1], "15": [0, 1, 6], "16": [6, 0, 1], "17": [6, 0, 4], "18": [6, 0, 1]},SL=[[-1, 0], [0, 0], [18, 0], [10, 31]];
+var D=window.RKMENU||[],T=window.RK,root=document.documentElement,LS=["ar","en","fa","ur"],PAIR={"0": [15, 14, 18], "1": [15, 18, 16], "2": [11, 16, 18], "3": [16, 18, 13], "4": [18, 16, 15], "5": [17, 13, 18], "6": [18, 16, 17], "7": [0, 8, 2], "8": [10, 11, 12], "9": [0, 7, 14], "10": [11, 8, 12], "11": [10, 8, 12], "12": [10, 3, 11], "13": [10, 3, 2], "14": [0, 6, 1], "15": [0, 1, 6], "16": [6, 0, 1], "17": [6, 0, 4], "18": [6, 0, 1]},SL=[[-1, 0]];
 function li(){var i=LS.indexOf(root.lang);return i<0?0:i}function t(k){return (T[root.lang]||T.ar)[k]||""}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function img(it){return it.i?"menu/"+it.i+".webp":"brand/logo.svg"}
@@ -13,7 +13,7 @@ function slides(){var l=li();return SL.map(function(s,i){var c=s[0],ttl,sub,src;
 var cur=0,tm;
 function paint(){hs.querySelector(".mhs-tr").innerHTML=slides();hs.querySelector(".mhs-dt").innerHTML=SL.map(function(_,i){return '<button type="button" data-d="'+i+'" aria-label="'+(i+1)+'"></button>'}).join("");show(cur)}
 function show(n){cur=(n+SL.length)%SL.length;hs.querySelector(".mhs-tr").style.transform="translateX("+(-100*cur)+"%)";
- [].forEach.call(hs.querySelectorAll(".mhs-sl"),function(s,i){s.classList.toggle("on",i===cur)});[].forEach.call(hs.querySelectorAll(".mhs-dt button"),function(b,i){b.classList.toggle("on",i===cur)});clearTimeout(tm);tm=setTimeout(function(){show(cur+1)},4500)}
+ [].forEach.call(hs.querySelectorAll(".mhs-sl"),function(s,i){s.classList.toggle("on",i===cur)});[].forEach.call(hs.querySelectorAll(".mhs-dt button"),function(b,i){b.classList.toggle("on",i===cur)});clearTimeout(tm);if(SL.length>1)tm=setTimeout(function(){show(cur+1)},4500)}
 hs.addEventListener("click",function(e){var d=e.target.closest("[data-d]");if(d){show(+d.dataset.d);return}var g=e.target.closest("[data-go]");if(g)goCat(g.dataset.go)});
 function swipe(el,fn){var x0,y0;el.addEventListener("touchstart",function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
  el.addEventListener("touchend",function(e){if(x0==null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.8)fn(dx)},{passive:true})}
