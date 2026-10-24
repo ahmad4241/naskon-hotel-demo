@@ -2,6 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
+<script>try{if(localStorage.getItem("msLang")==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}}catch(e){}</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#4c050d">
@@ -39,19 +41,19 @@ img{display:block;max-width:100%}
 @media(min-width:900px){.nav{display:flex}.hdi{height:84px}.logo,.logo svg{height:54px}}
 
 /* HERO: embroidered fabric */
-.hero{position:relative;min-height:calc(100svh - 104px);display:grid;place-items:center;overflow:hidden;color:var(--ivory);isolation:isolate;background:var(--red)}
+.hero{position:relative;min-height:calc(100svh - 104px);display:grid;place-items:center;overflow:hidden;color:#fff;isolation:isolate;background:var(--red)}
 .fab{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
 .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(90% 70% at 50% 45%,#0000 40%,#1a0104aa 100%)}
 .hc{display:flex;flex-direction:column;align-items:center;text-align:center;padding:60px 20px}
 .emb{width:min(82vw,480px);height:auto;overflow:visible}
-.emb .st{fill:none;stroke:#e9c9b8;stroke-width:1.1;stroke-dasharray:2.2 2.6;opacity:0}
+.emb .st{fill:none;stroke:#ffffff;stroke-width:1.1;stroke-dasharray:2.2 2.6;opacity:0}
 .emb .fl{opacity:0;transition:opacity 2.4s ease .2s}
 .in .emb .fl{opacity:1}
 .in .emb .st{animation:stitch 3.2s ease forwards}
 @keyframes stitch{0%{opacity:0}30%{opacity:.9}100%{opacity:.55}}
-.hc .en{margin-top:34px;font-size:13px;color:#efe6dacc}
+.hc .en{margin-top:34px;font-size:13px;color:#ffffffd9}
 .hc h1{margin:10px 0 0;font:400 clamp(30px,6vw,52px)/1.3 Amiri,serif;letter-spacing:.02em}
-.hc .ln{margin-top:28px;color:var(--ivory)}
+.hc .ln{margin-top:28px;color:#fff}
 .scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:1px;height:46px;background:linear-gradient(#efe6da00,#efe6da)}
 .scroll:after{content:"";position:absolute;left:-2px;width:5px;height:5px;border-radius:50%;background:var(--gold);animation:dr 2.4s ease-in-out infinite}
 @keyframes dr{0%{top:0;opacity:0}30%{opacity:1}100%{top:46px;opacity:0}}
@@ -99,13 +101,13 @@ img{display:block;max-width:100%}
 .more .ln{color:var(--red)}
 
 /* atelier */
-.at{position:relative;min-height:88svh;display:grid;place-items:center;text-align:center;color:var(--ivory);overflow:hidden;isolation:isolate;background:var(--navy)}
+.at{position:relative;min-height:88svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;isolation:isolate;background:var(--navy)}
 .at .fab{z-index:-1}
 .at .emb{width:min(30vw,150px)}
 .at h2{margin:26px 0 0;font:400 clamp(34px,7vw,60px)/1.2 "Cormorant Garamond",serif;letter-spacing:.18em}
-.at .ar{margin-top:4px;font:400 22px Amiri,serif;color:#efe6dacc}
-.at p{max-width:40ch;margin:14px auto 0;color:#efe6dabb;padding:0 20px}
-.at .ln{margin-top:28px;color:var(--ivory)}
+.at .ar{margin-top:4px;font:400 22px Amiri,serif;color:#fff}
+.at p{max-width:40ch;margin:14px auto 0;color:#ffffffd9;padding:0 20px}
+.at .ln{margin-top:28px;color:#fff}
 .at .mk{position:absolute;bottom:28px;left:0;right:0;font-size:11px;color:#efe6da88}
 
 /* manifesto */
@@ -131,6 +133,10 @@ img{display:block;max-width:100%}
 .ft .cp{margin-top:40px;font-size:12px;color:#efe6da77}
 .ft .cp a{color:var(--gold)}
 .demo{position:fixed;z-index:60;bottom:14px;left:50%;transform:translateX(-50%);background:#2a1013e6;color:#efe6da;font-size:11.5px;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.lg{font:400 13px Jost,"IBM Plex Sans Arabic";letter-spacing:.12em;width:auto;padding:0 8px}
+[lang=en] .hc h1,[lang=en] .sh h2,[lang=en] .cc b,[lang=en] .mf q,[lang=en] .at .ar{font-family:"Cormorant Garamond",serif;font-weight:500}
+[lang=en] .ln{letter-spacing:.24em;font-size:12.5px}
+[lang=en] body{font-family:Jost,"IBM Plex Sans Arabic",sans-serif}
 </style>
 </head>
 <body>
@@ -173,26 +179,26 @@ img{display:block;max-width:100%}
 </defs>
 </svg>
 
-<div class="ann">توصيل لكل محافظات العراق · الدفع عند الاستلام · استبدال خلال 3 أيام</div>
+<div class="ann" data-i="0">توصيل لكل محافظات العراق · الدفع عند الاستلام · استبدال خلال 3 أيام</div>
 <header class="hd" id="hd">
   <div class="wrap hdi">
-    <div class="l"><button class="ib" type="button" aria-label="القائمة"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button><button class="ib" type="button" aria-label="بحث"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button></div>
+    <div class="l"><button class="ib" type="button" aria-label="القائمة" data-a="35"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button><button class="ib" type="button" aria-label="بحث" data-a="36"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button></div>
     <a class="logo" href="#" aria-label="سيدة العباية"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg></a>
-    <div class="r"><button class="ib" type="button" aria-label="حسابي"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.4-6.5 8-6.5s7 2 8 6.5"/></svg></button><button class="ib" type="button" aria-label="الحقيبة"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg></button></div>
+    <div class="r"><button class="ib lg" type="button" id="lgb" aria-label="English / العربية">EN</button><button class="ib" type="button" aria-label="حسابي" data-a="37"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.4-6.5 8-6.5s7 2 8 6.5"/></svg></button><button class="ib" type="button" aria-label="الحقيبة" data-a="38"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg></button></div>
   </div>
-  <nav class="nav"><a href="#">وصل حديثاً</a><a href="#col">يومية</a><a href="#col">رسمية</a><a href="#col">مناسبات</a><a href="#at">المشغل</a><a href="#">دليل المقاسات</a></nav>
+  <nav class="nav"><a href="#" data-i="1">وصل حديثاً</a><a href="#col" data-i="2">يومية</a><a href="#col" data-i="3">رسمية</a><a href="#col" data-i="4">مناسبات</a><a href="#at" data-i="5">المشغل</a><a href="#" data-i="6">دليل المقاسات</a></nav>
 </header>
 
 <section class="hero" id="hero">
   <svg class="fab" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="#4c050d" filter="url(#weave)"/></svg>
   <div class="hc">
     <svg class="emb" viewBox="0 0 670 412" role="img" aria-label="سيدة العباية · MS ABAYA">
-      <use href="#lg-full" class="fl" fill="#94253a" filter="url(#embr)"/>
+      <use href="#lg-full" class="fl" fill="#f7f2ec" filter="url(#embr)"/>
       <use href="#lg-full" class="st"/>
     </svg>
     <span class="en rv d1">Collection 2026</span>
-    <h1 class="rv d2">فخامةٌ هادئة، بلا تكلّف</h1>
-    <a class="ln rv d3" href="#col">اكتشفي المجموعة</a>
+    <h1 class="rv d2" data-i="7">فخامةٌ هادئة، بلا تكلّف</h1>
+    <a class="ln rv d3" href="#col" data-i="8">اكتشفي المجموعة</a>
   </div>
   <span class="scroll" aria-hidden="true"></span>
 </section>
@@ -202,53 +208,54 @@ img{display:block;max-width:100%}
     <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3ede4"/><stop offset=".45" stop-color="#d7dbe0"/><stop offset=".7" stop-color="#9fb0c4"/><stop offset="1" stop-color="#7d8f6e"/></linearGradient></defs>
     <g filter="url(#wc)"><rect width="100%" height="100%" fill="#f3ede4"/><rect y="40%" width="100%" height="60%" fill="url(#sky)" opacity=".55"/><ellipse cx="15%" cy="95%" rx="40%" ry="22%" fill="#6f8257" opacity=".45"/><ellipse cx="85%" cy="98%" rx="45%" ry="18%" fill="#56693f" opacity=".4"/><ellipse cx="60%" cy="70%" rx="30%" ry="10%" fill="#8ea2bf" opacity=".35"/></g>
   </svg>
-  <div class="sh"><span class="en rv">The Collections</span><h2 class="rv d1">المجموعات</h2><p class="rv d2">ثلاث حكايات، لكل لحظة عباءتها.</p></div>
+  <div class="sh"><span class="en rv">The Collections</span><h2 class="rv d1" data-i="9">المجموعات</h2><p class="rv d2" data-i="10">ثلاث حكايات، لكل لحظة عباءتها.</p></div>
   <div class="cg">
-    <a class="cc rv" href="#"><div class="frm"><span class="bd"></span><div class="sc"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i>صورة الدار</i></div></div><b>يومية</b><span class="en">Everyday</span></a>
-    <a class="cc rv d1" href="#"><div class="frm"><span class="bd"></span><div class="sc"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i>صورة الدار</i></div></div><b>مناسبات</b><span class="en">Occasions</span></a>
-    <a class="cc rv d2" href="#"><div class="frm"><span class="bd"></span><div class="sc"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i>صورة الدار</i></div></div><b>رسمية</b><span class="en">Formal</span></a>
+    <a class="cc rv" href="#"><div class="frm"><span class="bd"></span><div class="sc"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i data-i="11">صورة الدار</i></div></div><b data-i="2">يومية</b><span class="en">Everyday</span></a>
+    <a class="cc rv d1" href="#"><div class="frm"><span class="bd"></span><div class="sc"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i data-i="11">صورة الدار</i></div></div><b data-i="4">مناسبات</b><span class="en">Occasions</span></a>
+    <a class="cc rv d2" href="#"><div class="frm"><span class="bd"></span><div class="sc"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i data-i="11">صورة الدار</i></div></div><b data-i="3">رسمية</b><span class="en">Formal</span></a>
   </div>
 </section>
 
 <section class="na">
-  <div class="sh"><span class="en rv">New In</span><h2 class="rv d1">وصل حديثاً</h2></div>
+  <div class="sh"><span class="en rv">New In</span><h2 class="rv d1" data-i="1">وصل حديثاً</h2></div>
   <div class="pg" id="pg"></div>
-  <div class="more"><a class="ln" href="#">عرض كل العبايات</a></div>
+  <div class="more"><a class="ln" href="#" data-i="12">عرض كل العبايات</a></div>
 </section>
 
 <section class="at" id="at">
   <svg class="fab" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="#112250" filter="url(#weave)"/></svg>
   <div>
-    <svg class="emb" viewBox="0 0 90 174" role="img" aria-label="رمز سيدة العباية"><use href="#lg-mono" class="fl" fill="#24376e" filter="url(#embr)"/><use href="#lg-mono" class="st"/></svg>
+    <svg class="emb" viewBox="0 0 90 174" role="img" aria-label="رمز سيدة العباية"><use href="#lg-mono" class="fl" fill="#f7f2ec" filter="url(#embr)"/><use href="#lg-mono" class="st"/></svg>
     <h2>L’ATELIER</h2>
-    <div class="ar">المشغل · تفصيل خاص</div>
-    <p>اختاري القصّة والقماش واللون والمقاس، وتُخاط عباءتكِ خلال أسبوع إلى أسبوعين.</p>
-    <a class="ln" href="#">ابدئي التفصيل</a>
+    <div class="ar" data-i="13">المشغل · تفصيل خاص</div>
+    <p data-i="14">اختاري القصّة والقماش واللون والمقاس، وتُخاط عباءتكِ خلال أسبوع إلى أسبوعين.</p>
+    <a class="ln" href="#" data-i="15">ابدئي التفصيل</a>
   </div>
   
 </section>
 
 <section class="mf">
   <div class="orn" aria-hidden="true">✦</div>
-  <q class="rv">كل عباءة قصة موضة مستقلة، وكل تفصيلة فيها تُصنع بعناية.</q>
+  <q class="rv" data-i="16">كل عباءة قصة موضة مستقلة، وكل تفصيلة فيها تُصنع بعناية.</q>
   <span class="en rv d1">MS Abaya</span>
 </section>
 
 <div class="sv">
-  <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><b>توصيل لكل المحافظات</b><span>يصلكِ خلال 3 إلى 4 أيام</span></div>
-  <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg><b>الدفع عند الاستلام</b><span>أو بالبطاقة</span></div>
-  <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 8M20 4v4h-4M20 12a8 8 0 0 1-14 5.3L4 16M4 20v-4h4"/></svg><b>استبدال سهل</b><span>خلال 3 أيام من الاستلام</span></div>
-  <div><svg viewBox="0 0 24 24"><path d="M6 3l12 18M18 3L6 21"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/></svg><b>تفصيل خاص</b><span>خلال أسبوع إلى أسبوعين</span></div>
+  <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><b data-i="17">توصيل لكل المحافظات</b><span data-i="18">يصلكِ خلال 3 إلى 4 أيام</span></div>
+  <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg><b data-i="19">الدفع عند الاستلام</b><span data-i="20">أو بالبطاقة</span></div>
+  <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 8M20 4v4h-4M20 12a8 8 0 0 1-14 5.3L4 16M4 20v-4h4"/></svg><b data-i="21">استبدال سهل</b><span data-i="22">خلال 3 أيام من الاستلام</span></div>
+  <div><svg viewBox="0 0 24 24"><path d="M6 3l12 18M18 3L6 21"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/></svg><b data-i="23">تفصيل خاص</b><span data-i="24">خلال أسبوع إلى أسبوعين</span></div>
 </div>
 
 <footer class="ft">
   <a class="logo" href="#" aria-label="سيدة العباية"><svg viewBox="0 0 670 412"><use href="#lg-full" fill="currentColor"/></svg></a>
-  <nav><a href="#">من نحن</a><a href="#">دليل المقاسات</a><a href="#">السياسات</a><a href="#">تتبع الطلب</a><a href="#">تواصلي معنا</a></nav>
-  <div class="cp">© 2026 سيدة العباية · <a href="https://naskon.com">Naskon</a></div>
+  <nav><a href="#" data-i="25">من نحن</a><a href="#" data-i="6">دليل المقاسات</a><a href="#" data-i="26">السياسات</a><a href="#" data-i="27">تتبع الطلب</a><a href="#" data-i="28">تواصلي معنا</a></nav>
+  <div class="cp">© 2026 <span data-i="29">سيدة العباية</span> · <a href="https://naskon.com">Naskon</a></div>
 </footer>
-<div class="demo">معاينة تصميم · الصور الحقيقية تُضاف من الدار</div>
+<div class="demo" data-i="30">معاينة تصميم · الصور الحقيقية تُضاف من الدار</div>
 
 <script>
+var AR=["توصيل لكل محافظات العراق · الدفع عند الاستلام · استبدال خلال 3 أيام", "وصل حديثاً", "يومية", "رسمية", "مناسبات", "المشغل", "دليل المقاسات", "فخامةٌ هادئة، بلا تكلّف", "اكتشفي المجموعة", "المجموعات", "ثلاث حكايات، لكل لحظة عباءتها.", "صورة الدار", "عرض كل العبايات", "المشغل · تفصيل خاص", "اختاري القصّة والقماش واللون والمقاس، وتُخاط عباءتكِ خلال أسبوع إلى أسبوعين.", "ابدئي التفصيل", "كل عباءة قصة موضة مستقلة، وكل تفصيلة فيها تُصنع بعناية.", "توصيل لكل المحافظات", "يصلكِ خلال 3 إلى 4 أيام", "الدفع عند الاستلام", "أو بالبطاقة", "استبدال سهل", "خلال 3 أيام من الاستلام", "تفصيل خاص", "خلال أسبوع إلى أسبوعين", "من نحن", "السياسات", "تتبع الطلب", "تواصلي معنا", "سيدة العباية", "معاينة تصميم · الصور الحقيقية تُضاف من الدار", "صورة العباية", "أضيفي إلى الحقيبة", "[اسم العباية]", "[السعر] د.ع", "القائمة", "بحث", "حسابي", "الحقيبة"],EN=["Delivery to every Iraqi governorate · Cash on delivery · 3-day exchange", "New In", "Everyday", "Formal", "Occasions", "The Atelier", "Size Guide", "Quiet luxury, effortlessly", "Discover the collection", "The Collections", "Three stories, an abaya for every moment.", "House photo", "View all abayas", "Bespoke tailoring", "Choose the cut, fabric, colour and size, and your abaya is made within one to two weeks.", "Start tailoring", "Every abaya is a story of its own, every detail made with care.", "Nationwide delivery", "Arrives in 3 to 4 days", "Cash on delivery", "or pay by card", "Easy exchange", "Within 3 days of delivery", "Bespoke", "Ready in 1 to 2 weeks", "About us", "Policies", "Track order", "Contact us", "MS Abaya", "Design preview · real photos will come from the house", "Abaya photo", "Add to bag", "[Abaya name]", "[Price] IQD", "Menu", "Search", "Account", "Bag"];function K(t){return AR.indexOf(t)}
 (function(){
 /* scalloped frame shape (from the brand board) as CSS mask */
 var sc="M50 2C62 2 70 9 73 18C88 18 96 28 96 40V60C96 72 88 82 73 82C70 91 62 98 50 98C38 98 30 91 27 82C12 82 4 72 4 60V40C4 28 12 18 27 18C30 9 38 2 50 2Z";
@@ -256,8 +263,15 @@ var u=function(d){return 'url("data:image/svg+xml,'+encodeURIComponent('<svg xml
 document.documentElement.style.setProperty("--sc",u('<path d="'+sc+'"/>'));
 /* product placeholders */
 var pg=document.getElementById("pg"),h="";
-for(var i=0;i<4;i++)h+='<a class="pc rv'+(i?' d'+Math.min(i,3):'')+'" href="#"><div class="im"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i>صورة العباية</i><span class="fav" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span class="hv">أضيفي إلى الحقيبة</span></div><b>[اسم العباية]</b><span>[السعر] د.ع</span></a>';
+for(var i=0;i<4;i++)h+='<a class="pc rv'+(i?' d'+Math.min(i,3):'')+'" href="#"><div class="im"><svg viewBox="0 0 90 174"><use href="#lg-mono" fill="currentColor"/></svg><i data-i="31">صورة العباية</i><span class="fav" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span class="hv" data-i="32">أضيفي إلى الحقيبة</span></div><b data-i="33">[اسم العباية]</b><span data-i="34">[السعر] د.ع</span></a>';
 pg.innerHTML=h;
+var root=document.documentElement,L="ar";try{L=localStorage.getItem("msLang")||"ar"}catch(e){}
+function setL(l){L=l;root.lang=l;root.dir=l==="en"?"ltr":"rtl";var D=l==="en"?EN:AR;
+ [].forEach.call(document.querySelectorAll("[data-i]"),function(e){e.textContent=D[+e.dataset.i]});
+ [].forEach.call(document.querySelectorAll("[data-a]"),function(e){e.setAttribute("aria-label",D[+e.dataset.a])});
+ document.getElementById("lgb").textContent=l==="en"?"ع":"EN";try{localStorage.setItem("msLang",l)}catch(e){}}
+document.getElementById("lgb").onclick=function(){setL(L==="en"?"ar":"en")};setL(L);
+
 /* reveal */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.2});
 [].forEach.call(document.querySelectorAll(".rv,.hero,.at"),function(el){io.observe(el)});
