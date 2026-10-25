@@ -178,6 +178,17 @@ html[data-m="2"] .mgl{color:#efe5d6}
 .hd.clear .mk svg.wm2{color:#fff}
 .hd .dn,.hd .mega{display:none}
 @media(min-width:1024px){
+ /* laptop: one single line — language · links · account & bag (no wordmark) */
+ .hd.hv{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px;padding:0 34px;transition:background .4s,color .4s,box-shadow .4s,height .45s cubic-bezier(.2,.7,.2,1)}
+ .scd .hd.hv{height:62px}
+ .hd.hv .r1{display:contents}
+ .hd.hv .mk{display:none}
+ .hd.hv .s{grid-column:1;grid-row:1}
+ .hd.hv .e{grid-column:3;grid-row:1}
+ .hd.hv .dn{grid-column:2;grid-row:1;height:auto!important;align-items:center!important}
+ .hd.hv .dn a{padding:10px 0!important}
+}
+@media(min-width:1024px){
  .hd .r1{height:74px;padding:0 34px;transition:height .45s cubic-bezier(.2,.7,.2,1)}
  .hd #bMenu{display:none}
  .hd .lg{display:inline-flex;align-items:center;gap:8px;width:auto;padding:0 6px}
