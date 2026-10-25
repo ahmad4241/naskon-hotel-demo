@@ -16,7 +16,7 @@ function render(){var l=L();gl.innerHTML=I.globe+'<span>'+(l==='ar'?'English':'�
  D.getElementById('mn').innerHTML='<button class="msr">'+I.search+'<span>'+T('ابحثي في المتجر','Search the store')+'</span></button>'+
   '<div class="mp">'+acc('col',T('العبايات','Abayas'),col)+acc('und',T('تحت العباية','Under the abaya'),un)+lk('category.html?l=vip','VIP','vipl')+lk('tailoring.html',T('التفصيل الخاص','Made to measure'))+'</div>'+
   '<div class="ms">'+[['account.html',T('حسابي','My account')],['account.html#orders',T('تتبع الطلب','Track order')],['sizes.html',T('دليل المقاسات','Size guide')],['about.html',T('من نحن','About us')]].map(function(a){return '<a href="'+a[0]+'">'+a[1]+'</a>'}).join('')+'</div>';
- D.getElementById('mmeta').innerHTML='<div class="mhelp"><b>'+T('نحن هنا لمساعدتكِ','We are here to help')+'</b><p>'+T('يومياً من ١١ صباحاً إلى ١١ مساءً · كربلاء، حي النقيب','Daily 11am – 11pm · Karbala, Al-Naqeeb')+'</p>'+
+ D.getElementById('mmeta').innerHTML='<div class="mhelp"><b>'+T('نحن هنا لمساعدتكِ','We are here to help')+'</b><p>'+T('يومياً من ١١ صباحاً إلى ١١ مساءً','Open daily from 11am to 11pm')+'<br>'+T('كربلاء حي النقيب','Karbala Al Naqeeb')+'</p>'+
   '<a class="wab" href="https://wa.me/'+MS.WA+'" target="_blank" rel="noopener">'+I.wa+'<span>'+T('راسلينا على واتساب','Message us on WhatsApp')+'</span></a>'+
   '<div class="row"><span class="soc3"><a href="https://instagram.com/mss.abaya" target="_blank" rel="noopener" aria-label="Instagram">'+I.ig+'</a><a href="#" aria-label="Facebook">'+I.fb+'</a></span></div></div>';
  D.querySelector('#mn .msr').onclick=function(){ov.querySelector('.bk').click();setTimeout(MS.openSearch,200)};
