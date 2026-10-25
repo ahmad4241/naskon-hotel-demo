@@ -216,7 +216,7 @@ var PH=!/photos=1/.test(location.search);
 function ph(){if(!PH)return;D.querySelectorAll('main section:not(.hero) img').forEach(function(im){var h=im.closest('picture')||im;if(h.dataset.d)return;var d=D.createElement('div');d.className='phl';d.innerHTML='<svg><use href="#s1"/></svg>';h.style.display='none';h.dataset.d=1;h.parentNode.insertBefore(d,h)})}
 ph();MS.onLang.push(ph);
 /* intro previews: ?i=1 white · ?i=2 wine · ?i=3 photo inside the S */
-var intro=D.getElementById('intro'),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,m=location.search.match(/i=([123])/),V=m?+m[1]:1,seen=false;
+var intro=D.getElementById('intro'),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,m=location.search.match(/i=([123])/),V=m?+m[1]:3,seen=false;
 try{seen=!m&&sessionStorage.getItem('msIntro')==='1'}catch(e){}
 function ready(){B.classList.add('ready');try{sessionStorage.setItem('msIntro','1')}catch(e){}}
 var sym=D.getElementById('s1'),vb=sym.getAttribute('viewBox').split(' ').map(Number);
