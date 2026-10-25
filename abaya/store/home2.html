@@ -373,6 +373,21 @@ html[dir=rtl] .csb button i:after{--o:right}
 .csb button.done i:after{transform:scaleX(1)}
 .csb button.on i:after{animation:csb 6s linear forwards}
 @keyframes csb{to{transform:scaleX(1)}}
+/* hero preview 4: turning abaya */
+.hero.tt{height:200svh;min-height:0;overflow:visible;background:none}
+.hero.tt::after{display:none}
+.hero.tt .stk{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#4a0a14 0%,#2c0208 75%)}
+.ttw{position:absolute;top:calc(32px + 50px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);aspect-ratio:600/1040;height:70%;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%)}
+@media(min-width:1024px){.ttw{top:calc(32px + 72px);height:calc(100% - 104px)}}
+.ttw img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:opacity}
+.hero.tt .stk::after{content:"";position:absolute;inset:auto 0 0;height:46%;z-index:1;background:linear-gradient(to top,rgba(30,2,8,.82),rgba(30,2,8,0))}
+.hero.tt .hx{z-index:2}
+.hero.tt .hx .k{color:#e7c79a}
+.tth{position:absolute;z-index:2;top:calc(32px + 58px + 18px + env(safe-area-inset-top));left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(239,229,214,.8);font-size:11.5px;letter-spacing:.04em}
+html[lang=en] .tth{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.tth i{width:1px;height:30px;background:linear-gradient(rgba(239,229,214,.8),transparent);animation:swc2 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes swc2{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media(min-width:1024px){.tth{top:calc(32px + 72px + 22px)}.hero.tt .stk::after{height:36%}}
 </style>
 </head><body data-over="1">
 <script src="assets/logo.js?v=1"></script>
@@ -426,14 +441,14 @@ html[dir=rtl] .csb button i:after{--o:right}
 
 <script src="assets/data.js?v=3"></script>
 <script src="assets/store.js?v=3"></script>
-<script src="assets/hdx.js?v=13"></script>
+<script src="assets/hdx.js?v=14"></script>
 <script src="assets/mnx.js?v=11"></script>
-<script src="assets/herox.js?v=4"></script>
+<script src="assets/herox.js?v=5"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
 D.getElementById('hs').onclick=MS.openSearch;
-function past(){var sw=D.querySelector('.hero.sw');B.classList.toggle('past',scrollY>(sw?sw.offsetHeight-innerHeight*.8:innerHeight*.6))}addEventListener('scroll',past,{passive:true});past();
+function past(){var sw=D.querySelector('.hero.sw,.hero.tt');B.classList.toggle('past',scrollY>(sw?sw.offsetHeight-innerHeight*.8:innerHeight*.6))}addEventListener('scroll',past,{passive:true});past();
 (function(){var W={ar:['ابحثي عن عباءة','ابحثي عن لون','ابحثي عن قماش'],en:['Search abayas','Search colours','Search fabrics']},el=D.getElementById('hsT'),i=0,n=0,del=0,t;
  function step(){var w=W[L()][i%3];if(!del){n++;el.textContent=w.slice(0,n);if(n>=w.length){del=1;t=setTimeout(step,1700);return}t=setTimeout(step,85)}
   else{n--;el.textContent=w.slice(0,n);if(n<=0){del=0;i++;t=setTimeout(step,350);return}t=setTimeout(step,40)}}

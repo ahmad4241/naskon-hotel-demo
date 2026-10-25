@@ -1,5 +1,23 @@
 /* hero preview ?hero=1 — the S window: felt with an S cut out, the abaya seen through it; scrolling opens the window */
 (function(){
+if(/hero=4/.test(location.search)){(function(){
+ var D=document,sec=D.querySelector('.hero');sec.classList.add('tt');
+ var stk=D.createElement('div');stk.className='stk';while(sec.firstChild)stk.appendChild(sec.firstChild);sec.appendChild(stk);
+ var pic=stk.querySelector('picture');pic.remove();
+ var w=D.createElement('div');w.className='ttw';var N=9,im=[];
+ for(var i=0;i<N;i++){var e=D.createElement('img');e.src='img/turn/'+i+'.webp';e.alt='';w.appendChild(e);im.push(e)}
+ stk.insertBefore(w,stk.firstChild);
+ var hint=D.createElement('div');hint.className='tth';hint.innerHTML='<span>'+MS.T('انزلي لتدور العباية','Scroll to turn the abaya')+'</span><i></i>';stk.appendChild(hint);
+ MS.onLang.push(function(){hint.querySelector('span').textContent=MS.T('انزلي لتدور العباية','Scroll to turn the abaya')});
+ var t0=performance.now(),last=-1;
+ function cl(x){return x<0?0:x>1?1:x}
+ function f(now){var r=sec.getBoundingClientRect(),p=cl(-r.top/(r.height-innerHeight));
+  var pos=((now-t0)/1000*0.55+p*N*1.5)%N,a=Math.floor(pos),b=(a+1)%N,t=pos-a;t=t*t*(3-2*t);
+  for(var i=0;i<N;i++)im[i].style.opacity=i===a?1:i===b?t:0;
+  hint.style.opacity=(1-cl(p/.15)).toFixed(3);
+  sec.style.setProperty('--tp',p.toFixed(3));
+  requestAnimationFrame(f)}
+ requestAnimationFrame(f)})();return}
 if(/hero=3/.test(location.search)){(function(){
  var D=document,L=MS.L,T=MS.T,sec=D.querySelector('.hero');sec.classList.add('cs');
  var S=[{img:'img/scene.webp',ims:'img/scene-s.webp',pos:'58% 28%',k:['المجموعة الجديدة','THE NEW COLLECTION'],h:['أناقةٌ تليق بحضوركِ','Elegance worthy of your presence'],a:['اكتشفي المجموعة','Discover the collection'],u:'category.html?s=new'},
