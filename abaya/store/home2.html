@@ -193,8 +193,8 @@ function prog(){var m=R.scrollWidth-R.clientWidth,x=Math.abs(R.scrollLeft),f=m>0
 R.addEventListener('scroll',prog,{passive:true});
 MS.onLang.push(function(){cats();rail();prog()});
 MS.start();
-var PH=/logo=1/.test(location.search);
-function ph(){if(!PH)return;D.querySelectorAll('main img').forEach(function(im){var h=im.closest('picture')||im;if(h.dataset.d)return;var d=D.createElement('div');d.className='phl';d.innerHTML='<svg><use href="#s1"/></svg>';h.style.display='none';h.dataset.d=1;h.parentNode.insertBefore(d,h)})}
+var PH=!/photos=1/.test(location.search);
+function ph(){if(!PH)return;D.querySelectorAll('main section:not(.hero) img').forEach(function(im){var h=im.closest('picture')||im;if(h.dataset.d)return;var d=D.createElement('div');d.className='phl';d.innerHTML='<svg><use href="#s1"/></svg>';h.style.display='none';h.dataset.d=1;h.parentNode.insertBefore(d,h)})}
 ph();MS.onLang.push(ph);
 /* intro: gold particles form the emblem once per visit */
 var intro=D.getElementById('intro'),cv=D.getElementById('ic'),c=cv.getContext('2d'),dpr=Math.min(2,devicePixelRatio||1),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,seen=false;
