@@ -392,6 +392,17 @@ html[lang=en] .tth{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
 .hero.t3d .c3d{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero.t3d .hx .rv{opacity:1;transform:none}
 .hero.t3d .tth{display:none}
+/* hero preview 6: photographic turntable */
+.hero.rt{height:210svh;min-height:0;overflow:visible;background:#fff;padding:0}
+.hero.rt::after{display:none}
+.hero.rt .stk{position:sticky;top:0;height:100svh;overflow:hidden}
+.hero.rt canvas{display:block;width:100%;height:100%}
+.rthx{position:relative!important;inset:auto!important;margin:0 auto!important;max-width:none!important;padding:46px var(--pad) 50px!important;text-align:center;display:flex;flex-direction:column;align-items:center;color:var(--ink)!important;background:#fff}
+.rthx .rv{opacity:1!important;transform:none!important}
+.rthx .k{color:var(--gold)!important}
+.rthx h1{color:var(--wine);margin:12px 0 14px;font-size:clamp(32px,8.6vw,64px);line-height:1.25}
+.rthx .lnk{color:var(--wine)!important;border-bottom:1px solid currentColor!important;padding-bottom:4px!important}
+.rthx .hs{border-color:rgba(76,5,13,.28)!important;color:#6f6660!important}.rthx .hs svg{stroke:var(--wine)!important}
 </style>
 </head><body data-over="1">
 <script src="assets/logo.js?v=1"></script>
@@ -448,7 +459,8 @@ html[lang=en] .tth{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
 <script src="assets/hdx.js?v=14"></script>
 <script src="assets/mnx.js?v=11"></script>
 <script src="assets/herox.js?v=5"></script>
-<script>if(/hero=5/.test(location.search)){document.write('<script src="assets/vendor/gsap.min.js"><\/script><script src="assets/vendor/ScrollTrigger.min.js"><\/script><script type="module" src="assets/abaya3d.js?v=3"><\/script>')}</script>
+<script>if(/hero=6/.test(location.search)){document.write('<script src="assets/vendor/gsap.min.js"><\/script><script src="assets/vendor/ScrollTrigger.min.js"><\/script><script src="assets/rot.js?v=2"><\/script>')}
+if(/hero=5/.test(location.search)){document.write('<script src="assets/vendor/gsap.min.js"><\/script><script src="assets/vendor/ScrollTrigger.min.js"><\/script><script type="module" src="assets/abaya3d.js?v=3"><\/script>')}</script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
