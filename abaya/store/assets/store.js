@@ -42,10 +42,10 @@ function annR(){var a=D.getElementById('ann');a.innerHTML=ANN.map(function(t,i){
 setInterval(function(){var ts=D.querySelectorAll('#ann .t');if(!ts.length)return;ts[ai].className='t out';ai=(ai+1)%ANN.length;ts[ai].className='t on';setTimeout(function(){[].forEach.call(ts,function(t,i){if(i!==ai)t.className='t'})},650)},4200);
 
 /* ---------- menu ---------- */
-function menuR(){var c=MS.CATS.map(function(c){return '<a href="category.html?c='+c.id+'">'+c[L()]+'<small>›</small></a>'}).join('');
+function menuR(){var c=MS.CATS.map(function(c){return '<a href="category.html?c='+c.id+'">'+c[L()]+'<small>›</small></a>'+(c.subs?c.subs.map(function(x){return '<a class="sub" href="category.html?c='+c.id+'&s='+x.id+'">'+x[L()]+'</a>'}).join(''):'')}).join('');
  D.getElementById('mn').innerHTML=
   '<div class="k grp">'+T('التسوق','SHOP')+'</div><a href="category.html">'+T('كل العبايات','All abayas')+'</a>'+c+
-  '<a class="vip" href="category.html?l=vip">VIP<small>›</small></a>'+
+  '<div class="k grp">'+T('حسب المستوى','BY LEVEL')+'</div><a href="category.html?l=daily">'+T('يومي','Everyday')+'</a><a href="category.html?l=lux">'+T('فاخر','Luxury')+'</a><a class="vip" href="category.html?l=vip">VIP<small>›</small></a><a href="category.html?s=sale" style="color:var(--wine)">'+T('العروض','Offers')+'</a>'+
   '<div class="k grp">'+T('خدماتنا','SERVICES')+'</div><a href="tailoring.html">'+T('التفصيل الخاص','Made to measure')+'</a>'+
   '<div class="k grp">'+T('حسابي','ACCOUNT')+'</div><a href="account.html">'+T('تسجيل الدخول','Sign in')+'</a><a href="account.html#orders">'+T('تتبع الطلب','Track order')+'</a><a href="account.html#fav">'+T('المفضلة','Wishlist')+'</a>'+
   '<div class="k grp">'+T('الدار','THE HOUSE')+'</div><a href="about.html">'+T('من نحن','About')+'</a><a href="sizes.html">'+T('دليل المقاسات','Size guide')+'</a><a href="policies.html">'+T('السياسات','Policies')+'</a><a href="contact.html">'+T('تواصلي معنا','Contact')+'</a>';

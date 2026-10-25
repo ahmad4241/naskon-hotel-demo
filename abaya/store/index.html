@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/store.css?v=1">
+<link rel="stylesheet" href="assets/store.css?v=3">
 <script>try{if(localStorage.getItem('msLang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr'}}catch(e){}</script>
 <style>
 /* intro */
@@ -40,6 +40,22 @@ html[lang=en] .hs{font-family:var(--enb)}
 .cat:hover .im img{transform:scale(1.05)}
 .cat span{display:block;margin-top:10px;font-size:13px;font-weight:400}
 .cat em{display:block;font-style:normal;font-size:11.5px;color:var(--mute)}
+.cat .subs{display:flex;justify-content:center;gap:6px;margin-top:6px;flex-wrap:wrap}
+.cat .subs b{font-weight:400;font-size:11px;border:1px solid var(--line);padding:3px 9px;color:var(--ink)}
+/* levels */
+.lvls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 var(--pad);max-width:var(--max);margin:auto}
+.lv{display:flex;flex-direction:column;justify-content:space-between;min-height:132px;padding:16px 14px;border:1px solid var(--line);background:#fff;transition:transform .4s}
+.lv:hover{transform:translateY(-3px)}
+.lv b{font:400 22px/1.2 var(--ar)}
+html[lang=en] .lv b{font-family:var(--en);font-size:24px}
+.lv span{font-size:11.5px;color:var(--mute);line-height:1.6}
+.lv i{font-style:normal;font-size:12px;margin-top:10px}
+.lv.lux{background:var(--soft);border-color:rgba(176,135,74,.45)}
+.lv.lux b{color:var(--gold)}
+.lv.vipc{background:var(--navy);border-color:var(--navy);color:#f3e7d3}
+.lv.vipc span{color:rgba(243,231,211,.65)}
+.lv.vipc b{color:var(--gold2)}
+.offers .sh .k{color:var(--wine)}
 /* grid */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 10px;padding:0 var(--pad);max-width:var(--max);margin:auto}
 /* VIP */
@@ -140,8 +156,22 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
 </section>
 
 <section>
+ <div class="sh fade"><div><div class="k" data-ar="تسوّقي حسب" data-en="SHOP BY">تسوّقي حسب</div><h2 class="h" data-ar="المستوى" data-en="Level">المستوى</h2></div></div>
+ <div class="lvls fade">
+  <a class="lv" href="category.html?l=daily"><b data-ar="يومي" data-en="Everyday">يومي</b><span data-ar="أناقة عملية لكل يوم" data-en="Practical elegance for every day">أناقة عملية لكل يوم</span><i>←</i></a>
+  <a class="lv lux" href="category.html?l=lux"><b data-ar="فاخر" data-en="Luxury">فاخر</b><span data-ar="خامات مميزة وتفاصيل راقية" data-en="Distinctive fabrics, refined details">خامات مميزة وتفاصيل راقية</span><i>←</i></a>
+  <a class="lv vipc" href="category.html?l=vip"><b>VIP</b><span data-ar="قطع محدودة بخامات حصرية" data-en="Limited pieces, exclusive fabrics">قطع محدودة بخامات حصرية</span><i>←</i></a>
+ </div>
+</section>
+
+<section>
  <div class="sh fade"><div><div class="k" data-ar="وصل حديثاً" data-en="NEW IN">وصل حديثاً</div><h2 class="h" data-ar="القطع الجديدة" data-en="New arrivals">القطع الجديدة</h2></div><a class="lnk" href="category.html?s=new"><span data-ar="عرض الكل" data-en="View all">عرض الكل</span><i>←</i></a></div>
  <div class="grid" id="newGrid"></div>
+</section>
+
+<section class="offers">
+ <div class="sh fade"><div><div class="k" data-ar="أسعار خاصة" data-en="SPECIAL PRICES">أسعار خاصة</div><h2 class="h" data-ar="العروض" data-en="Offers">العروض</h2></div><a class="lnk" href="category.html?s=sale"><span data-ar="كل العروض" data-en="All offers">كل العروض</span><i>←</i></a></div>
+ <div class="grid" id="saleGrid"></div>
 </section>
 
 <section class="vipsec">
@@ -184,17 +214,18 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
 </section>
 </main>
 
-<script src="assets/data.js?v=1"></script>
-<script src="assets/store.js?v=1"></script>
+<script src="assets/data.js?v=2"></script>
+<script src="assets/store.js?v=2"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
 D.getElementById('hs').onclick=MS.openSearch;
 
 function cats(){var cnt={};MS.PRODUCTS.forEach(function(p){cnt[p.cat]=(cnt[p.cat]||0)+1});
- D.getElementById('cats').innerHTML=MS.CATS.map(function(c){return '<a class="cat fade" href="category.html?c='+c.id+'"><div class="im"><img'+(c.cover?' class="cv"':'')+' src="'+c.img+'" alt="" loading="lazy"></div><span>'+c[L()]+'</span></a>'}).join('')}
+ D.getElementById('cats').innerHTML=MS.CATS.map(function(c){return '<a class="cat fade" href="category.html?c='+c.id+'"><div class="im"><img'+(c.cover?' class="cv"':'')+' src="'+c.img+'" alt="" loading="lazy"></div><span>'+c[L()]+'</span>'+(c.subs?'<div class="subs">'+c.subs.map(function(x){return '<b>'+x[L()]+'</b>'}).join('')+'</div>':'')+'</a>'}).join('')}
 function grids(){
  D.getElementById('newGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.lvl!=='vip'||p.isNew}).slice(0,4).map(MS.card).join('');
+ D.getElementById('saleGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.old}).map(MS.card).join('');
  D.getElementById('vipGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.lvl==='vip'}).map(MS.card).join('')}
 
 /* rack */

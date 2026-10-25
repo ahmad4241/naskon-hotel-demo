@@ -5,7 +5,8 @@ MS.CATS = [
   {id:'formal',   ar:'عبايات رسمية',     en:'Formal',          img:'img/r1.webp'},
   {id:'occasion', ar:'عبايات مناسبات',   en:'Occasion',        img:'img/r4.webp'},
   {id:'design',   ar:'عبايات تصميم خاص', en:'Signature design',img:'img/r2.webp'},
-  {id:'under',    ar:'تحت العباية',      en:'Under the abaya', img:'img/cat-shayla.webp', cover:true}
+  {id:'under',    ar:'تحت العباية',      en:'Under the abaya', img:'img/cat-shayla.webp', cover:true,
+   subs:[{id:'dresses',ar:'فساتين',en:'Dresses'},{id:'suits',ar:'سوت',en:'Suits'}]}
 ];
 MS.LEVELS = {daily:{ar:'يومي',en:'Everyday'}, lux:{ar:'فاخر',en:'Luxury'}, vip:{ar:'VIP',en:'VIP'}};
 MS.SIZES = [52,54,56,58,60];
@@ -26,7 +27,7 @@ MS.PRODUCTS = [
    ar:'عباءة اللؤلؤ', en:'Pearl',
    dar:'شيفون عاجي بتطريز أبيض ناعم', den:'Ivory chiffon with delicate white embroidery',
    colors:[{h:'#efe9df',ar:'عاجي',en:'Ivory'}]},
-  {id:'spring', img:'img/r5.webp', cat:'daily', lvl:'lux', price:95000, old:0, stock:8, isNew:0,
+  {id:'spring', img:'img/r5.webp', cat:'daily', lvl:'lux', price:95000, old:115000, stock:8, isNew:0,
    ar:'عباءة الربيع', en:'Spring',
    dar:'رمادي فاتح بتطريز زهور ملوّنة', den:'Soft grey with colourful floral embroidery',
    colors:[{h:'#a9b2b7',ar:'رمادي',en:'Grey'}]}
