@@ -10,6 +10,7 @@ var I={
  heart:'<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
  wa:'<svg viewBox="0 0 24 24"><path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1l-.5-.2z"/></svg>',
  ig:'<svg viewBox="0 0 24 24"><path d="M12 7.2A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 15.1 12 3.1 3.1 0 0 1 12 15.1zM17 5.9a1.1 1.1 0 1 0 1.1 1.1A1.1 1.1 0 0 0 17 5.9zM21.3 7.3a5.6 5.6 0 0 0-1.5-4 5.6 5.6 0 0 0-4-1.5C14.3 1.7 9.7 1.7 8.2 1.8a5.6 5.6 0 0 0-4 1.5 5.6 5.6 0 0 0-1.5 4c-.1 1.5-.1 6.1 0 7.6a5.6 5.6 0 0 0 1.5 4 5.6 5.6 0 0 0 4 1.5c1.5.1 6.1.1 7.6 0a5.6 5.6 0 0 0 4-1.5 5.6 5.6 0 0 0 1.5-4c.1-1.5.1-6.1 0-7.6zM19.4 17a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.6.4s-4.4.1-5.6-.4A3.1 3.1 0 0 1 4.6 17c-.5-1.2-.4-4.1-.4-5s-.1-3.8.4-5a3.1 3.1 0 0 1 1.8-1.8c1.2-.5 4.1-.4 5.6-.4s4.4-.1 5.6.4A3.1 3.1 0 0 1 19.4 7c.5 1.2.4 4.1.4 5s.1 3.8-.4 5z"/></svg>',
+ chat:'<svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h10a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 17 16h-6.2L6.5 19.5V16H7a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M8.5 9h7M8.5 12h4.5"/></svg>',
  fb:'<svg viewBox="0 0 24 24"><path d="M14 8.5V6.8c0-.8.5-1 .9-1h2.3V2.2L14 2.2c-3.5 0-4.2 2.6-4.2 4.3v2H7.6v3.7h2.2V22h4.2v-9.8h2.9l.4-3.7z"/></svg>'
 };
 function L(){return H.lang==='en'?'en':'ar'}
@@ -32,7 +33,7 @@ B.insertAdjacentHTML('afterbegin',
  '<div class="ov l" id="ovM"><div class="bk" data-x></div><div class="pn"><div class="top"><button class="x" data-x aria-label="إغلاق">×</button></div><nav class="mn" id="mn"></nav><div class="meta" id="mmeta"></div></div></div>'+
  '<div class="ov r" id="ovC"><div class="bk" data-x></div><div class="pn"><div class="top"><span class="ttl" id="cTtl"></span><button class="x" data-x aria-label="إغلاق">×</button></div><div id="cList"></div><div class="cart-ft" id="cFt"></div></div></div>'+
  '<div class="so" id="so"><div class="b2"><input id="q" type="search" autocomplete="off"><button class="x" id="sX" aria-label="إغلاق">×</button></div><div class="w"><div class="k" id="sK"></div><div class="chips" id="chips"></div><div class="res" id="res"></div></div></div>'+
- '<a class="wa" id="wa" href="https://wa.me/'+MS.WA+'" target="_blank" rel="noopener" aria-label="واتساب">'+I.wa+'</a>'+
+ '<a class="wa" id="wa" href="https://wa.me/'+MS.WA+'" target="_blank" rel="noopener" aria-label="تواصلي معنا">'+I.chat+'</a>'+
  '<div class="toast" id="toast"></div>');
 B.insertAdjacentHTML('beforeend','<footer class="ft" id="ft"></footer>');
 

@@ -94,7 +94,8 @@ html[dir=ltr] .lnk i{transform:scaleX(-1)}
 /* whatsapp */
 .wa{position:fixed;z-index:45;bottom:calc(18px + env(safe-area-inset-bottom));left:16px;width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 10px 26px -10px rgba(31,26,23,.45),inset 0 0 0 1px var(--line);display:grid;place-items:center;transition:transform .3s}
 .wa:hover{transform:scale(1.06)}
-.wa svg{width:24px;height:24px;fill:#1f7a4d}
+.wa{background:var(--wine);box-shadow:0 10px 26px -10px rgba(76,5,13,.6)}
+.wa svg{width:23px;height:23px;fill:none;stroke:#f6ecdd;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 /* toast */
 .toast{position:fixed;z-index:95;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;font-size:13px;opacity:0;transition:all .4s;pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
