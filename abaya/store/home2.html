@@ -255,10 +255,13 @@ html[lang=en] .mhelp b{font-family:var(--en);font-size:20px}
 #mmeta .mhelp p{margin:8px 0 18px;font-size:12.5px;line-height:1.8;color:var(--ink);opacity:.72}
 .mhelp .wab{display:flex;align-items:center;justify-content:center;gap:9px;height:46px;background:var(--wine);color:#fff;font-size:13.5px;font-weight:400}
 .mhelp .wab svg{width:17px;height:17px;fill:#fff}
-.mhelp .row{display:flex;align-items:center;justify-content:space-between;margin-top:16px;font-size:12.5px;color:var(--ink)}
+.mhelp .row{display:flex;justify-content:center;margin-top:16px}
 .mhelp .row span{opacity:.75}
-.mhelp .soc3{display:flex;gap:16px}
-.mhelp .soc3 svg{width:18px;height:18px;fill:var(--wine)}
+.mhelp .soc3{display:flex;gap:12px}
+.mhelp .soc3 a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(76,5,13,.35);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.mhelp .soc3 a:hover{background:var(--wine);border-color:var(--wine)}
+.mhelp .soc3 svg{width:17px;height:17px;fill:var(--wine);transition:fill .3s}
+.mhelp .soc3 a:hover svg{fill:#fff}
 .ms a{padding:6px 0;font-size:14px;font-weight:400;color:var(--ink);opacity:.78}
 html[lang=en] .ms a,html[lang=en] .mb a,html[lang=en] .msr,html[lang=en] .mfe b{font-weight:400;letter-spacing:.01em}
 html[lang=en] #mmeta{font-weight:400}
@@ -341,7 +344,7 @@ html[data-m="2"] #ovM .top{max-width:1320px;width:100%;margin:0 auto 34px}
 <script src="assets/data.js?v=2"></script>
 <script src="assets/store.js?v=3"></script>
 <script src="assets/hdx.js?v=7"></script>
-<script src="assets/mnx.js?v=5"></script>
+<script src="assets/mnx.js?v=6"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
