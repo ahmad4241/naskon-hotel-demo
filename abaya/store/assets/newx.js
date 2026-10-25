@@ -1,6 +1,6 @@
 /* سيدة العباية — «وصل حديثاً» previews: ?new=1 gallery rail · ?new=2 feature + grid · ?new=3 spotlight on felt */
 (function(){
-var m=location.search.match(/new=([123])/);if(!m)return;var V=+m[1];
+var m=location.search.match(/new=([123])/),V=m?+m[1]:1;
 var D=document,L=MS.L,T=MS.T,fmt=MS.fmt,I=MS.I,sec=D.getElementById('newSec');
 var PH=!/photos=1/.test(location.search);
 sec.classList.add('nx','nx'+V);
@@ -18,11 +18,10 @@ D.addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!
 /* ---------- 1: gallery rail with quick add ---------- */
 function v1(){box.innerHTML='<div class="g1" id="g1">'+P.map(function(p,i){return '<article class="c1"><a class="im" href="product.html?p='+p.id+'">'+pic(p)+tag(p)+'</a>'+fav(p)+
  '<button class="qa" aria-label="'+T('إضافة سريعة','Quick add')+'">+</button><div class="qs"><span>'+T('اختاري المقاس','Select size')+'</span>'+sizes(p)+'</div>'+
- '<div class="in"><i>'+n2(i)+'</i><a href="product.html?p='+p.id+'" class="nm">'+p[L()]+'</a><span class="pr">'+price(p)+'</span></div></article>'}).join('')+'</div>'+
- '<div class="g1f"><span class="ct1"><b id="g1n">01</b> / '+n2(P.length-1)+'</span><div class="bar"><i id="g1b"></i></div><div class="ar"><button id="g1p" aria-label="prev">→</button><button id="g1x" aria-label="next">←</button></div></div>';
+ '<div class="in"><a href="product.html?p='+p.id+'" class="nm">'+p[L()]+'</a><span class="pr">'+price(p)+'</span></div></article>'}).join('')+'</div>'+
+ '<div class="g1f"><div class="bar"><i id="g1b"></i></div><div class="ar"><button id="g1p" aria-label="prev">→</button><button id="g1x" aria-label="next">←</button></div></div>';
  var r=D.getElementById('g1');
- function up(){var max=r.scrollWidth-r.clientWidth,x=Math.abs(r.scrollLeft),f=max>0?x/max:0;D.getElementById('g1b').style.width=(20+f*80)+'%';
-  var w=r.firstChild.getBoundingClientRect().width+14;D.getElementById('g1n').textContent=n2(Math.min(P.length-1,Math.round(x/w)))}
+ function up(){var max=r.scrollWidth-r.clientWidth,x=Math.abs(r.scrollLeft),f=max>0?x/max:0;D.getElementById('g1b').style.width=(20+f*80)+'%'}
  r.addEventListener('scroll',up,{passive:true});up();
  var dir=function(){return D.dir==='rtl'?-1:1},step=function(k){r.scrollBy({left:k*dir()*(r.firstChild.getBoundingClientRect().width+14),behavior:'smooth'})};
  D.getElementById('g1x').onclick=function(){step(1)};D.getElementById('g1p').onclick=function(){step(-1)};
