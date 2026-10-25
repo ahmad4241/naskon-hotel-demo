@@ -2,7 +2,7 @@
 :root{
  --bg:#fff;--soft:#F6F3EE;--line:rgba(31,26,23,.1);--ink:#1F1A17;--mute:#8A817A;
  --wine:#4C050D;--navy:#112250;--gold:#B0874A;--gold2:#E7A84B;
- --ar:'Reem Kufi',serif;--arb:'IBM Plex Sans Arabic',system-ui,sans-serif;--en:'Bodoni Moda',serif;--enb:'Jost',system-ui,sans-serif;
+ --ar:'Reem Kufi',serif;--arb:'IBM Plex Sans Arabic',system-ui,sans-serif;--en:'Gilda Display',serif;--enb:'Jost',system-ui,sans-serif;
  --pad:20px;--max:1320px;--bar:34px}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{background:var(--bg)}
