@@ -4,7 +4,7 @@ MS.CATS = [
   {id:'daily',    ar:'عبايات يومية',     en:'Everyday',        img:'img/r3.webp'},
   {id:'formal',   ar:'عبايات رسمية',     en:'Formal',          img:'img/r1.webp'},
   {id:'occasion', ar:'عبايات مناسبات',   en:'Occasion',        img:'img/r4.webp'},
-  {id:'design',   ar:'عبايات تصميم خاص', en:'Signature design',img:'img/r2.webp'},
+  {id:'design',   ar:'تصاميم سيدة العباية', en:'MS ABAYA Signatures',img:'img/r2.webp'},
   {id:'under',    ar:'تحت العباية',      en:'Under the abaya', img:'img/cat-shayla.webp', cover:true,
    subs:[{id:'dresses',ar:'فساتين',en:'Dresses'},{id:'suits',ar:'سوت',en:'Suits'}]}
 ];
