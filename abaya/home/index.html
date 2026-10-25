@@ -132,6 +132,32 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
 .fade.in{opacity:1;transform:none}
 
 
+
+/* hero search */
+.hs{display:flex;align-items:center;gap:10px;width:100%;max-width:440px;margin-top:22px;padding:13px 16px;border-radius:2px;
+ background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font:300 13.5px var(--arb);text-align:start}
+html[lang=en] .hs{font-family:var(--enb)}
+.hs svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.3;stroke-linecap:round;flex:none}
+.hs span{opacity:.85}
+.ready .hx .rv.d3{transition-delay:.45s}
+/* search overlay */
+.so{position:fixed;inset:0;z-index:90;background:#fff;transform:translateY(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);overflow:auto;padding:calc(10px + env(safe-area-inset-top)) var(--pad) 30px;visibility:hidden}
+.so.open{transform:none;visibility:visible}
+.so .bar2{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--ink);max-width:720px;margin:0 auto}
+.so input::-webkit-search-cancel-button{-webkit-appearance:none}
+.so input{flex:1;font:300 17px var(--arb);border:0;outline:none;padding:14px 2px;background:none;color:var(--ink)}
+html[lang=en] .so input{font-family:var(--enb)}
+.so .x{width:40px;height:40px;font-size:24px;font-weight:200}
+.so .wrap2{max-width:720px;margin:auto}
+.so .k{margin:26px 0 12px}
+.so .chips{display:flex;flex-wrap:wrap;gap:8px}
+.so .chips button{border:1px solid var(--line);padding:8px 14px;font-size:12.5px}
+.so .res a{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.so .res img{width:56px;height:76px;object-fit:contain;background:var(--soft)}
+.so .res b{display:block;font-weight:400;font-size:14px}
+.so .res span{color:var(--mute);font-size:12px}
+.so .empty{color:var(--mute);padding:24px 0;text-align:center}
+
 /* categories */
 .cats{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 4px;scrollbar-width:none;max-width:var(--max);margin:auto}
 .cats::-webkit-scrollbar{display:none}
@@ -184,6 +210,7 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
   <div class="k rv" data-ar="سيدة العباية · المجموعة الجديدة" data-en="MS ABAYA · NEW COLLECTION">سيدة العباية · المجموعة الجديدة</div>
   <h1 class="h rv d1" data-ar="أناقةٌ تليق بحضوركِ" data-en="Elegance worthy of your presence">أناقةٌ تليق بحضوركِ</h1>
   <a class="lnk rv d2" href="#new"><span data-ar="اكتشفي المجموعة" data-en="Discover the collection">اكتشفي المجموعة</span><i>←</i></a>
+  <button class="hs rv d3" id="hs" type="button"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span data-ar="ابحثي عن عباءة، لون، أو قماش" data-en="Search abayas, colours, fabrics">ابحثي عن عباءة، لون، أو قماش</span></button>
  </div>
 </section>
 
@@ -230,6 +257,10 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
 </section>
 </main>
 
+<div class="so" id="so" aria-hidden="true">
+ <div class="bar2"><input id="q" type="search" autocomplete="off" placeholder="ابحثي…"><button class="x" id="sx" aria-label="إغلاق">×</button></div>
+ <div class="wrap2"><div class="k" data-ar="عمليات بحث شائعة" data-en="POPULAR SEARCHES">عمليات بحث شائعة</div><div class="chips" id="chips"></div><div class="res" id="res"></div></div>
+</div>
 <footer class="ft">
  <a class="mk" href="#" aria-label="سيدة العباية"><svg><use href="#full"/></svg></a>
  <nav><a href="#new" data-ar="المجموعة" data-en="Collection">المجموعة</a><a href="#" data-ar="التفصيل الخاص" data-en="Made to measure">التفصيل الخاص</a><a href="https://instagram.com/mss.abaya" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/9647744807778" target="_blank" rel="noopener" data-ar="واتساب" data-en="WhatsApp">واتساب</a></nav>
@@ -257,6 +288,20 @@ function renderGrid(){grid.innerHTML=P.slice(0,4).map(function(a){return '<a cla
 /* categories */
 var C=[{i:'r1.webp',ar:'عبايات سوداء',en:'Black abayas',n:24},{i:'r2.webp',ar:'عبايات مطرّزة',en:'Embroidered',n:18},{i:'r4.webp',ar:'عبايات مناسبات',en:'Occasion',n:12},{i:'r3.webp',ar:'عبايات يومية',en:'Everyday',n:30},{i:'r5.webp',ar:'عبايات ملوّنة',en:'Colours',n:15},{i:'cat-shayla.webp',ar:'شيلات',en:'Shaylas',n:20,cv:1}];
 function renderCats(){D.getElementById('catl').innerHTML=C.map(function(c){return '<a class="cat fade" href="#"><div class="im"><img'+(c.cv?' class="cv"':'')+' src="'+c.i+'" alt="" loading="lazy"></div><span>'+c[L()]+'</span><em>'+(L()==='ar'?c.n.toLocaleString('ar-IQ')+' قطعة':c.n+' pieces')+'</em></a>'}).join('');observe()}
+
+
+/* search */
+var so=D.getElementById('so'),q=D.getElementById('q'),res=D.getElementById('res'),chips=D.getElementById('chips');
+var TG={ar:['سوداء','مطرّزة','شيفون','بيج','بنّي','ملوّنة'],en:['Black','Embroidered','Chiffon','Beige','Brown','Colourful']},MP=[[0],[0,1,2,3,4],[3],[1],[2],[4]];
+var KW=['سوداء أسود مطرزة تطريز كريستال ترتر مناسبات black embroidered crystal','بيج مطرزة تطريز ورد زهور beige embroidered floral','بني يومية مخمل مطرزة brown velvet everyday','عاجي ابيض شيفون مناسبات مطرزة ivory white chiffon','رمادي ملونة زهور مطرزة grey colourful floral'];
+function nz(t){return t.toLowerCase().replace(/[\u064B-\u0652\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي')}
+function srch(force){var v=nz(q.value.trim()),l=L(),h=[];P.forEach(function(a,k){var t=nz(a.ar+' '+a.en+' '+a.dar+' '+a.den+' '+KW[k]);if(force?force.indexOf(k)>-1:(!v||t.indexOf(v)>-1))h.push(k)});
+ res.innerHTML=h.length?h.map(function(k){var a=P[k];return '<a href="#rk" data-k="'+k+'"><img src="'+a.i+'" alt=""><div><b>'+a[l]+'</b><span>'+a['d'+l]+' · '+fmt(a.p)+'</span></div></a>'}).join(''):'<div class="empty">'+(l==='ar'?'لا توجد نتائج مطابقة':'No matching results')+'</div>';
+ [].forEach.call(res.querySelectorAll('a'),function(x){x.onclick=function(e){e.preventDefault();closeS();D.getElementById('rk').scrollIntoView({behavior:'smooth'});setTimeout(function(){setR(+x.dataset.k)},500)}})}
+function openS(){chips.innerHTML='';TG[L()].forEach(function(t,i){var b=D.createElement('button');b.textContent=t;b.onclick=function(){q.value=t;srch(MP[i])};chips.appendChild(b)});q.placeholder=L()==='ar'?'ابحثي…':'Search…';srch();so.classList.add('open');B.style.overflow='hidden';setTimeout(function(){q.focus()},350)}
+function closeS(){so.classList.remove('open');B.style.overflow=''}
+D.getElementById('hs').onclick=openS;D.getElementById('sx').onclick=closeS;q.addEventListener('input',function(){srch()});
+addEventListener('keydown',function(e){if(e.key==='Escape')closeS()});
 
 /* language */
 function setLang(l){H.lang=l;H.dir=l==='ar'?'rtl':'ltr';D.querySelectorAll('[data-ar]').forEach(function(e){e.innerHTML=e.getAttribute('data-'+l)});try{localStorage.setItem('msLang',l)}catch(e){}renderGrid();renderCats();setR(sel,true)}
