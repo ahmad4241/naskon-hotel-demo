@@ -1,0 +1,23 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>خطوط العناوين</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:wght@400&family=Reem+Kufi:wght@400&family=Bodoni+Moda:opsz,wght@6..96,400&family=El+Messiri:wght@400&family=Playfair+Display:wght@400&family=Aref+Ruqaa&family=Italiana&family=Alexandria:wght@200&family=Cinzel&family=Qahiri&family=Prata&family=IBM+Plex+Sans+Arabic:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;color:#1F1A17;font:300 13px/1.7 'IBM Plex Sans Arabic',sans-serif}
+.o{padding:34px 22px 30px;border-bottom:1px solid #e9e4dc}
+.n{display:flex;justify-content:space-between;align-items:center;color:#8A817A;font-size:12px;margin-bottom:14px}
+.n b{font-weight:400;color:#1F1A17;font-size:14px}.n a{color:#4C050D}
+.hero{background:linear-gradient(to top,rgba(20,14,10,.7),rgba(20,14,10,.15)),url(img/scene-s.webp) 58% 30%/cover;color:#fff;padding:34px 22px 26px;margin-bottom:22px}
+.hero h1{margin:0;font-weight:400;font-size:38px;line-height:1.25}
+.s{font-size:30px;line-height:1.35;margin:0}
+.e{font-size:30px;line-height:1.2;margin:6px 0 0;direction:ltr;text-align:left}
+.e.hx{font-size:28px;color:#fff;margin-top:8px}
+.s,.e:not(.hx){color:#4C050D}.kk{color:#B0874A;font-size:12px;margin-bottom:4px}
+</style></head><body>
+<div id="L"></div>
+<script>
+var F=[['١','الحالي','Amiri','Cormorant Garamond',400],['٢','كوفي عصري · ستايل مجلات الأزياء','Reem Kufi','Bodoni Moda',400],['٣','أنيق ناعم','El Messiri','Playfair Display',400],['٤','رقعة فخمة','Aref Ruqaa','Italiana',400],['٥','رفيع جداً · مينيمال','Alexandria','Cinzel',200],['٦','قاهري مزخرف','Qahiri','Prata',400]];
+document.getElementById('L').innerHTML=F.map(function(f,i){var a="font-family:'"+f[2]+"';font-weight:"+f[4],e="font-family:'"+f[3]+"'";
+return '<div class="o"><div class="n"><b>الخيار '+f[0]+' — '+f[1]+'</b><a href="index.html?f='+(i+1)+'">شوفه بالموقع ←</a></div>'+
+'<div class="hero"><h1 style="'+a+'">أناقةٌ تليق بحضوركِ</h1><p class="e hx" style="'+e+'">Elegance worthy of your presence</p></div>'+
+'<div class="kk">وصل حديثاً</div><p class="s" style="'+a+'">الفخامة تسكن التفاصيل</p><p class="s" style="'+a+'">القطع الجديدة · العروض</p><p class="e" style="'+e+'">New arrivals · Offers</p>'+
+'<div class="n" style="margin:10px 0 0">'+f[2]+' / '+f[3]+'</div></div>'}).join('');
+</script></body></html>
