@@ -1,5 +1,8 @@
 /* hero preview ?hero=1 — the S window: felt with an S cut out, the abaya seen through it; scrolling opens the window */
 (function(){
+if(/hero=2/.test(location.search)){var sec2=document.querySelector('.hero');sec2.classList.add('sp');document.body.dataset.over='0';
+ var hd2=document.getElementById('hd');hd2.classList.remove('clear');
+ var tg=document.createElement('div');tg.className='spn';tg.textContent='MS ABAYA';sec2.querySelector('picture').appendChild(tg);return}
 if(!/hero=1/.test(location.search))return;
 var D=document,B=D.body,sec=D.querySelector('.hero');if(!sec)return;
 var sym=D.getElementById('s1'),vb=sym.getAttribute('viewBox').split(' ').map(Number),cx=vb[0]+vb[2]/2,cy=vb[1]+vb[3]/2;

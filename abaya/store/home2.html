@@ -329,6 +329,26 @@ html[data-m="2"] #ovM .top{max-width:1320px;width:100%;margin:0 auto 34px}
 .swc{position:absolute;left:50%;bottom:calc(30px + env(safe-area-inset-bottom));z-index:4;width:1px;height:46px;overflow:hidden;background:rgba(239,229,214,.25)}
 .swc i{position:absolute;left:0;top:0;width:1px;height:100%;background:#efe5d6;animation:swc 1.8s cubic-bezier(.6,0,.2,1) infinite}
 @keyframes swc{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+/* hero preview 2: editorial split */
+.hero.sp{height:auto;min-height:0;overflow:visible;background:#fff;display:grid;grid-template-rows:auto auto;padding-top:calc(32px + 58px + env(safe-area-inset-top))}
+.hero.sp::after{display:none}
+.hero.sp picture{display:block;position:relative;height:58svh;overflow:hidden;margin:0 var(--pad)}
+.hero.sp picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:56% 22%;transform:scale(1.06);transition:transform 2.6s cubic-bezier(.2,.7,.1,1)}
+.ready .hero.sp picture img{transform:scale(1)}
+.hero.sp .hx{position:relative;inset:auto;color:var(--ink);padding:30px var(--pad) 44px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero.sp .hx .k{color:var(--gold)}
+.hero.sp .hx h1{color:var(--wine);font-size:clamp(34px,9.6vw,72px);line-height:1.2;margin:14px 0 14px;max-width:none}
+html[lang=en] .hero.sp .hx h1{line-height:1.1}
+.hero.sp .lnk{color:var(--wine)!important;border-bottom:1px solid currentColor!important;padding-bottom:4px!important}
+.hero.sp .hs{margin-top:26px;border-color:rgba(76,5,13,.28);color:#6f6660;max-width:420px}
+.hero.sp .hs svg{stroke:var(--wine)}
+.hero.sp .spn{position:absolute;bottom:18px;inset-inline-start:18px;z-index:2;font:400 11px/1 var(--enb);letter-spacing:.24em;color:#fff;opacity:.9}
+@media(min-width:1024px){
+ .hero.sp{grid-template-columns:1.1fr 1fr;grid-template-rows:none;align-items:stretch;height:100svh;padding-top:calc(32px + 72px)}
+ .hero.sp picture{height:auto;margin:0}
+ .hero.sp .hx{justify-content:center;padding:40px 70px;background:var(--soft);margin:0;max-width:none;inset:auto}
+ .hero.sp .hx h1{font-size:clamp(46px,4.6vw,78px)}
+}
 </style>
 </head><body data-over="1">
 <script src="assets/logo.js?v=1"></script>
@@ -384,7 +404,7 @@ html[data-m="2"] #ovM .top{max-width:1320px;width:100%;margin:0 auto 34px}
 <script src="assets/store.js?v=3"></script>
 <script src="assets/hdx.js?v=13"></script>
 <script src="assets/mnx.js?v=11"></script>
-<script src="assets/herox.js?v=2"></script>
+<script src="assets/herox.js?v=3"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
