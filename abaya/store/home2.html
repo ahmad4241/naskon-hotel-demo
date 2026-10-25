@@ -223,7 +223,7 @@ function ready(){B.classList.add('ready');try{sessionStorage.setItem('msIntro','
 var sym=D.getElementById('s1'),vb=sym.getAttribute('viewBox').split(' ').map(Number);
 if(RM||seen){intro.classList.add('gone');ready()}
 else{
- var img=V===3?'<defs><clipPath id="CP">'+[].map.call(sym.querySelectorAll('path'),function(p){return p.outerHTML}).join('')+'</clipPath></defs><g class="tex" clip-path="url(#CP)"><rect x="'+vb[0]+'" y="'+vb[1]+'" width="'+vb[2]+'" height="'+vb[3]+'" fill="#1a1414"/><image href="img/detail.webp" x="'+(vb[0]-vb[2]*.5)+'" y="'+(vb[1]-vb[3]*.15)+'" width="'+vb[2]*2+'" height="'+vb[3]*1.62+'" preserveAspectRatio="xMidYMid slice"/></g>':'';
+ var img=V===3?'<defs><clipPath id="CP">'+[].map.call(sym.querySelectorAll('path'),function(p){return p.outerHTML}).join('')+'</clipPath></defs><g class="tex" clip-path="url(#CP)"><rect x="'+vb[0]+'" y="'+vb[1]+'" width="'+vb[2]+'" height="'+vb[3]+'" fill="#3e0610"/><image href="img/felt.webp" x="'+(vb[0]-20)+'" y="'+(vb[1]-10)+'" width="200" height="200"/></g>':'';
  var art='<svg class="S" viewBox="'+vb.join(' ')+'">'+img+sym.innerHTML+'</svg><div class="wm">MS ABAYA</div>';
  intro.className='intro v'+V;
  intro.innerHTML='<div class="dr t"><div class="in">'+art+'</div></div><div class="dr b"><div class="in">'+art.replace(/CP/g,'CP2')+'</div></div><div class="cut"></div>';
