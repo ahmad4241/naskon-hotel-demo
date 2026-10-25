@@ -44,7 +44,7 @@ mega.addEventListener('mouseleave',mClose);
 lap.addEventListener('change',function(){hd.classList.remove('mo')});
 
 /* scroll: the header stays with you; it turns solid as soon as you start scrolling */
-function want(){return B.dataset.over==='1'&&(window.pageYOffset||D.documentElement.scrollTop)<12&&!hd.classList.contains('mo')}
+function want(){var y=window.pageYOffset||D.documentElement.scrollTop,sw=D.querySelector('.hero.sw'),lim=sw?sw.offsetHeight-innerHeight*1.02:12;return B.dataset.over==='1'&&y<lim&&!hd.classList.contains('mo')}
 function sc(){var y=window.pageYOffset||D.documentElement.scrollTop;B.classList.toggle('scd',y>8);var w=want();if(hd.classList.contains('clear')!==w)hd.classList.toggle('clear',w)}
 /* the shared shell has its own rule for this; keep ours authoritative whatever order events arrive in */
 new MutationObserver(function(){var w=want();if(hd.classList.contains('clear')!==w)hd.classList.toggle('clear',w)}).observe(hd,{attributes:true,attributeFilter:['class']});

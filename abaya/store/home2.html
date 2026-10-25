@@ -316,6 +316,19 @@ html[data-m="2"] .soc2 a{border-color:rgba(239,229,214,.25)}
 html[data-m="2"] .soc2 svg{fill:#efe5d6}
 html[data-m="2"] #ovM .top{max-width:1320px;width:100%;margin:0 auto 34px}
 @media(min-width:900px){html[data-m="2"] .mp .mh,html[data-m="2"] .mp .ml{font-size:30px}}
+/* hero preview: the S window */
+.hero.sw{height:220svh;min-height:0;overflow:visible;background:none}
+.hero.sw::after{display:none}
+.hero.sw .stk{position:sticky;top:0;height:100svh;overflow:hidden;background:#d9c8b0}
+.hero.sw .stk picture,.hero.sw .stk img{position:absolute;inset:0;width:100%;height:100%}
+.hero.sw .stk img{object-fit:cover;object-position:58% 28%;transition:none;will-change:transform}
+.hero.sw .stk::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(20,14,10,.6),rgba(20,14,10,0) 45%);opacity:var(--t,0)}
+.hero.sw .swo{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.hero.sw .hx{z-index:4;opacity:var(--t,0);transform:translateY(calc((1 - var(--t,0)) * 26px))}
+.hero.sw .hx .rv{opacity:1;transform:none}
+.swc{position:absolute;left:50%;bottom:calc(30px + env(safe-area-inset-bottom));z-index:4;width:1px;height:46px;overflow:hidden;background:rgba(239,229,214,.25)}
+.swc i{position:absolute;left:0;top:0;width:1px;height:100%;background:#efe5d6;animation:swc 1.8s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes swc{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
 </style>
 </head><body data-over="1">
 <script src="assets/logo.js?v=1"></script>
@@ -369,13 +382,14 @@ html[data-m="2"] #ovM .top{max-width:1320px;width:100%;margin:0 auto 34px}
 
 <script src="assets/data.js?v=3"></script>
 <script src="assets/store.js?v=3"></script>
-<script src="assets/hdx.js?v=12"></script>
+<script src="assets/hdx.js?v=13"></script>
 <script src="assets/mnx.js?v=11"></script>
+<script src="assets/herox.js?v=2"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
 D.getElementById('hs').onclick=MS.openSearch;
-function past(){B.classList.toggle('past',scrollY>innerHeight*.6)}addEventListener('scroll',past,{passive:true});past();
+function past(){var sw=D.querySelector('.hero.sw');B.classList.toggle('past',scrollY>(sw?sw.offsetHeight-innerHeight*.8:innerHeight*.6))}addEventListener('scroll',past,{passive:true});past();
 (function(){var W={ar:['ابحثي عن عباءة','ابحثي عن لون','ابحثي عن قماش'],en:['Search abayas','Search colours','Search fabrics']},el=D.getElementById('hsT'),i=0,n=0,del=0,t;
  function step(){var w=W[L()][i%3];if(!del){n++;el.textContent=w.slice(0,n);if(n>=w.length){del=1;t=setTimeout(step,1700);return}t=setTimeout(step,85)}
   else{n--;el.textContent=w.slice(0,n);if(n<=0){del=0;i++;t=setTimeout(step,350);return}t=setTimeout(step,40)}}
