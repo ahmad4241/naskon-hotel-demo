@@ -3,10 +3,10 @@
 var D=document,H=D.documentElement,B=D.body,L=MS.L,T=MS.T,I=MS.I;
 var hd=D.getElementById('hd'),ann=D.getElementById('ann');
 var bMenu=D.getElementById('bMenu'),bBag=D.getElementById('bBag'),bLang=D.getElementById('bLang'),acc=hd.querySelector('a.ic'),mk=hd.querySelector('.mk');
-bLang.innerHTML='<span class="lt"></span>';bLang.classList.add('lg');
+bLang.innerHTML=I.globe+'<span class="lt"></span>';bLang.classList.add('lg');
 mk.innerHTML='<span class="wm2">MS ABAYA</span>';
 var r1=D.createElement('div');r1.className='r1';
-var s=D.createElement('div');s.className='s';s.append(bMenu,bLang);
+var s=D.createElement('div');s.className='s';s.append(bMenu,bLang);/* language shows in the header on laptop only; on phones it lives in the menu */
 var e=D.createElement('div');e.className='e';e.append(acc,bBag);
 r1.append(s,mk,e);
 var nav=D.createElement('nav');nav.className='dn';
@@ -14,7 +14,7 @@ var mega=D.createElement('div');mega.className='mega';
 hd.innerHTML='';hd.append(r1,nav,mega);hd.classList.add('hv');
 
 function render(){var l=L();
- D.querySelector('#bLang .lt').textContent=l==='ar'?'EN':'ع';
+ D.querySelector('#bLang .lt').textContent=l==='ar'?'English':'العربية';
  nav.innerHTML=[
   ['home2.html',T('الرئيسية','Home')],
   ['category.html',T('المتجر','Shop'),'mega'],
@@ -33,8 +33,7 @@ function render(){var l=L();
   '<a class="mt" href="category.html?s=new"><span class="ph2"><svg><use href="#s1"/></svg></span><b>'+T('القطع الجديدة','New arrivals')+'</b><small>'+T('اكتشفي المجموعة','Discover the collection')+'</small></a>'+
   '<a class="mt nv2" href="category.html?l=vip"><span class="ph2"><svg><use href="#s1"/></svg></span><b>VIP</b><small>'+T('المجموعة الخاصة','The private collection')+'</small></a>'+
  '</div>';
- var ANN=[T('التوصيل لجميع محافظات العراق','Delivery to all Iraqi governorates'),T('الدفع عند الاستلام أو بالبطاقة','Cash on delivery or card'),T('تفصيل خاص خلال أسبوع إلى أسبوعين','Made to measure in 1–2 weeks'),T('استبدال خلال ٣ أيام','Exchange within 3 days')].map(function(t){return '<span>'+t+'</span>'}).join('');
- ann.innerHTML='<div class="mq"><div class="tr">'+ANN+ANN+ANN+ANN+'</div></div>'}
+}
 MS.onLang.push(render);
 
 /* shop panel (laptop only) */
@@ -46,10 +45,7 @@ hd.addEventListener('mouseleave',mClose);
 mega.addEventListener('mouseleave',mClose);
 lap.addEventListener('change',function(){hd.classList.remove('mo')});
 
-/* scroll: bar folds, header compacts, hides going down, returns going up */
-var ly=scrollY,a=0;
-function sc(){var y=scrollY,d=y-ly;ly=y;B.classList.toggle('scd',y>8);
- if(y<160||hd.classList.contains('mo')){B.classList.remove('hdh');a=0;return}
- a=(d>0)===(a>0)?a+d:d;if(a>28)B.classList.add('hdh');else if(a<-14)B.classList.remove('hdh')}
+/* scroll: the header stays with you; it turns solid as soon as you start scrolling */
+function sc(){var y=scrollY;B.classList.toggle('scd',y>8);if(B.dataset.over==='1')hd.classList.toggle('clear',y<40&&!hd.classList.contains('mo'))}
 addEventListener('scroll',sc,{passive:true});sc();
 })();

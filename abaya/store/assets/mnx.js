@@ -4,11 +4,12 @@ var D=document,H=D.documentElement,L=MS.L,T=MS.T,I=MS.I;
 var m=location.search.match(/m=([12])/),V=m?+m[1]:1;H.setAttribute('data-m',V);
 var ov=D.getElementById('ovM'),pn=ov.querySelector('.pn'),top=pn.querySelector('.top'),x=top.querySelector('.x'),ml=top.querySelector('.mlang');
 var wm=D.createElement('span');wm.className='mwm';wm.textContent='MS ABAYA';
-top.innerHTML='';top.append(x,wm);if(ml)top.append(ml);
+var gl=D.createElement('button');gl.className='mgl';gl.onclick=function(){MS.setLang(L()==='ar'?'en':'ar')};
+top.innerHTML='';top.append(x,wm,gl);
 function cat(id){return MS.CATS.filter(function(c){return c.id===id})[0]}
 function acc(key,label,inner){return '<div class="ma" data-k="'+key+'"><button class="mh"><span>'+label+'</span><i></i></button><div class="mb"><div>'+inner+'</div></div></div>'}
 function lk(h,t,c){return '<a class="ml'+(c?' '+c:'')+'" href="'+h+'"><span>'+t+'</span></a>'}
-function render(){var l=L();
+function render(){var l=L();gl.innerHTML=I.globe+'<span>'+(l==='ar'?'English':'العربية')+'</span>';
  var col=['daily','formal','occasion','design'].map(function(id){return '<a href="category.html?c='+id+'">'+cat(id)[l]+'</a>'}).join('');
  col='<a href="category.html">'+T('كل العبايات','All abayas')+'</a>'+col+'<div class="lv2"><em>'+T('حسب المستوى','By level')+'</em><a href="category.html?l=daily">'+T('يومي','Everyday')+'</a><a href="category.html?l=lux">'+T('فاخر','Luxury')+'</a><a href="category.html?l=vip">VIP</a></div>';
  var un=cat('under').subs.map(function(s){return '<a href="category.html?c=under&s='+s.id+'">'+s[l]+'</a>'}).join('');
