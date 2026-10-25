@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>سيدة العباية · MS ABAYA</title>
+<meta name="theme-color" content="#4C050D">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/store.css?v=1">
+<script>try{if(localStorage.getItem('msLang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr'}}catch(e){}</script>
+<style>
+/* intro */
+.intro{position:fixed;inset:0;z-index:100;background:#fff;transition:opacity .9s,visibility .9s}
+.intro.out{opacity:0;visibility:hidden}
+.intro canvas{position:absolute;inset:0;width:100%;height:100%}
+/* hero */
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#d9c8b0}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:58% 28%;transform:scale(1.08);transition:transform 2.4s cubic-bezier(.2,.7,.1,1)}
+.ready .hero img{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,10,.6),rgba(20,14,10,0) 45%),linear-gradient(to bottom,rgba(20,14,10,.3),rgba(20,14,10,0) 22%)}
+.hx{position:absolute;z-index:2;inset:auto 0 calc(30px + env(safe-area-inset-bottom));padding:0 var(--pad);color:#fff}
+.hx .k{color:rgba(255,255,255,.78)}
+.hx h1{font-size:clamp(30px,8.4vw,64px);line-height:1.25;margin:12px 0 18px;max-width:12em}
+html[lang=en] .hx h1{line-height:1.05}
+.hs{display:flex;align-items:center;gap:10px;width:100%;max-width:440px;margin-top:22px;padding:13px 16px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font:300 13.5px var(--arb);text-align:start}
+html[lang=en] .hs{font-family:var(--enb)}
+.hs svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.3;stroke-linecap:round;flex:none}
+.rv{opacity:0;transform:translateY(16px);transition:opacity 1.1s,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.ready .rv{opacity:1;transform:none}
+.ready .rv.d1{transition-delay:.15s}.ready .rv.d2{transition-delay:.3s}.ready .rv.d3{transition-delay:.45s}
+/* categories */
+.cats{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 4px;scrollbar-width:none;max-width:var(--max);margin:auto}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:0 0 40%;scroll-snap-align:start;text-align:center}
+.cat .im{aspect-ratio:3/4;background:var(--soft);overflow:hidden;position:relative}
+.cat .im img{position:absolute;inset:6% 12% 0;width:76%;height:94%;object-fit:contain;object-position:50% 0;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.cat .im img.cv{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.cat:hover .im img{transform:scale(1.05)}
+.cat span{display:block;margin-top:10px;font-size:13px;font-weight:400}
+.cat em{display:block;font-style:normal;font-size:11.5px;color:var(--mute)}
+/* grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 10px;padding:0 var(--pad);max-width:var(--max);margin:auto}
+/* VIP */
+.vipsec{margin-top:90px;background:var(--navy);color:#f3e7d3;padding:70px 0 60px;position:relative;overflow:hidden}
+.vipsec::before,.vip::after{content:"";position:absolute;left:var(--pad);right:var(--pad);height:1px;background:linear-gradient(90deg,transparent,rgba(231,168,75,.6),transparent)}
+.vipsec::before{top:22px}.vip::after{bottom:22px}
+.vipsec .hd2{text-align:center;padding:0 var(--pad) 30px}
+.vipsec .k{color:var(--gold2)}
+.vipsec h2{font-size:clamp(30px,7.6vw,48px);line-height:1.3;margin:10px 0 10px;color:#fff}
+.vipsec p{max-width:30em;margin:0 auto;color:rgba(243,231,211,.72);font-size:13.5px}
+.vipsec .grid .pc .im{background:rgba(255,255,255,.06)}
+.vipsec .pc .nm,.vipsec .pc .pr{color:#f3e7d3}
+.vipsec .pc .ds{color:rgba(243,231,211,.6)}
+.vipsec .pc .fav svg{stroke:#f3e7d3}
+.vipsec .tg{background:rgba(255,255,255,.1);color:#f3e7d3}
+.vipsec .tg.vip{background:var(--gold2);color:var(--navy)}
+.vipsec .more{text-align:center;margin-top:34px}
+.vipsec .lnk{color:var(--gold2)}
+/* editorial */
+.ed{display:grid;margin-top:90px}
+.ed .ph{aspect-ratio:4/4.6;overflow:hidden;background:var(--soft)}
+.ed .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.ed .ph.in img{transform:scale(1)}
+.ed .tx{padding:34px var(--pad) 0;max-width:520px}
+.ed h2{font-size:clamp(28px,7vw,44px);line-height:1.3;margin:10px 0 14px}
+.ed p{color:var(--mute);margin-bottom:22px}
+/* tailoring */
+.tl{max-width:var(--max);margin:90px auto 0;padding:0 var(--pad)}
+.tl .top2{text-align:center;margin-bottom:30px}
+.tl h2{font-size:clamp(28px,7vw,44px);line-height:1.3;margin:10px 0 8px}
+.tl .top2 p{color:var(--mute);max-width:30em;margin:auto}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.st{background:#fff;padding:24px 16px;text-align:center}
+.st b{display:block;font:400 30px/1 var(--en);color:var(--gold)}
+.st span{display:block;margin-top:10px;font-size:14px;font-weight:400}
+.st em{font-style:normal;font-size:12px;color:var(--mute)}
+.tl .cta{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:26px}
+.tl .cta small{color:var(--mute);font-size:12px}
+/* rack */
+.rk{margin-top:90px;background:var(--soft);padding-bottom:30px}
+.stagewrap{position:relative;margin:30px auto 0;max-width:1100px;touch-action:pan-y}
+.bar{position:absolute;left:3%;width:94%;height:auto;pointer-events:none;z-index:2;filter:drop-shadow(0 8px 8px rgba(90,62,30,.16))}
+.rack{position:relative;display:flex;justify-content:center;align-items:flex-start;height:var(--rh);perspective:1400px;direction:ltr}
+.it{position:relative;flex:0 0 var(--cw);height:100%;transition:flex-basis .8s cubic-bezier(.65,0,.2,1);cursor:pointer;transform:translateY(3px)}
+.it.on{flex-basis:var(--ow)}
+.it .gg{position:absolute;top:0;left:50%;width:var(--ow);height:100%;margin-left:calc(var(--ow)/-2);transform-origin:50% 2%;transform:rotateY(var(--ry,70deg)) scale(.96);transition:transform .8s cubic-bezier(.65,0,.2,1),filter .6s;filter:brightness(.94)}
+.it .gg img{width:100%;height:100%;object-fit:contain;object-position:50% 0;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.it.on .gg{transform:none;filter:none}
+.it.on .sw2{animation:swing 1.6s cubic-bezier(.3,.7,.3,1)}
+.sw2{position:absolute;inset:0;transform-origin:50% 0}
+@keyframes swing{18%{transform:rotate(2.6deg)}40%{transform:rotate(-1.6deg)}62%{transform:rotate(.8deg)}82%{transform:rotate(-.3deg)}100%{transform:rotate(0)}}
+.rinfo{text-align:center;padding:20px var(--pad) 26px}
+.rinfo b{display:block;font:400 24px/1.3 var(--ar)}
+html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
+.rinfo p{color:var(--mute);font-size:13px;margin:4px 0 14px}
+.rinfo>*{transition:opacity .3s}.rinfo.chg>*{opacity:0}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:16px}
+.dots i{width:5px;height:5px;border-radius:5px;background:var(--ink);opacity:.18;transition:all .4s}.dots i.on{width:18px;opacity:.7}
+/* services */
+.sv{display:grid;border-top:1px solid var(--line);max-width:var(--max);margin:0 auto}
+.sv div{padding:24px var(--pad);border-bottom:1px solid var(--line);display:flex;gap:14px}
+.sv svg{width:22px;height:22px;stroke:var(--wine);fill:none;stroke-width:1.1;flex:none;margin-top:3px}
+.sv b{display:block;font-weight:400}
+.sv span{color:var(--mute);font-size:12.5px}
+.ft{margin-top:0}
+@media(min-width:900px){
+ .hx{inset:auto 0 64px;max-width:var(--max);margin:auto}
+ .cats{overflow:visible}.cat{flex:1 1 0}
+ .grid{grid-template-columns:repeat(4,1fr);gap:34px 18px}
+ .vipsec .grid{grid-template-columns:repeat(2,minmax(0,320px));justify-content:center}
+ .ed{grid-template-columns:1.1fr 1fr;align-items:center;max-width:var(--max);margin:120px auto 0;padding:0 var(--pad);gap:70px}
+ .ed .tx{padding:0}
+ .steps{grid-template-columns:repeat(4,1fr)}
+ .sv{grid-template-columns:repeat(3,1fr)}
+ .sv div{border-bottom:0;border-inline-end:1px solid var(--line);padding:40px var(--pad)}
+ .sv div:last-child{border-inline-end:0}
+}
+</style>
+</head>
+<body data-over="1">
+<script src="assets/logo.js?v=1"></script>
+<div class="intro" id="intro" aria-hidden="true"><canvas id="ic"></canvas></div>
+
+<main class="pg over">
+<section class="hero">
+ <picture><source media="(max-width:520px)" srcset="img/scene-s.webp"><img src="img/scene.webp" alt="" fetchpriority="high"></picture>
+ <div class="hx">
+  <div class="k rv" data-ar="براند عراقي · عبايات فاخرة" data-en="AN IRAQI HOUSE OF ABAYAS">براند عراقي · عبايات فاخرة</div>
+  <h1 class="h rv d1" data-ar="أناقةٌ تليق بحضوركِ" data-en="Elegance worthy of your presence">أناقةٌ تليق بحضوركِ</h1>
+  <a class="lnk rv d2" href="category.html"><span data-ar="اكتشفي المجموعة" data-en="Discover the collection">اكتشفي المجموعة</span><i>←</i></a>
+  <button class="hs rv d3" id="hs" type="button"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span data-ar="ابحثي عن عباءة، لون، أو قماش" data-en="Search abayas, colours, fabrics">ابحثي عن عباءة، لون، أو قماش</span></button>
+ </div>
+</section>
+
+<section>
+ <div class="sh fade"><div><div class="k" data-ar="تسوّقي حسب" data-en="SHOP BY">تسوّقي حسب</div><h2 class="h" data-ar="الأقسام" data-en="Categories">الأقسام</h2></div><a class="lnk" href="category.html"><span data-ar="كل العبايات" data-en="All abayas">كل العبايات</span><i>←</i></a></div>
+ <div class="cats" id="cats"></div>
+</section>
+
+<section>
+ <div class="sh fade"><div><div class="k" data-ar="وصل حديثاً" data-en="NEW IN">وصل حديثاً</div><h2 class="h" data-ar="القطع الجديدة" data-en="New arrivals">القطع الجديدة</h2></div><a class="lnk" href="category.html?s=new"><span data-ar="عرض الكل" data-en="View all">عرض الكل</span><i>←</i></a></div>
+ <div class="grid" id="newGrid"></div>
+</section>
+
+<section class="vipsec">
+ <div class="hd2 fade"><div class="k" data-ar="المجموعة الخاصة" data-en="THE PRIVATE COLLECTION">المجموعة الخاصة</div><h2 class="h">VIP</h2><p data-ar="قطع محدودة بخامات حصرية لدى الدار، تُصنع بكميات قليلة لمن تبحث عن التفرّد." data-en="Limited pieces in fabrics exclusive to the house, made in small numbers for those who seek the extraordinary.">قطع محدودة بخامات حصرية لدى الدار، تُصنع بكميات قليلة لمن تبحث عن التفرّد.</p></div>
+ <div class="grid" id="vipGrid"></div>
+ <div class="more"><a class="lnk" href="category.html?l=vip"><span data-ar="اكتشفي مجموعة VIP" data-en="Explore VIP">اكتشفي مجموعة VIP</span><i>←</i></a></div>
+</section>
+
+<section class="ed">
+ <div class="ph fade"><img src="img/detail.webp" alt="" loading="lazy"></div>
+ <div class="tx fade">
+  <div class="k" data-ar="الحِرفة" data-en="THE CRAFT">الحِرفة</div>
+  <h2 class="h" data-ar="الفخامة تسكن التفاصيل" data-en="Luxury lives in the details">الفخامة تسكن التفاصيل</h2>
+  <p data-ar="خامات مميزة، كثير منها بوكالة خاصة لدى الدار، وتصاميم مبتكرة تُنفَّذ بعناية في كل غرزة." data-en="Distinctive fabrics, many exclusive to the house, and original designs finished with care in every stitch.">خامات مميزة، كثير منها بوكالة خاصة لدى الدار، وتصاميم مبتكرة تُنفَّذ بعناية في كل غرزة.</p>
+  <a class="lnk" href="about.html"><span data-ar="قصة الدار" data-en="Our story">قصة الدار</span><i>←</i></a>
+ </div>
+</section>
+
+<section class="tl">
+ <div class="top2 fade"><div class="k" data-ar="التفصيل الخاص" data-en="MADE TO MEASURE">التفصيل الخاص</div><h2 class="h" data-ar="عباءتكِ، كما تتخيّلينها" data-en="Your abaya, as you imagine it">عباءتكِ، كما تتخيّلينها</h2><p data-ar="اختاري التصميم والقماش واللون، وأرسلي مقاساتكِ، ونفصّلها لكِ خصيصاً." data-en="Choose the design, fabric and colour, send your measurements, and we tailor it just for you.">اختاري التصميم والقماش واللون، وأرسلي مقاساتكِ، ونفصّلها لكِ خصيصاً.</p></div>
+ <div class="steps fade">
+  <div class="st"><b>01</b><span data-ar="التصميم" data-en="Design">التصميم</span><em data-ar="من تصاميم الدار أو فكرتكِ" data-en="Ours or your idea">من تصاميم الدار أو فكرتكِ</em></div>
+  <div class="st"><b>02</b><span data-ar="القماش" data-en="Fabric">القماش</span><em data-ar="خامات حصرية" data-en="Exclusive fabrics">خامات حصرية</em></div>
+  <div class="st"><b>03</b><span data-ar="اللون" data-en="Colour">اللون</span><em data-ar="كل الألوان متوفرة" data-en="Every colour">كل الألوان متوفرة</em></div>
+  <div class="st"><b>04</b><span data-ar="المقاس" data-en="Size">المقاس</span><em data-ar="قياساتكِ الخاصة" data-en="Your measurements">قياساتكِ الخاصة</em></div>
+ </div>
+ <div class="cta fade"><a class="btn" href="tailoring.html" data-ar="ابدئي طلب التفصيل" data-en="Start your order">ابدئي طلب التفصيل</a><small data-ar="مدة التنفيذ من أسبوع إلى أسبوعين · السعر حسب التصميم والقماش" data-en="Ready in 1–2 weeks · price depends on design and fabric">مدة التنفيذ من أسبوع إلى أسبوعين · السعر حسب التصميم والقماش</small></div>
+</section>
+
+<section class="rk">
+ <div class="sh c fade"><div><div class="k" data-ar="من داخل البوتيك" data-en="IN THE BOUTIQUE">من داخل البوتيك</div><h2 class="h" data-ar="تصفّحي الرف" data-en="Browse the rail">تصفّحي الرف</h2></div></div>
+ <div class="stagewrap" id="sw"><img class="bar" id="bar" src="img/bar.webp" alt="" aria-hidden="true"><div class="rack" id="rack"></div></div>
+ <div class="rinfo" id="rinfo"><b id="rn"></b><p id="rd"></p><a class="lnk" id="rb" href="#"><span data-ar="عرض التفاصيل" data-en="View details">عرض التفاصيل</span><i>←</i></a><div class="dots" id="dots"></div></div>
+</section>
+
+<section class="sv">
+ <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><p><b data-ar="التوصيل لكل العراق" data-en="Delivery across Iraq">التوصيل لكل العراق</b><span data-ar="خلال ٣ إلى ٤ أيام، والأجور حسب المحافظة" data-en="In 3–4 days, fee by governorate">خلال ٣ إلى ٤ أيام، والأجور حسب المحافظة</span></p></div>
+ <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M3 10h18M7 15h3"/></svg><p><b data-ar="دفع مرن" data-en="Flexible payment">دفع مرن</b><span data-ar="عند الاستلام أو بالبطاقة، بالدينار العراقي" data-en="Cash on delivery or card, in IQD">عند الاستلام أو بالبطاقة، بالدينار العراقي</span></p></div>
+ <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></svg><p><b data-ar="الاستبدال خلال ٣ أيام" data-en="Exchange within 3 days">الاستبدال خلال ٣ أيام</b><span data-ar="لا يشمل القطع المفصّلة حسب الطلب" data-en="Excludes made-to-measure pieces">لا يشمل القطع المفصّلة حسب الطلب</span></p></div>
+</section>
+</main>
+
+<script src="assets/data.js?v=1"></script>
+<script src="assets/store.js?v=1"></script>
+<script>
+(function(){
+var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
+D.getElementById('hs').onclick=MS.openSearch;
+
+function cats(){var cnt={};MS.PRODUCTS.forEach(function(p){cnt[p.cat]=(cnt[p.cat]||0)+1});
+ D.getElementById('cats').innerHTML=MS.CATS.map(function(c){return '<a class="cat fade" href="category.html?c='+c.id+'"><div class="im"><img'+(c.cover?' class="cv"':'')+' src="'+c.img+'" alt="" loading="lazy"></div><span>'+c[L()]+'</span></a>'}).join('')}
+function grids(){
+ D.getElementById('newGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.lvl!=='vip'||p.isNew}).slice(0,4).map(MS.card).join('');
+ D.getElementById('vipGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.lvl==='vip'}).map(MS.card).join('')}
+
+/* rack */
+var P=MS.PRODUCTS,rack=D.getElementById('rack'),sw=D.getElementById('sw'),dots=D.getElementById('dots'),ri=D.getElementById('rinfo'),its=[],sel=2;
+P.forEach(function(a,k){var e=D.createElement('div');e.className='it';e.innerHTML='<div class="gg"><div class="sw2"><img src="'+a.img+'" alt="" loading="lazy"></div></div>';e.onclick=function(){if(sel===k)location.href='product.html?p='+a.id;else setR(k)};rack.appendChild(e);its.push(e);dots.appendChild(D.createElement('i'))});
+function size(){var W=innerWidth,mob=W<700,rh=Math.round(Math.min(mob?W*1.1:540,innerHeight*.62)),ow=Math.round(rh*.45),cw=Math.round(Math.min((Math.min(W,1100)*.9-ow)/(P.length-1),ow*.42));
+ sw.style.setProperty('--rh',rh+'px');sw.style.setProperty('--ow',ow+'px');sw.style.setProperty('--cw',cw+'px');
+ var bw=sw.getBoundingClientRect().width*.94,bh=bw*69/1243;D.getElementById('bar').style.top=(Math.round(rh*.028)+3-bh*.188)+'px'}
+function setR(k,first){sel=Math.max(0,Math.min(P.length-1,k));its.forEach(function(e,j){var d=j-sel;e.classList.toggle('on',j===sel);e.style.zIndex=10-Math.abs(d);e.querySelector('.gg').style.setProperty('--ry',(d<0?-70:70)+'deg')});
+ [].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===sel)});
+ var a=P[sel];function fill(){var l=L();D.getElementById('rn').textContent=a[l];D.getElementById('rd').textContent=a['d'+l]+' · '+fmt(a.price);D.getElementById('rb').href='product.html?p='+a.id;ri.classList.remove('chg')}
+ if(first)fill();else{ri.classList.add('chg');setTimeout(fill,280)}}
+var sx=null;sw.addEventListener('pointerdown',function(e){sx=e.clientX},{passive:true});
+sw.addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)>40)setR(sel+(dx<0?1:-1))},{passive:true});
+if(matchMedia('(hover:hover)').matches)its.forEach(function(e,k){e.addEventListener('mouseenter',function(){if(sel!==k)setR(k)})});
+addEventListener('resize',size);
+
+MS.onLang.push(function(){cats();grids();setR(sel,true)});
+size();MS.start();
+var eph=D.querySelectorAll('.ed .ph');
+
+/* intro: gold particles form the emblem once per visit */
+var intro=D.getElementById('intro'),cv=D.getElementById('ic'),c=cv.getContext('2d'),dpr=Math.min(2,devicePixelRatio||1),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,seen=false;
+try{seen=sessionStorage.getItem('msIntro')==='1'}catch(e){}
+function done(){if(B.classList.contains('ready'))return;intro.classList.add('out');B.classList.add('ready');try{sessionStorage.setItem('msIntro','1')}catch(e){}setTimeout(function(){intro.remove()},1000)}
+if(RM||seen){intro.remove();B.classList.add('ready')}else{
+ var W=innerWidth,Hh=innerHeight;cv.width=W*dpr;cv.height=Hh*dpr;var S=Math.min(W*.42,Hh*.24,220),cx=W/2,cy=Hh/2,pts=[];
+ var img=new Image();img.onload=function(){var hh=S*179/186,o=D.createElement('canvas');o.width=S*2;o.height=hh*2;o.getContext('2d').drawImage(img,0,0,o.width,o.height);
+  var d=o.getContext('2d').getImageData(0,0,o.width,o.height).data;for(var y=0;y<o.height;y+=2)for(var x=0;x<o.width;x+=2)if(d[(y*o.width+x)*4+3]>120)pts.push([x/2-S/2,y/2-hh/2]);run()};
+ img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="848 348 186 179" width="'+S*2+'" height="'+S*2*179/186+'">'+D.getElementById('s2').innerHTML.replace(/currentColor/g,'#fff')+'</svg>');
+ var COL=['#6f4b1f','#8c6127','#a97a33','#c49447','#d9b064'];
+ function run(){var N=W<700?1800:2800,Q=[];for(var i=0;i<N;i++){var t=pts[(Math.random()*pts.length)|0],a=Math.random()*6.28,r=Math.pow(Math.random(),.5)*S*.9;Q.push({x:Math.cos(a)*r,y:Math.sin(a)*r,tx:t[0],ty:t[1],dl:Math.random()*.5,c:COL[(Math.random()*COL.length)|0],s:1.2+Math.random()*1.1})}
+  var t0=performance.now();(function f(now){var t=(now-t0)/1000;c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,Hh);var fd=t>2?Math.max(0,1-(t-2)/.5):1;
+   for(var i=0;i<N;i++){var p=Q[i],k=Math.min(1,Math.max(0,(t-.15-p.dl)/1.1));k=1-Math.pow(1-k,3);c.globalAlpha=Math.min(1,t*3)*fd;c.fillStyle=p.c;c.beginPath();c.arc(cx+p.x+(p.tx-p.x)*k,cy+p.y+(p.ty-p.y)*k,p.s,0,6.283);c.fill()}
+   if(t<2.5)requestAnimationFrame(f);else done()})(t0)}
+ intro.addEventListener('click',done);setTimeout(done,3600)}
+})();
+</script>
+</body>
+</html>
