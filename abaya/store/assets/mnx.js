@@ -1,0 +1,28 @@
+/* menu previews: ?m=1 drawer · ?m=2 full screen on wine felt */
+(function(){
+var D=document,H=D.documentElement,L=MS.L,T=MS.T,I=MS.I;
+var m=location.search.match(/m=([12])/),V=m?+m[1]:1;H.setAttribute('data-m',V);
+var ov=D.getElementById('ovM'),pn=ov.querySelector('.pn'),top=pn.querySelector('.top'),x=top.querySelector('.x'),ml=top.querySelector('.mlang');
+var wm=D.createElement('span');wm.className='mwm';wm.textContent='MS ABAYA';
+top.innerHTML='';top.append(x,wm);if(ml)top.append(ml);
+function cat(id){return MS.CATS.filter(function(c){return c.id===id})[0]}
+function acc(key,label,inner){return '<div class="ma" data-k="'+key+'"><button class="mh"><span>'+label+'</span><i></i></button><div class="mb"><div>'+inner+'</div></div></div>'}
+function lk(h,t,c){return '<a class="ml'+(c?' '+c:'')+'" href="'+h+'"><span>'+t+'</span></a>'}
+function render(){var l=L();
+ var col=['daily','formal','occasion','design'].map(function(id){return '<a href="category.html?c='+id+'">'+cat(id)[l]+'</a>'}).join('');
+ col='<a href="category.html">'+T('كل العبايات','All abayas')+'</a>'+col+'<div class="lv2"><em>'+T('حسب المستوى','By level')+'</em><a href="category.html?l=daily">'+T('يومي','Everyday')+'</a><a href="category.html?l=lux">'+T('فاخر','Luxury')+'</a><a href="category.html?l=vip">VIP</a></div>';
+ var un=cat('under').subs.map(function(s){return '<a href="category.html?c=under&s='+s.id+'">'+s[l]+'</a>'}).join('');
+ un='<a href="category.html?c=under">'+T('الكل','All')+'</a>'+un;
+ D.getElementById('mn').innerHTML='<button class="msr">'+I.search+'<span>'+T('ابحثي عن عباءة، لون، أو قماش','Search abayas, colours, fabrics')+'</span></button><div class="mp">'+
+  acc('col',T('العبايات','Abayas'),col)+acc('und',T('تحت العباية','Under the abaya'),un)+
+  lk('category.html?l=vip','VIP','vipl')+lk('tailoring.html',T('التفصيل الخاص','Made to measure'))+lk('category.html?s=new',T('وصل حديثاً','New in'))+lk('category.html?s=sale',T('العروض','Offers'))+
+  '</div><div class="ms">'+
+  [['account.html',T('حسابي','My account')],['account.html#orders',T('تتبع الطلب','Track order')],['account.html#fav',T('المفضلة','Wishlist')],['sizes.html',T('دليل المقاسات','Size guide')],['about.html',T('من نحن','About us')],['policies.html',T('السياسات','Policies')],['contact.html',T('تواصلي معنا','Contact us')]].map(function(a){return '<a href="'+a[0]+'">'+a[1]+'</a>'}).join('')+'</div>';
+ D.getElementById('mmeta').innerHTML='<div class="soc2"><a href="https://wa.me/'+MS.WA+'" target="_blank" rel="noopener" aria-label="WhatsApp">'+I.wa+'</a><a href="https://instagram.com/mss.abaya" target="_blank" rel="noopener" aria-label="Instagram">'+I.ig+'</a><a href="#" aria-label="Facebook">'+I.fb+'</a></div>'+
+  '<p>'+T('كربلاء · حي النقيب','Karbala · Al-Naqeeb')+'<br>'+T('يومياً ١١ صباحاً – ١١ مساءً','Daily 11am – 11pm')+'<br><span dir="ltr">0774 480 7778</span></p>';
+ D.querySelector('#mn .msr').onclick=function(){ov.querySelector('.bk').click();setTimeout(MS.openSearch,200)};
+ [].forEach.call(D.querySelectorAll('#mn .mh'),function(b){b.onclick=function(){b.parentNode.classList.toggle('op')}})}
+MS.onLang.push(render);
+/* stagger the items each time it opens */
+var wasOpen=false;new MutationObserver(function(){var o=ov.classList.contains('open');if(o===wasOpen)return;wasOpen=o;if(o)requestAnimationFrame(function(){ov.classList.add('shown')});else ov.classList.remove('shown')}).observe(ov,{attributes:true,attributeFilter:['class']});
+})();
