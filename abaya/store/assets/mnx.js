@@ -3,7 +3,7 @@
 var D=document,H=D.documentElement,L=MS.L,T=MS.T,I=MS.I;
 var m=location.search.match(/m=([12])/),V=m?+m[1]:1;H.setAttribute('data-m',V);
 var ov=D.getElementById('ovM'),pn=ov.querySelector('.pn'),top=pn.querySelector('.top'),x=top.querySelector('.x'),ml=top.querySelector('.mlang');
-var wm=D.createElement('span');wm.className='mwm';wm.textContent='MS ABAYA';
+var wm=D.createElement('span');wm.className='mwm';wm.innerHTML='<svg aria-label="MS ABAYA" role="img"><use href="#wmen"/></svg>';
 var gl=D.createElement('button');gl.className='mgl';gl.onclick=function(){MS.setLang(L()==='ar'?'en':'ar')};
 top.innerHTML='';top.append(x,wm,gl);
 function cat(id){return MS.CATS.filter(function(c){return c.id===id})[0]}
