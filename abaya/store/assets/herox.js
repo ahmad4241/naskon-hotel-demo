@@ -1,5 +1,24 @@
 /* hero preview ?hero=1 — the S window: felt with an S cut out, the abaya seen through it; scrolling opens the window */
 (function(){
+if(/hero=3/.test(location.search)){(function(){
+ var D=document,L=MS.L,T=MS.T,sec=D.querySelector('.hero');sec.classList.add('cs');
+ var S=[{img:'img/scene.webp',ims:'img/scene-s.webp',pos:'58% 28%',k:['المجموعة الجديدة','THE NEW COLLECTION'],h:['أناقةٌ تليق بحضوركِ','Elegance worthy of your presence'],a:['اكتشفي المجموعة','Discover the collection'],u:'category.html?s=new'},
+        {img:'img/detail.webp',ims:'img/detail.webp',pos:'50% 40%',k:['المجموعة الخاصة','THE PRIVATE COLLECTION'],h:['VIP','VIP'],a:['اكتشفي مجموعة VIP','Explore VIP'],u:'category.html?l=vip',vip:1},
+        {img:'img/detail2.webp',ims:'img/detail2.webp',pos:'50% 45%',k:['التفصيل الخاص','MADE TO MEASURE'],h:['عباءتكِ، كما تتخيّلينها','Your abaya, as you imagine it'],a:['ابدئي طلب التفصيل','Start your order'],u:'tailoring.html'}];
+ var hx=sec.querySelector('.hx'),hs=hx.querySelector('.hs');sec.querySelector('picture').remove();
+ var st=D.createElement('div');st.className='cst';sec.insertBefore(st,hx);
+ st.innerHTML=S.map(function(s,i){return '<div class="csl" data-i="'+i+'"><picture><source media="(max-width:520px)" srcset="'+s.ims+'"><img src="'+s.img+'" alt="" style="object-position:'+s.pos+'"></picture></div>'}).join('');
+ var tx=D.createElement('div');tx.className='cstx';hx.innerHTML='';hx.appendChild(tx);hx.appendChild(hs);
+ var bars=D.createElement('div');bars.className='csb';bars.innerHTML=S.map(function(){return '<button><i></i></button>'}).join('');hx.appendChild(bars);
+ var cur=-1,tm,DUR=6000;
+ function txt(i){var s=S[i],l=L()==='ar'?0:1;tx.className='cstx'+(s.vip?' vip':'');tx.innerHTML='<div class="k">'+s.k[l]+'</div><h1 class="h">'+s.h[l]+'</h1><a class="lnk" href="'+s.u+'"><span>'+s.a[l]+'</span><i>←</i></a>';void tx.offsetWidth;tx.classList.add('in')}
+ function go(i){i=(i+S.length)%S.length;var sl=st.children,bs=bars.children;
+  [].forEach.call(sl,function(e,k){e.classList.toggle('on',k===i);e.classList.toggle('was',k===cur)});
+  [].forEach.call(bs,function(b,k){b.className=k<i?'done':k===i?'on':''});cur=i;txt(i);clearTimeout(tm);tm=setTimeout(function(){go(cur+1)},DUR)}
+ [].forEach.call(bars.children,function(b,k){b.onclick=function(){go(k)}});
+ var sx=null;sec.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+ sec.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50)go(cur+((dx<0)===(D.dir==='rtl')?-1:1))},{passive:true});
+ MS.onLang.push(function(){if(cur>-1)txt(cur)});go(0)})();return}
 if(/hero=2/.test(location.search)){var sec2=document.querySelector('.hero');sec2.classList.add('sp');document.body.dataset.over='0';
  var hd2=document.getElementById('hd');hd2.classList.remove('clear');
  var tg=document.createElement('div');tg.className='spn';tg.textContent='MS ABAYA';sec2.querySelector('picture').appendChild(tg);return}

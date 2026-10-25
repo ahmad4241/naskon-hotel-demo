@@ -349,6 +349,30 @@ html[lang=en] .hero.sp .hx h1{line-height:1.1}
  .hero.sp .hx{justify-content:center;padding:40px 70px;background:var(--soft);margin:0;max-width:none;inset:auto}
  .hero.sp .hx h1{font-size:clamp(46px,4.6vw,78px)}
 }
+/* hero preview 3: campaigns */
+.hero.cs{background:#1a1210}
+.hero.cs .cst{position:absolute;inset:0}
+.csl{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;z-index:0}
+.csl.on{opacity:1;z-index:1}.csl.was{z-index:0;opacity:0}
+.csl img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 7.5s linear}
+.csl.on img{transform:scale(1)}
+.hero.cs::after{z-index:1;background:linear-gradient(to top,rgba(20,10,10,.72),rgba(20,10,10,0) 55%),linear-gradient(to bottom,rgba(20,10,10,.35),rgba(20,10,10,0) 22%)}
+.hero.cs .hx{z-index:2}
+.cstx>*{opacity:0;transform:translateY(18px);transition:opacity .9s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.cstx.in>*{opacity:1;transform:none}
+.cstx.in>*:nth-child(2){transition-delay:.12s}.cstx.in>*:nth-child(3){transition-delay:.26s}
+.cstx .k{color:rgba(255,255,255,.8)}
+.cstx h1{font-size:clamp(32px,8.8vw,68px);line-height:1.22;margin:12px 0 16px;max-width:12em}
+.cstx.vip h1{font-family:var(--en);letter-spacing:.14em;font-size:clamp(48px,14vw,104px)}
+.cstx .lnk{color:#fff;border-bottom:1px solid currentColor;padding-bottom:4px}
+.csb{display:flex;gap:6px;margin-top:22px;max-width:440px}
+.csb button{flex:1;height:14px;display:flex;align-items:center;padding:0}
+.csb button i{display:block;width:100%;height:2px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.csb button i:after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:var(--o,left)}
+html[dir=rtl] .csb button i:after{--o:right}
+.csb button.done i:after{transform:scaleX(1)}
+.csb button.on i:after{animation:csb 6s linear forwards}
+@keyframes csb{to{transform:scaleX(1)}}
 </style>
 </head><body data-over="1">
 <script src="assets/logo.js?v=1"></script>
@@ -404,7 +428,7 @@ html[lang=en] .hero.sp .hx h1{line-height:1.1}
 <script src="assets/store.js?v=3"></script>
 <script src="assets/hdx.js?v=13"></script>
 <script src="assets/mnx.js?v=11"></script>
-<script src="assets/herox.js?v=3"></script>
+<script src="assets/herox.js?v=4"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;
