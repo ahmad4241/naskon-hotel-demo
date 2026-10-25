@@ -440,11 +440,11 @@ lay();(D.fonts?D.fonts.ready:Promise.resolve()).then(function(){lay();sample(fun
 /* ---- abaya rack ---- */
 (function(){var D=document,rack=D.getElementById('rack'),sw=D.getElementById('sw'),info=D.getElementById('info'),dots=D.getElementById('dots2');
  var A=[
-  {i:'r1.webp',ar:'عباءة البريق',en:'Bareeq',dar:'كريب أسود بتطريز من الترتر والكريستال على الأطراف والأكمام',den:'Black crepe with sequin and crystal embroidery along the edges and cuffs'},
-  {i:'r2.webp',ar:'عباءة الورد الأسود',en:'Black Rose',dar:'كريب بيج بزهور سوداء مطرزة بارزة',den:'Beige crepe with raised black floral embroidery'},
-  {i:'r3.webp',ar:'عباءة الخريف',en:'Autumn',dar:'بنّي داكن بأوراق مخملية مطرزة بالخرز',den:'Deep brown with beaded velvet leaf appliqués'},
-  {i:'r4.webp',ar:'عباءة اللؤلؤ',en:'Pearl',dar:'شيفون عاجي بتطريز أبيض ناعم',den:'Ivory chiffon with delicate white embroidery'},
-  {i:'r5.webp',ar:'عباءة الربيع',en:'Spring',dar:'رمادي فاتح بتطريز زهور ملوّنة',den:'Soft grey with colourful floral embroidery'}];
+  {i:'r1.webp?v=2',ar:'عباءة البريق',en:'Bareeq',dar:'كريب أسود بتطريز من الترتر والكريستال على الأطراف والأكمام',den:'Black crepe with sequin and crystal embroidery along the edges and cuffs'},
+  {i:'r2.webp?v=2',ar:'عباءة الورد الأسود',en:'Black Rose',dar:'كريب بيج بزهور سوداء مطرزة بارزة',den:'Beige crepe with raised black floral embroidery'},
+  {i:'r3.webp?v=2',ar:'عباءة الخريف',en:'Autumn',dar:'بنّي داكن بأوراق مخملية مطرزة بالخرز',den:'Deep brown with beaded velvet leaf appliqués'},
+  {i:'r4.webp?v=2',ar:'عباءة اللؤلؤ',en:'Pearl',dar:'شيفون عاجي بتطريز أبيض ناعم',den:'Ivory chiffon with delicate white embroidery'},
+  {i:'r5.webp?v=2',ar:'عباءة الربيع',en:'Spring',dar:'رمادي فاتح بتطريز زهور ملوّنة',den:'Soft grey with colourful floral embroidery'}];
  var sel=2,its=[];
  function L(){return document.documentElement.lang==='en'?'en':'ar'}
  function size(){var W=innerWidth,mob=W<700,rh=Math.round(Math.min(mob?W*1.12:560,innerHeight*.62)),ow=Math.round(rh*.45),cw=Math.round(Math.min((W*.92-ow)/(A.length-1),ow*.42));
@@ -467,9 +467,9 @@ lay();(D.fonts?D.fonts.ready:Promise.resolve()).then(function(){lay();sample(fun
  var RISE=0,HK=0,RW=0;
  function railY(x){var u=(x/RW)*2-1;return HK+RISE*u*u}
  function drawRail(){var r=sw.getBoundingClientRect(),W=r.width,Hh=rack.offsetHeight;RW=W;HK=parseFloat(getComputedStyle(sw).getPropertyValue('--hk'))||12;RISE=Math.min(26,W*.035);
-  var x0=W*.035,x1=W*.965,R=Math.min(40,W*.06),yb=Hh+30,p='M'+x0+','+yb+' L'+x0+','+(railY(x0)+R)+' Q'+x0+','+railY(x0)+' '+(x0+R)+','+railY(x0+R);
-  for(var i=1;i<=40;i++){var x=x0+R+(x1-x0-2*R)*i/40;p+=' L'+x.toFixed(1)+','+railY(x).toFixed(1)}
-  p+=' Q'+x1+','+railY(x1)+' '+x1+','+(railY(x1)+R)+' L'+x1+','+yb;
+  var x0=W*.035,x1=W*.965,R=Math.min(40,W*.06),p='M'+(x0+R*.4)+','+railY(x0+R*.4);
+  for(var i=1;i<=40;i++){var x=x0+R*.4+(x1-x0-.8*R)*i/40;p+=' L'+x.toFixed(1)+','+railY(x).toFixed(1)}
+  p+=' L'+(x1-R*.4)+','+railY(x1-R*.4);
   D.getElementById('rodP').setAttribute('d',p);D.getElementById('rodSh').setAttribute('d',p.replace(/,(\d+(\.\d+)?)/g,function(m,y){return ','+(+y+5)}));
   var g='',n=Math.max(7,Math.round((x1-x0)/46));for(var j=0;j<=n;j++){var bx=x0+R*.6+(x1-x0-R*1.2)*j/n,by=railY(bx)-5.5;g+='<circle cx="'+bx.toFixed(1)+'" cy="'+by.toFixed(1)+'" r="4.6" fill="url(#bal)"/>'}
   D.getElementById('rodB').innerHTML=g}
