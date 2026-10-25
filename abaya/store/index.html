@@ -99,28 +99,8 @@ html[lang=en] .lv b{font-family:var(--en);font-size:24px}
 .st em{font-style:normal;font-size:12px;color:var(--mute)}
 .tl .cta{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:26px}
 .tl .cta small{color:var(--mute);font-size:12px}
-/* rack */
-.rk{margin-top:90px;background:var(--soft);padding-bottom:30px}
-.stagewrap{position:relative;margin:30px auto 0;max-width:1100px;touch-action:pan-y}
-.bar{position:absolute;left:3%;width:94%;height:auto;pointer-events:none;z-index:2;filter:drop-shadow(0 8px 8px rgba(90,62,30,.16))}
-.rack{position:relative;display:flex;justify-content:center;align-items:flex-start;height:var(--rh);perspective:1400px;direction:ltr}
-.it{position:relative;flex:0 0 var(--cw);height:100%;transition:flex-basis .8s cubic-bezier(.65,0,.2,1);cursor:pointer;transform:translateY(3px)}
-.it.on{flex-basis:var(--ow)}
-.it .gg{position:absolute;top:0;left:50%;width:var(--ow);height:100%;margin-left:calc(var(--ow)/-2);transform-origin:50% 2%;transform:rotateY(var(--ry,70deg)) scale(.96);transition:transform .8s cubic-bezier(.65,0,.2,1),filter .6s;filter:brightness(.94)}
-.it .gg img{width:100%;height:100%;object-fit:contain;object-position:50% 0;pointer-events:none;user-select:none;-webkit-user-drag:none}
-.it.on .gg{transform:none;filter:none}
-.it.on .sw2{animation:swing 1.6s cubic-bezier(.3,.7,.3,1)}
-.sw2{position:absolute;inset:0;transform-origin:50% 0}
-@keyframes swing{18%{transform:rotate(2.6deg)}40%{transform:rotate(-1.6deg)}62%{transform:rotate(.8deg)}82%{transform:rotate(-.3deg)}100%{transform:rotate(0)}}
-.rinfo{text-align:center;padding:20px var(--pad) 26px}
-.rinfo b{display:block;font:400 24px/1.3 var(--ar)}
-html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
-.rinfo p{color:var(--mute);font-size:13px;margin:4px 0 14px}
-.rinfo>*{transition:opacity .3s}.rinfo.chg>*{opacity:0}
-.dots{display:flex;gap:6px;justify-content:center;margin-top:16px}
-.dots i{width:5px;height:5px;border-radius:5px;background:var(--ink);opacity:.18;transition:all .4s}.dots i.on{width:18px;opacity:.7}
 /* services */
-.sv{display:grid;border-top:1px solid var(--line);max-width:var(--max);margin:0 auto}
+.sv{display:grid;border-top:1px solid var(--line);max-width:var(--max);margin:80px auto 0}
 .sv div{padding:24px var(--pad);border-bottom:1px solid var(--line);display:flex;gap:14px}
 .sv svg{width:22px;height:22px;stroke:var(--wine);fill:none;stroke-width:1.1;flex:none;margin-top:3px}
 .sv b{display:block;font-weight:400}
@@ -206,12 +186,6 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
  <div class="cta fade"><a class="btn" href="tailoring.html" data-ar="ابدئي طلب التفصيل" data-en="Start your order">ابدئي طلب التفصيل</a><small data-ar="مدة التنفيذ من أسبوع إلى أسبوعين · السعر حسب التصميم والقماش" data-en="Ready in 1–2 weeks · price depends on design and fabric">مدة التنفيذ من أسبوع إلى أسبوعين · السعر حسب التصميم والقماش</small></div>
 </section>
 
-<section class="rk">
- <div class="sh c fade"><div><div class="k" data-ar="من داخل البوتيك" data-en="IN THE BOUTIQUE">من داخل البوتيك</div><h2 class="h" data-ar="تصفّحي الرف" data-en="Browse the rail">تصفّحي الرف</h2></div></div>
- <div class="stagewrap" id="sw"><img class="bar" id="bar" src="img/bar.webp" alt="" aria-hidden="true"><div class="rack" id="rack"></div></div>
- <div class="rinfo" id="rinfo"><b id="rn"></b><p id="rd"></p><a class="lnk" id="rb" href="#"><span data-ar="عرض التفاصيل" data-en="View details">عرض التفاصيل</span><i>←</i></a><div class="dots" id="dots"></div></div>
-</section>
-
 <section class="sv">
  <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><p><b data-ar="التوصيل لكل العراق" data-en="Delivery across Iraq">التوصيل لكل العراق</b><span data-ar="خلال ٣ إلى ٤ أيام، والأجور حسب المحافظة" data-en="In 3–4 days, fee by governorate">خلال ٣ إلى ٤ أيام، والأجور حسب المحافظة</span></p></div>
  <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M3 10h18M7 15h3"/></svg><p><b data-ar="دفع مرن" data-en="Flexible payment">دفع مرن</b><span data-ar="عند الاستلام أو بالبطاقة، بالدينار العراقي" data-en="Cash on delivery or card, in IQD">عند الاستلام أو بالبطاقة، بالدينار العراقي</span></p></div>
@@ -238,23 +212,9 @@ function grids(){
  D.getElementById('saleGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.old}).map(MS.card).join('');
  D.getElementById('vipGrid').innerHTML=MS.PRODUCTS.filter(function(p){return p.lvl==='vip'}).map(MS.card).join('')}
 
-/* rack */
-var P=MS.PRODUCTS,rack=D.getElementById('rack'),sw=D.getElementById('sw'),dots=D.getElementById('dots'),ri=D.getElementById('rinfo'),its=[],sel=2;
-P.forEach(function(a,k){var e=D.createElement('div');e.className='it';e.innerHTML='<div class="gg"><div class="sw2"><img src="'+a.img+'" alt="" loading="lazy"></div></div>';e.onclick=function(){if(sel===k)location.href='product.html?p='+a.id;else setR(k)};rack.appendChild(e);its.push(e);dots.appendChild(D.createElement('i'))});
-function size(){var W=innerWidth,mob=W<700,rh=Math.round(Math.min(mob?W*1.1:540,innerHeight*.62)),ow=Math.round(rh*.45),cw=Math.round(Math.min((Math.min(W,1100)*.9-ow)/(P.length-1),ow*.42));
- sw.style.setProperty('--rh',rh+'px');sw.style.setProperty('--ow',ow+'px');sw.style.setProperty('--cw',cw+'px');
- var bw=sw.getBoundingClientRect().width*.94,bh=bw*69/1243;D.getElementById('bar').style.top=(Math.round(rh*.028)+3-bh*.188)+'px'}
-function setR(k,first){sel=Math.max(0,Math.min(P.length-1,k));its.forEach(function(e,j){var d=j-sel;e.classList.toggle('on',j===sel);e.style.zIndex=10-Math.abs(d);e.querySelector('.gg').style.setProperty('--ry',(d<0?-70:70)+'deg')});
- [].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===sel)});
- var a=P[sel];function fill(){var l=L();D.getElementById('rn').textContent=a[l];D.getElementById('rd').textContent=a['d'+l]+' · '+fmt(a.price);D.getElementById('rb').href='product.html?p='+a.id;ri.classList.remove('chg')}
- if(first)fill();else{ri.classList.add('chg');setTimeout(fill,280)}}
-var sx=null;sw.addEventListener('pointerdown',function(e){sx=e.clientX},{passive:true});
-sw.addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)>40)setR(sel+(dx<0?1:-1))},{passive:true});
-if(matchMedia('(hover:hover)').matches)its.forEach(function(e,k){e.addEventListener('mouseenter',function(){if(sel!==k)setR(k)})});
-addEventListener('resize',size);
 
-MS.onLang.push(function(){cats();grids();setR(sel,true)});
-size();MS.start();
+MS.onLang.push(function(){cats();grids()});
+MS.start();
 var eph=D.querySelectorAll('.ed .ph');
 
 /* intro: gold particles form the emblem once per visit */
