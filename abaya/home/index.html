@@ -131,6 +131,18 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
 .fade{opacity:0;transform:translateY(22px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
 .fade.in{opacity:1;transform:none}
 
+
+/* categories */
+.cats{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 4px;scrollbar-width:none;max-width:var(--max);margin:auto}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:0 0 38%;scroll-snap-align:start;text-align:center}
+.cat .im{aspect-ratio:3/4;background:var(--soft);overflow:hidden;position:relative}
+.cat .im img{position:absolute;inset:6% 12% 0;width:76%;height:94%;object-fit:contain;object-position:50% 0;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.cat .im img.cv{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.cat:hover .im img{transform:scale(1.05)}
+.cat span{display:block;margin-top:10px;font-size:13px;font-weight:400}
+.cat em{display:block;font-style:normal;font-size:11.5px;color:var(--mute)}
+@media(min-width:900px){.cats{overflow:visible}.cat{flex:1 1 0}}
 @media(min-width:900px){
  :root{--pad:44px}
  .hx{inset:auto 0 64px;max-width:var(--max);margin:auto}
@@ -175,6 +187,11 @@ html[lang=en] .rinfo b{font-family:var(--en);font-size:26px}
  </div>
 </section>
 
+
+<section id="cats">
+ <div class="sh fade"><div><div class="k" data-ar="تسوّقي حسب" data-en="SHOP BY">تسوّقي حسب</div><h2 class="h" data-ar="الفئات" data-en="Categories">الفئات</h2></div><a class="lnk" href="#"><span data-ar="كل العبايات" data-en="All abayas">كل العبايات</span><i>←</i></a></div>
+ <div class="cats" id="catl"></div>
+</section>
 <section id="new">
  <div class="sh fade"><div><div class="k" data-ar="وصل حديثاً" data-en="NEW IN">وصل حديثاً</div><h2 class="h" data-ar="القطع الجديدة" data-en="New arrivals">القطع الجديدة</h2></div><a class="lnk" href="#"><span data-ar="عرض الكل" data-en="View all">عرض الكل</span><i>←</i></a></div>
  <div class="grid" id="grid"></div>
@@ -236,8 +253,13 @@ function fmt(n){return L()==='ar'?n.toLocaleString('ar-IQ')+' د.ع':'IQD '+n.to
 var grid=D.getElementById('grid');
 function renderGrid(){grid.innerHTML=P.slice(0,4).map(function(a){return '<a class="pc fade" href="#"><div class="im">'+(a.t?'<span class="tag">'+a.t[L()]+'</span>':'')+'<img src="'+a.i+'" alt="'+a[L()]+'" loading="lazy"></div><div class="nm"><span>'+a[L()]+'</span><span class="pr">'+fmt(a.p)+'</span></div><div class="ds">'+a['d'+L()]+'</div><div class="sw">'+a.c.map(function(c){return '<i style="background:'+c+'"></i>'}).join('')+'</div></a>'}).join('');observe()}
 
+
+/* categories */
+var C=[{i:'r1.webp',ar:'عبايات سوداء',en:'Black abayas',n:24},{i:'r2.webp',ar:'عبايات مطرّزة',en:'Embroidered',n:18},{i:'r4.webp',ar:'عبايات مناسبات',en:'Occasion',n:12},{i:'r3.webp',ar:'عبايات يومية',en:'Everyday',n:30},{i:'r5.webp',ar:'عبايات ملوّنة',en:'Colours',n:15},{i:'cat-shayla.webp',ar:'شيلات',en:'Shaylas',n:20,cv:1}];
+function renderCats(){D.getElementById('catl').innerHTML=C.map(function(c){return '<a class="cat fade" href="#"><div class="im"><img'+(c.cv?' class="cv"':'')+' src="'+c.i+'" alt="" loading="lazy"></div><span>'+c[L()]+'</span><em>'+(L()==='ar'?c.n.toLocaleString('ar-IQ')+' قطعة':c.n+' pieces')+'</em></a>'}).join('');observe()}
+
 /* language */
-function setLang(l){H.lang=l;H.dir=l==='ar'?'rtl':'ltr';D.querySelectorAll('[data-ar]').forEach(function(e){e.innerHTML=e.getAttribute('data-'+l)});try{localStorage.setItem('msLang',l)}catch(e){}renderGrid();setR(sel,true)}
+function setLang(l){H.lang=l;H.dir=l==='ar'?'rtl':'ltr';D.querySelectorAll('[data-ar]').forEach(function(e){e.innerHTML=e.getAttribute('data-'+l)});try{localStorage.setItem('msLang',l)}catch(e){}renderGrid();renderCats();setR(sel,true)}
 D.getElementById('lng').onclick=function(){setLang(L()==='ar'?'en':'ar')};
 
 /* header */
@@ -280,7 +302,7 @@ if(RM||seen){intro.remove();B.classList.add('ready')}else{
    if(t<2.5)requestAnimationFrame(f);else done()})(t0)}
  intro.addEventListener('click',done);setTimeout(done,3500)}
 
-if(L()==='en')setLang('en');else{renderGrid();setR(sel,true)}
+if(L()==='en')setLang('en');else{renderGrid();renderCats();setR(sel,true)}
 observe();hdr();
 })();
 </script>
