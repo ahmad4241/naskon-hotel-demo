@@ -167,7 +167,7 @@ html[lang=en] .info b{font-family:var(--en);font-size:32px}
  opacity:0;transition:opacity .8s .4s,transform .8s .4s}
 html[lang=en] .bsr{font-family:var(--enb)}
 .on .bsr{opacity:1;transform:translate(-50%,0)}
-.on .bsr.hide{opacity:0;transform:translate(-50%,120%);transition-delay:0s;pointer-events:none}
+.on .bsr.away,.on .bsr.hide{opacity:0;transform:translate(-50%,120%);transition-delay:0s;pointer-events:none}
 .bsr svg{width:19px;height:19px;stroke:#4C050D;fill:none;stroke-width:1.5;stroke-linecap:round;flex:none}
 /* overlays */
 .ov{position:fixed;inset:0;z-index:60;visibility:hidden;pointer-events:none}
@@ -403,6 +403,9 @@ lay();(D.fonts?D.fonts.ready:Promise.resolve()).then(function(){lay();sample(fun
   res.innerHTML=hits.length?hits.map(function(k){var a=R.A[k];return '<a href="#col" data-k="'+k+'"><img src="'+a.i+'" alt=""><div><b>'+a[l]+'</b><span>'+a['d'+l]+'</span></div></a>'}).join(''):'<div class="empty">'+(l==='ar'?'لا توجد نتائج مطابقة':'No matching results')+'</div>';
   [].forEach.call(res.querySelectorAll('a'),function(x){x.onclick=function(e){e.preventDefault();close(D.getElementById('ovS'));var k=+x.dataset.k;D.getElementById('col').scrollIntoView({behavior:'smooth'});setTimeout(function(){R.set(k)},500)}})}
  q.addEventListener('input',function(){render()});
+ // never cover the rack details: hide the bottom search while the rack/info area is on screen
+ var inRack=false,bs2=D.getElementById('bSearch');
+ new IntersectionObserver(function(es){es.forEach(function(e){inRack=e.isIntersecting;bs2.classList.toggle('away',inRack)})},{rootMargin:'0px 0px -40px 0px',threshold:0}).observe(D.getElementById('info'));
  D.getElementById('bSearch').onclick=function(){fillChips();render();open('ovS');setTimeout(function(){q.focus()},350)};
 })();
 </script>
