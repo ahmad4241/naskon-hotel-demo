@@ -18,9 +18,10 @@ function render(){var l=L();gl.innerHTML=I.globe+'<span>'+(l==='ar'?'English':'�
   acc('col',T('العبايات','Abayas'),col)+acc('und',T('تحت العباية','Under the abaya'),un)+
   lk('category.html?l=vip','VIP','vipl')+lk('tailoring.html',T('التفصيل الخاص','Made to measure'))+lk('category.html?s=sale',T('العروض','Offers'))+
   '</div><div class="ms">'+
-  [['account.html',T('حسابي','My account')],['account.html#orders',T('تتبع الطلب','Track order')],['account.html#fav',T('المفضلة','Wishlist')],['sizes.html',T('دليل المقاسات','Size guide')],['about.html',T('من نحن','About us')],['policies.html',T('السياسات','Policies')],['contact.html',T('تواصلي معنا','Contact us')]].map(function(a){return '<a href="'+a[0]+'">'+a[1]+'</a>'}).join('')+'</div>';
- D.getElementById('mmeta').innerHTML='<div class="soc2"><a href="https://wa.me/'+MS.WA+'" target="_blank" rel="noopener" aria-label="WhatsApp">'+I.wa+'</a><a href="https://instagram.com/mss.abaya" target="_blank" rel="noopener" aria-label="Instagram">'+I.ig+'</a><a href="#" aria-label="Facebook">'+I.fb+'</a></div>'+
-  '<p>'+T('كربلاء · حي النقيب','Karbala · Al-Naqeeb')+'<br>'+T('يومياً ١١ صباحاً – ١١ مساءً','Daily 11am – 11pm')+'<br><span dir="ltr">0774 480 7778</span></p>';
+  [['account.html',T('حسابي','My account')],['account.html#orders',T('تتبع الطلب','Track order')],['account.html#fav',T('المفضلة','Wishlist')],['sizes.html',T('دليل المقاسات','Size guide')],['about.html',T('من نحن','About us')],['policies.html',T('السياسات','Policies')]].map(function(a){return '<a href="'+a[0]+'">'+a[1]+'</a>'}).join('')+'</div>';
+ D.getElementById('mmeta').innerHTML='<div class="mhelp"><b>'+T('نحن هنا لمساعدتكِ','We are here to help')+'</b><p>'+T('يومياً من ١١ صباحاً إلى ١١ مساءً · كربلاء، حي النقيب','Daily 11am – 11pm · Karbala, Al-Naqeeb')+'</p>'+
+  '<a class="wab" href="https://wa.me/'+MS.WA+'" target="_blank" rel="noopener">'+I.wa+'<span>'+T('راسلينا على واتساب','Message us on WhatsApp')+'</span></a>'+
+  '<div class="row"><span dir="ltr">0774 480 7778</span><span class="soc3"><a href="https://instagram.com/mss.abaya" target="_blank" rel="noopener" aria-label="Instagram">'+I.ig+'</a><a href="#" aria-label="Facebook">'+I.fb+'</a></span></div></div>';
  D.querySelector('#mn .msr').onclick=function(){ov.querySelector('.bk').click();setTimeout(MS.openSearch,200)};
  [].forEach.call(D.querySelectorAll('#mn .mh'),function(b){b.onclick=function(){b.parentNode.classList.toggle('op')}})}
 MS.onLang.push(render);
