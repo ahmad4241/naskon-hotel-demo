@@ -29,7 +29,7 @@ function render(){var l=L();
  mega.innerHTML='<div class="mg">'+
   '<div class="mc"><em>'+T('العبايات','Abayas')+'</em><a href="category.html">'+T('كل العبايات','All abayas')+'</a>'+cats+'</div>'+
   '<div class="mc"><em>'+un[l]+'</em><a href="category.html?c=under">'+T('الكل','All')+'</a>'+un.subs.map(function(x){return '<a href="category.html?c=under&s='+x.id+'">'+x[l]+'</a>'}).join('')+'</div>'+
-  '<div class="mtw"><a class="mt" href="category.html?s=new"><span class="ph2"><svg><use href="#s1"/></svg></span><b>'+T('وصل حديثاً','New in')+'</b><small>'+T('اكتشفي القطع الجديدة','Discover the latest pieces')+'</small></a><a class="mof" href="category.html?s=sale">'+T('العروض','Offers')+' <i>←</i></a></div>'+
+  '<div class="mtw"><div class="mt2"><a class="mt" href="category.html?s=new"><span class="ph2"><svg><use href="#s1"/></svg></span><b>'+T('وصل حديثاً','New in')+'</b></a><a class="mt nv2" href="category.html?l=vip"><span class="ph2"><svg><use href="#s1"/></svg></span><b>'+T('مجموعة VIP','The VIP collection')+'</b></a></div><a class="mof" href="category.html?s=sale">'+T('العروض','Offers')+' <i>←</i></a></div>'+
  '</div>';
 }
 MS.onLang.push(render);
