@@ -1,7 +1,7 @@
 /* header previews: ?h=1 classic centred · ?h=2 wordmark · ?h=3 with category row */
 (function(){
 var D=document,H=D.documentElement,B=D.body,L=MS.L,T=MS.T,I=MS.I;
-var m=location.search.match(/h=([123])/),V=m?+m[1]:1;H.setAttribute('data-h',V);
+var m=location.search.match(/h=([123])/),V=m?+m[1]:2;H.setAttribute('data-h',V);
 var hd=D.getElementById('hd'),ann=D.getElementById('ann');
 var bMenu=D.getElementById('bMenu'),bBag=D.getElementById('bBag'),bLang=D.getElementById('bLang'),acc=hd.querySelector('a.ic'),mk=hd.querySelector('.mk');
 var bS=D.createElement('button');bS.className='ic';bS.setAttribute('aria-label','بحث');bS.innerHTML=I.search;bS.onclick=function(){MS.openSearch()};
