@@ -197,7 +197,11 @@ html[data-m="2"] .mgl{color:#efe5d6}
  .hd.mo .mega{opacity:1;visibility:visible;transform:none}
  .hd.mo{background:#fff!important;color:var(--ink)!important}
  .hd.mo .wm2{color:var(--wine)!important}
- .mg{max-width:1240px;margin:auto;padding:40px 34px 46px;display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr 1.25fr;gap:36px}
+ .mg{max-width:1000px;margin:auto;padding:40px 34px 46px;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:56px}
+ .mof{display:inline-flex;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);width:100%;font-size:13.5px;color:var(--wine)}
+ .mof i{font-style:normal}
+ html[dir=ltr] .mof i{transform:scaleX(-1)}
+ html[lang=en] .mof{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
  .mc{display:flex;flex-direction:column}
  .mc em{font-style:normal;font:400 17px/1.3 var(--ar);color:var(--wine);margin-bottom:12px}
  html[lang=en] .mc em{font:400 11.5px/1.3 var(--enb);letter-spacing:.18em;text-transform:uppercase}
@@ -205,7 +209,7 @@ html[data-m="2"] .mgl{color:#efe5d6}
  .mc a{font-size:13.5px;padding:6px 0;color:var(--ink);opacity:.82;transition:opacity .2s,color .2s}
  .mc a:hover{opacity:1;color:var(--wine)}
  .mt{display:flex;flex-direction:column}
- .mt .ph2{aspect-ratio:4/3.1;background:var(--soft);display:grid;place-items:center;color:var(--wine);overflow:hidden}
+ .mt .ph2{aspect-ratio:16/9;background:var(--soft);display:grid;place-items:center;color:var(--wine);overflow:hidden}
  .mt .ph2 svg{height:36%;width:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
  .mt:hover .ph2 svg{transform:scale(1.06)}
  .mt.nv2 .ph2{background:url(img/felt.webp) center/300px,#3e0610;color:#efe5d6}
@@ -243,6 +247,8 @@ html[lang=ar] .mp .vipl{font:500 19px/1.35 var(--enb);letter-spacing:.22em;paddi
 .mb>div{overflow:hidden;padding-inline-start:2px}
 .ma.op .mb{grid-template-rows:1fr}
 .mb a{display:block;padding:7px 0;font-size:14.5px;color:var(--ink)}
+.mb a.hl{color:var(--wine);font-weight:400}
+.mb a.hl+a:not(.hl){margin-top:8px;padding-top:15px;border-top:1px solid var(--line)!important}
 .mb>div>a:first-child{margin-top:4px}
 .lv2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 0 16px}
 .lv2 em{display:none}
@@ -344,8 +350,8 @@ html[data-m="2"] #ovM .top{max-width:1320px;width:100%;margin:0 auto 34px}
 
 <script src="assets/data.js?v=2"></script>
 <script src="assets/store.js?v=3"></script>
-<script src="assets/hdx.js?v=7"></script>
-<script src="assets/mnx.js?v=6"></script>
+<script src="assets/hdx.js?v=9"></script>
+<script src="assets/mnx.js?v=7"></script>
 <script>
 (function(){
 var D=document,B=D.body,L=MS.L,T=MS.T,fmt=MS.fmt;

@@ -18,20 +18,17 @@ function render(){var l=L();
  nav.innerHTML=[
   ['home2.html',T('الرئيسية','Home')],
   ['category.html',T('المتجر','Shop'),'mega'],
-  ['category.html?s=new',T('وصل حديثاً','New in')],
-  ['category.html?l=vip','VIP','vipn'],
+  ['category.html?l=vip','VIP'],
   ['tailoring.html',T('التفصيل الخاص','Made to measure')],
   ['about.html',T('من نحن','About us')],
   ['contact.html',T('تواصلي معنا','Contact')]
- ].map(function(x){return '<a href="'+x[0]+'"'+(x[2]==='mega'?' data-mega class="hasm"':x[2]?' class="'+x[2]+'"':'')+'><span>'+x[1]+'</span>'+(x[2]==='mega'?'<i></i>':'')+'</a>'}).join('');
+ ].map(function(x){return '<a href="'+x[0]+'"'+(x[2]==='mega'?' data-mega class="hasm"':'')+'><span>'+x[1]+'</span>'+(x[2]==='mega'?'<i></i>':'')+'</a>'}).join('');
  var cats=MS.CATS.filter(function(c){return c.id!=='under'}).map(function(c){return '<a href="category.html?c='+c.id+'">'+c[l]+'</a>'}).join('');
  var un=MS.CATS.filter(function(c){return c.id==='under'})[0];
  mega.innerHTML='<div class="mg">'+
   '<div class="mc"><em>'+T('العبايات','Abayas')+'</em><a href="category.html">'+T('كل العبايات','All abayas')+'</a>'+cats+'</div>'+
   '<div class="mc"><em>'+un[l]+'</em><a href="category.html?c=under">'+T('الكل','All')+'</a>'+un.subs.map(function(x){return '<a href="category.html?c=under&s='+x.id+'">'+x[l]+'</a>'}).join('')+'</div>'+
-  '<div class="mc"><em>'+T('حسب المستوى','By level')+'</em><a href="category.html?l=daily">'+T('يومي','Everyday')+'</a><a href="category.html?l=lux">'+T('فاخر','Luxury')+'</a><a href="category.html?l=vip">VIP</a><a href="category.html?s=sale">'+T('العروض','Offers')+'</a></div>'+
-  '<a class="mt" href="category.html?s=new"><span class="ph2"><svg><use href="#s1"/></svg></span><b>'+T('القطع الجديدة','New arrivals')+'</b><small>'+T('اكتشفي المجموعة','Discover the collection')+'</small></a>'+
-  '<a class="mt nv2" href="category.html?l=vip"><span class="ph2"><svg><use href="#s1"/></svg></span><b>VIP</b><small>'+T('المجموعة الخاصة','The private collection')+'</small></a>'+
+  '<div class="mtw"><a class="mt" href="category.html?s=new"><span class="ph2"><svg><use href="#s1"/></svg></span><b>'+T('وصل حديثاً','New in')+'</b><small>'+T('اكتشفي القطع الجديدة','Discover the latest pieces')+'</small></a><a class="mof" href="category.html?s=sale">'+T('العروض','Offers')+' <i>←</i></a></div>'+
  '</div>';
 }
 MS.onLang.push(render);
