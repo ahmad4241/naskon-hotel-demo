@@ -26,7 +26,7 @@ function v4(){var l=L(),fmt=MS.fmt;
  function cnt(n){return l==='ar'?(n===1?'قطعة واحدة':n===2?'قطعتان':n.toLocaleString('ar-IQ')+(n<=10?' قطع':' قطعة')):(n+(n===1?' piece':' pieces'))}
  ct.innerHTML='<div class="sx4" id="sx4">'+ORD.map(function(id){var k=c(id),ps=MS.PRODUCTS.filter(function(p){return p.cat===id});
   var mini=ps.slice(0,3).map(function(p){return '<a class="mi" href="product.html?p='+p.id+'"><span class="mt">'+(PH?'<span class="cph '+TONE[id]+'"><svg><use href="#s1"/></svg></span>':'<img src="'+p.img+'" alt="" loading="lazy">')+'</span><span class="mp">'+fmt(p.price)+'</span></a>'}).join('');
-  return '<article class="k4"><a class="arch" href="category.html?c='+id+'" data-imgs="'+ps.map(function(p){return p.img}).join(',')+'">'+pic(k)+'<span class="cn">'+(ps.length?cnt(ps.length):T('قريباً','Soon'))+'</span></a>'+
+  return '<article class="k4"><a class="arch" href="category.html?c='+id+'" data-imgs="'+ps.map(function(p){return p.img}).join(',')+'">'+pic(k)+(ps.length?'<span class="cn">'+cnt(ps.length)+'</span>':'')+'</a>'+
    '<div class="hd4"><a class="nm" href="category.html?c='+id+'">'+k[l]+'</a><a class="all" href="category.html?c='+id+'">'+T('الكل','All')+' <i>←</i></a></div><span class="ds">'+DS[id][l==='ar'?0:1]+'</span>'+
    (k.subs?subs(k):'<div class="mrow">'+mini+'</div>')+'</article>'}).join('')+'</div>'+
   '<div class="g1f"><div class="bar"><i id="sx4b"></i></div><div class="ar"><button id="sx4p" aria-label="prev">→</button><button id="sx4n" aria-label="next">←</button></div></div>';
