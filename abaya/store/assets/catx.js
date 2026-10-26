@@ -1,6 +1,6 @@
 /* سيدة العباية — categories previews: ?cat=1 editorial index · ?cat=2 arches · ?cat=3 mosaic */
 (function(){
-var m=location.search.match(/cat=([1234])/);if(!m)return;var V=+m[1];
+var m=location.search.match(/cat=([1-5])/);if(!m)return;var V=+m[1];
 var D=document,L=MS.L,T=MS.T,sec=D.getElementById('catSec'),ct=D.getElementById('ct');
 var PH=!/photos=1/.test(location.search);
 sec.classList.add('cx','cx'+V);ct.className='cxb';
@@ -36,6 +36,8 @@ function v4(){var l=L(),fmt=MS.fmt;
  D.getElementById('sx4n').onclick=function(){st(1)};D.getElementById('sx4p').onclick=function(){st(-1)};
  if(!PH)[].forEach.call(r.querySelectorAll('.arch'),function(a){var im=a.querySelector('img'),L2=a.dataset.imgs.split(',').filter(Boolean),i=0,t;if(!im||L2.length<2)return;
   a.addEventListener('mouseenter',function(){t=setInterval(function(){i=(i+1)%L2.length;im.src=L2[i]},900)});a.addEventListener('mouseleave',function(){clearInterval(t)})})}
-function render(){({1:v1,2:v2,3:v3,4:v4})[V]()}
+function v5(){var l=L(),A=['design','formal','occasion','daily','under'];
+ ct.innerHTML='<div class="g5">'+A.map(function(id,i){var k=c(id);return '<a class="t5x'+(i===0?' big':'')+'" href="category.html?c='+id+'"><span class="arch">'+pic(k)+'</span><span class="nm">'+k[l]+'</span><span class="ds">'+DS[id][l==='ar'?0:1]+'</span></a>'}).join('')+'</div>'}
+function render(){({1:v1,2:v2,3:v3,4:v4,5:v5})[V]()}
 MS.onLang.push(render);render();
 })();
