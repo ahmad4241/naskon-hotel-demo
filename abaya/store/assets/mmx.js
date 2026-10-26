@@ -68,7 +68,7 @@ function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],t
   '<div class="pnl"><nav class="stp">'+STP.map(function(x,n){return '<button data-go="'+n+'" class="'+(n===S?'on':'')+(n<S?' dn':'')+'">'+x[l?1:2]+'</button>'}).join('')+'</nav>'+
    '<div class="pane'+(S!==lastS?' in':'')+'" style="--dx:'+(S>=lastS?1:-1)*(l?-1:1)+'"><div class="mph"><b>'+STP[S][l?3:4]+'</b>'+(val?'<em>'+val+'</em>':'')+'</div>'+P[STP[S][0]]()+'</div>'+
    '<div class="mnx"><div class="pg2"><i style="width:'+((S+1)/6*100)+'%">'+(AT!=='3'?'<span class="tn">'+Array.apply(null,Array(30)).map(function(_,n){return '<em style="--n:'+n+'">'+(n*10||'')+'</em>'}).join('')+'</span><b class="tip"></b>':'')+'</i></div><div class="nb">'+(S>0?'<button class="bk" data-go="'+(S-1)+'" aria-label="'+T('السابق','Back')+'">'+(l?'→':'←')+'</button>':'')+nxt+'</div></div></div></div></div>';
- lastS=S;
+ lastS=S;lensInit();
  var nv=sec.querySelector('.stp'),on=nv.querySelector('.on');nv.scrollLeft+=on.getBoundingClientRect().left-nv.getBoundingClientRect().left-(nv.clientWidth-on.offsetWidth)/2;
  [].forEach.call(sec.querySelectorAll('[data-k]'),function(b){b.onclick=function(){pick[b.dataset.k]=+b.dataset.n;keep(v2)}});
  [].forEach.call(sec.querySelectorAll('[data-go],[data-s]'),function(b){b.onclick=function(){pick.s=+(b.dataset.go||b.dataset.s);keep(v2);
@@ -80,6 +80,24 @@ function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],t
   if(navigator.share&&matchMedia('(pointer:coarse)').matches){navigator.share({title:'MS ABAYA',text:t,url:u}).catch(function(){});return}
   var done=function(){var b=sl.querySelector('b'),o=b.textContent;b.textContent=T('تم نسخ الرابط','Link copied');sl.classList.add('ok');setTimeout(function(){b.textContent=o;sl.classList.remove('ok')},2200)};
   if(navigator.clipboard)navigator.clipboard.writeText(u).then(done,function(){prompt('',u)});else prompt('',u)}}
+var lz={on:false,x:null,y:null};
+function lensInit(){var st=sec.querySelector('.stage'),sc=st&&st.querySelector('.scn');if(!sc)return;var touch=!matchMedia('(hover:hover) and (pointer:fine)').matches,Z=2.6;
+ var b=D.createElement('button');b.type='button';b.className='lzb'+(lz.on?' on':'');b.setAttribute('aria-label',T('عدسة التكبير','Magnifier'));
+ b.innerHTML='<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20M10.5 7.8v5.4M7.8 10.5h5.4"/></svg><span>'+(lz.on?T('إغلاق العدسة','Close lens'):T('تكبير','Zoom'))+'</span>';
+ var Lw=D.createElement('div');Lw.className='lns';var inr=D.createElement('div');inr.className='lz';inr.innerHTML=sc.outerHTML;Lw.appendChild(inr);
+ if(!touch){var h=D.createElement('span');h.className='lzh';h.textContent=T('مرّري المؤشر فوق العباية لرؤية القماش عن قرب','Hover over the abaya to see the fabric up close');st.appendChild(h)}else st.appendChild(b);
+ st.appendChild(Lw);
+ function at(x,y,abs){var r=st.getBoundingClientRect(),R=Lw.offsetWidth/2,px=abs?x:x-r.left,py=abs?y:y-r.top;px=Math.max(0,Math.min(r.width,px));py=Math.max(0,Math.min(r.height,py));
+  inr.style.width=r.width+'px';inr.style.height=r.height+'px';var ly=touch?Math.max(-R+10,py-R-80):py-R;
+  Lw.style.transform='translate('+(px-R)+'px,'+ly+'px)';inr.style.transform='translate('+(R-px*Z)+'px,'+(R-py*Z+(py-R-ly)*0)+'px) scale('+Z+')';
+  if(touch){inr.style.transform='translate('+(R-px*Z)+'px,'+(R-py*Z)+'px) scale('+Z+')'}lz.x=px;lz.y=py}
+ if(!touch){st.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;Lw.classList.add('show');st.classList.add('lzon');at(e.clientX,e.clientY)});
+  st.addEventListener('pointerleave',function(){Lw.classList.remove('show');st.classList.remove('lzon')});return}
+ function mode(){st.style.touchAction=lz.on?'none':'';Lw.classList.toggle('show',lz.on);if(lz.on){if(lz.x===null){lz.x=st.clientWidth/2;lz.y=st.clientHeight*.45}at(lz.x,lz.y,1)}}
+ b.onclick=function(e){e.stopPropagation();lz.on=!lz.on;b.classList.toggle('on',lz.on);b.querySelector('span').textContent=lz.on?T('إغلاق العدسة','Close lens'):T('تكبير','Zoom');mode()};
+ st.addEventListener('pointerdown',function(e){if(!lz.on||e.target.closest('.lzb'))return;at(e.clientX,e.clientY)});
+ st.addEventListener('pointermove',function(e){if(!lz.on||e.pointerType==='mouse')return;e.preventDefault();at(e.clientX,e.clientY)});
+ requestAnimationFrame(mode)}
 function img(src){return new Promise(function(ok,no){var m=new Image();m.onload=function(){ok(m)};m.onerror=no;m.src=src})}
 function story(){var b=D.getElementById('shImg');b.classList.add('busy');
  var l=L()==='ar',d=DSN[pick.d],own=false,W=1080,H=1920,cv=D.createElement('canvas');cv.width=W;cv.height=H;var x=cv.getContext('2d');
