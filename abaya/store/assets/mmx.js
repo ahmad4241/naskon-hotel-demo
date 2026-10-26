@@ -1,6 +1,6 @@
 /* سيدة العباية — «التفصيل الخاص» previews: ?mm=1 atelier steps · ?mm=2 mini builder · ?mm=3 timeline */
 (function(){
-var m=location.search.match(/mm=([123])/);if(!m)return;var V=+m[1];
+var m=location.search.match(/mm=([123])/),V=m?+m[1]:2;
 var D=document,L=MS.L,T=MS.T,old=D.querySelector('section.mm');
 var sec=D.createElement('section');sec.className='mx mx'+V;old.parentNode.replaceChild(sec,old);
 var PH=!/photos=1/.test(location.search);
@@ -20,20 +20,38 @@ function v1(){var l=L()==='ar';
   '<div class="m1s">'+ST.map(function(s){return '<div class="st1"><span class="ic">'+IC[s[0]]+'</span><b>'+(l?s[1]:s[2])+'</b><span>'+(l?s[3]:s[4])+'</span></div>'}).join('')+'</div>'+
   '<div class="m1f">'+cta()+dur()+'</div></div>'}
 
-var pick={d:0,f:0,c:0,z:0};
-var DS=[['من تصاميم الدار','House design'],['فكرتي الخاصة','My own idea']],FB=[['كريب','Crepe'],['شيفون','Chiffon'],['ليننو','Linen'],['حرير','Silk']],
- CL=[['#141414','أسود','Black'],['#3e2a20','بنّي','Brown'],['#b9a48c','بيج','Beige'],['#1c2a44','كحلي','Navy'],['#4C050D','عنابي','Wine']];
-function v2(){var l=L()==='ar',i=l?0:1;
- function chips(arr,k){return arr.map(function(a,n){return '<button class="ch'+(pick[k]===n?' on':'')+'" data-k="'+k+'" data-n="'+n+'">'+a[i]+'</button>'}).join('')}
- sec.innerHTML='<div class="m2"><div class="m2l">'+head()+'<p>'+T('جرّبي الآن: اختاري، ونكمل معكِ الطلب.','Try it now: choose, and we will complete the order with you.')+'</p>'+
-  '<div class="row"><span class="lb">'+T('التصميم','Design')+'</span><div class="cs2">'+chips(DS,'d')+'</div></div>'+
-  '<div class="row"><span class="lb">'+T('القماش','Fabric')+'</span><div class="cs2">'+chips(FB,'f')+'</div></div>'+
-  '<div class="row"><span class="lb">'+T('اللون','Colour')+'</span><div class="cs2 dots">'+CL.map(function(c,n){return '<button class="dt'+(pick.c===n?' on':'')+'" data-k="c" data-n="'+n+'" style="--c:'+c[0]+'" title="'+c[l?1:2]+'"></button>'}).join('')+'</div></div>'+
-  '<div class="row"><span class="lb">'+T('المقاس','Size')+'</span><div class="cs2">'+MS.SIZES.map(function(z,n){return '<button class="ch sz'+(pick.z===n?' on':'')+'" data-k="z" data-n="'+n+'">'+z+'</button>'}).join('')+'<button class="ch'+(pick.z===9?' on':'')+'" data-k="z" data-n="9">'+T('مقاساتي','My measurements')+'</button></div></div></div>'+
-  '<div class="m2r"><div class="card"><div class="cim">'+ph('t1')+'<span class="sw" style="background:'+CL[pick.c][0]+'"></span></div><div class="sum"><span class="k">'+T('عباءتكِ','Your abaya')+'</span>'+
-  '<ul><li><span>'+T('التصميم','Design')+'</span><b>'+DS[pick.d][i]+'</b></li><li><span>'+T('القماش','Fabric')+'</span><b>'+FB[pick.f][i]+'</b></li><li><span>'+T('اللون','Colour')+'</span><b>'+CL[pick.c][l?1:2]+'</b></li><li><span>'+T('المقاس','Size')+'</span><b>'+(pick.z===9?T('حسب قياساتي','Custom'):MS.SIZES[pick.z])+'</b></li></ul>'+
-  '<a class="btn" href="tailoring.html?d='+pick.d+'&f='+pick.f+'&c='+pick.c+'&z='+pick.z+'">'+T('أكملي الطلب','Continue your order')+'</a>'+dur()+'</div></div></div></div>';
- [].forEach.call(sec.querySelectorAll('[data-k]'),function(b){b.onclick=function(){pick[b.dataset.k]=+b.dataset.n;v2()}})}
+var pick={d:0,f:0,c:0,z:0,file:'',ms:{}};
+var DSN=[['البريق','Bareeq','d1'],['الورد الأسود','Black Rose','d2'],['الربيع','Spring','d3']],
+ FB=[['كريب','Crepe','مطفي وانسيابي','Matte and fluid','fc'],['شيفون','Chiffon','خفيف وشفاف قليلاً','Light, softly sheer','fh'],['ليننو','Linen','ملمس طبيعي محبوك','Natural woven texture','fl'],['حرير','Silk','لمعة ناعمة','Soft sheen','fs']],
+ CL=[['#141414','أسود','Black'],['#4C050D','عنابي','Wine'],['#3e2a20','بنّي','Brown'],['#b9a48c','بيج','Beige'],['#1c2a44','كحلي','Navy'],['#6b6f72','رمادي','Grey']];
+var MSR=[['l','الطول','Length'],['s','الكتف','Shoulder'],['b','الصدر','Bust'],['a','طول الكم','Sleeve']];
+function v2(){var l=L()==='ar',i=l?0:1,d=DSN[Math.min(pick.d,2)],own=pick.d===3,f=FB[pick.f],c=CL[pick.c];
+ var szTxt=pick.z===9?T('حسب قياساتي','My measurements'):MS.SIZES[pick.z];
+ var msg=T('مرحباً، أريد تفصيل عباءة:','Hello, I would like a made-to-measure abaya:')+'\n'+T('التصميم: ','Design: ')+(own?T('فكرتي الخاصة','My own idea'):d[i])+'\n'+T('القماش: ','Fabric: ')+f[i]+'\n'+T('اللون: ','Colour: ')+c[l?1:2]+'\n'+T('المقاس: ','Size: ')+szTxt+
+  (pick.z===9?'\n'+MSR.map(function(x){return x[l?1:2]+': '+(pick.ms[x[0]]||'-')+' cm'}).join('\n'):'')+(pick.note?'\n'+T('ملاحظات: ','Notes: ')+pick.note:'');
+ sec.innerHTML='<div class="m2"><div class="m2l">'+head()+'<p>'+T('صمّمي عباءتكِ الآن، وشاهديها تتغيّر أمامكِ.','Design your abaya now, and watch it change before you.')+'</p>'+
+  '<div class="pg2"><i style="width:'+(25*(1+(pick.f>0||pick.c>0)+(pick.c>0)+(pick.z>0)))+'%"></i></div>'+
+  '<div class="mrw"><span class="lb">'+T('التصميم','Design')+'<em>'+(own?T('فكرتي الخاصة','My own idea'):d[i])+'</em></span><div class="dz">'+
+   DSN.map(function(x,n){return '<button class="dsg'+(pick.d===n?' on':'')+'" data-k="d" data-n="'+n+'"><span class="dpv"><img src="img/mm/'+x[2]+'-em.webp" alt=""><span class="dsh" style="--m:url(img/mm/'+x[2]+'-sh.webp)"></span></span><b>'+x[i]+'</b></button>'}).join('')+
+   '<label class="dsg up'+(own?' on':'')+'"><input type="file" accept="image/*" id="upf" hidden><span class="dpv"><svg viewBox="0 0 24 24"><path d="M12 16V5M7.5 9.5L12 5l4.5 4.5M5 19h14"/></svg></span><b>'+(pick.file||T('فكرتي الخاصة','My own idea'))+'</b></label></div></div>'+
+  '<div class="mrw"><span class="lb">'+T('القماش','Fabric')+'<em>'+f[i]+'</em></span><div class="fz">'+FB.map(function(x,n){return '<button class="fab'+(pick.f===n?' on':'')+'" data-k="f" data-n="'+n+'"><span class="ftx '+x[4]+'"></span><b>'+x[i]+'</b><span>'+x[i+2]+'</span></button>'}).join('')+'</div></div>'+
+  '<div class="mrw"><span class="lb">'+T('اللون','Colour')+'<em>'+c[l?1:2]+'</em></span><div class="cs2 dots">'+CL.map(function(x,n){return '<button class="dt'+(pick.c===n?' on':'')+'" data-k="c" data-n="'+n+'" style="--c:'+x[0]+'" aria-label="'+x[l?1:2]+'"></button>'}).join('')+'</div></div>'+
+  '<div class="mrw"><span class="lb">'+T('المقاس','Size')+'<em>'+szTxt+'</em></span><div class="cs2">'+MS.SIZES.map(function(z,n){return '<button class="ch sz'+(pick.z===n?' on':'')+'" data-k="z" data-n="'+n+'">'+z+'</button>'}).join('')+'<button class="ch'+(pick.z===9?' on':'')+'" data-k="z" data-n="9">'+T('قياساتي الخاصة','My measurements')+'</button></div>'+
+   (pick.z===9?'<div class="mz">'+MSR.map(function(x){return '<label><span>'+x[l?1:2]+'</span><input type="number" inputmode="decimal" data-ms="'+x[0]+'" value="'+(pick.ms[x[0]]||'')+'" placeholder="'+T('سم','cm')+'"></label>'}).join('')+'</div>':'')+'</div>'+
+  '<div class="mrw"><span class="lb">'+T('ملاحظاتكِ','Your notes')+'</span><textarea id="mnote" rows="2" placeholder="'+T('مثلاً: أكمام أوسع، أو تطريز على الظهر','e.g. wider sleeves, or embroidery on the back')+'">'+(pick.note||'')+'</textarea></div></div>'+
+  '<div class="m2r"><div class="card"><div class="stage"><div class="abp'+(own?' own':'')+' '+f[4]+'" style="--m:url(img/mm/'+d[2]+'-sh.webp);--e:url(img/mm/'+d[2]+'-em.webp);--c:'+c[0]+'"><i class="c"></i><i class="s"></i><i class="t"></i><i class="e"></i></div>'+
+   (own&&pick.img?'<img class="ownimg" src="'+pick.img+'" alt="">':'')+'<span class="tagf">'+f[i]+' · '+c[l?1:2]+'</span></div>'+
+  '<div class="sum"><span class="k">'+T('عباءتكِ','Your abaya')+'</span><ul><li><span>'+T('التصميم','Design')+'</span><b>'+(own?T('فكرتي الخاصة','My own idea'):d[i])+'</b></li><li><span>'+T('القماش','Fabric')+'</span><b>'+f[i]+'</b></li><li><span>'+T('اللون','Colour')+'</span><b>'+c[l?1:2]+'</b></li><li><span>'+T('المقاس','Size')+'</span><b>'+szTxt+'</b></li></ul>'+
+  '<p class="pn">'+T('يحدّد الأتيليه السعر بعد مراجعة طلبكِ، ويتواصل معكِ خلال يوم عمل.','The atelier confirms the price after reviewing your request, within one working day.')+'</p>'+
+  '<a class="btn" href="tailoring.html">'+T('أرسلي الطلب','Send your request')+'</a>'+
+  '<a class="wa2" target="_blank" rel="noopener" href="https://wa.me/'+MS.WA+'?text='+encodeURIComponent(msg)+'">'+MS.I.wa+'<span>'+T('أو أرسليه عبر واتساب','Or send it on WhatsApp')+'</span></a>'+dur()+'</div></div></div></div>';
+ [].forEach.call(sec.querySelectorAll('[data-k]'),function(b){b.onclick=function(){pick[b.dataset.k]=+b.dataset.n;keep(v2)}});
+ var up=D.getElementById('upf');up.onchange=function(){var fl=up.files[0];if(!fl)return;pick.d=3;pick.file=fl.name.length>18?fl.name.slice(0,16)+'…':fl.name;var r=new FileReader();r.onload=function(){pick.img=r.result;keep(v2)};r.readAsDataURL(fl)};
+ sec.querySelector('.up').onclick=function(e){if(e.target.tagName!=='INPUT'&&pick.d!==3&&pick.img){pick.d=3;e.preventDefault();keep(v2)}};
+ [].forEach.call(sec.querySelectorAll('[data-ms]'),function(x){x.oninput=function(){pick.ms[x.dataset.ms]=x.value;var w=sec.querySelector('.wa2');if(w)w.href=w.href}});
+ D.getElementById('mnote').oninput=function(e){pick.note=e.target.value}}
+if(V===2&&'IntersectionObserver' in window)new IntersectionObserver(function(e){D.body.classList.toggle('inmm',e[0].isIntersecting)}).observe(sec);
+function keep(fn){var y=scrollY;fn();scrollTo(0,y)}
 
 function v3(){var l=L();
  sec.innerHTML='<div class="m3"><div class="m3p">'+ph('t3')+'<div class="m3c">'+head()+'</div></div><div class="m3t"><p class="m3i">'+T('من الفكرة إلى عباءة على قياسكِ، خطوة بخطوة.','From an idea to an abaya cut to you, step by step.')+'</p><div class="tl" id="tl"><i class="tlf" id="tlf"></i>'+
