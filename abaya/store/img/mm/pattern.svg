@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice">
+<defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#E2D4BC" stroke-width=".8"/></pattern>
+<radialGradient id="l" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#C9B597" stop-opacity=".25"/></radialGradient></defs>
+<rect width="600" height="720" fill="#F2E9D9"/><rect width="600" height="720" fill="url(#g)"/>
+<g fill="none" stroke-linecap="round">
+<path d="M70 60c40 10 60 60 55 120s-30 120-20 200 30 160 20 240" stroke="#B5483A" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="7 6"/>
+<path d="M530 60c-40 10-60 60-55 120s30 120 20 200-30 160-20 240" stroke="#B5483A" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="7 6"/>
+<path d="M40 300h520M40 470h520" stroke="#9C8F80" stroke-opacity=".35" stroke-width="1"/>
+<path d="M300 20v680" stroke="#9C8F80" stroke-opacity=".3" stroke-width="1" stroke-dasharray="2 5"/>
+<path d="M110 120c60-30 110-30 190-30s130 0 190 30" stroke="#8A7F72" stroke-opacity=".4" stroke-width="1.1"/>
+</g>
+<g font-family="Georgia, serif" font-style="italic" fill="#8A7F72" fill-opacity=".55" font-size="15">
+<text x="48" y="292">96</text><text x="530" y="292">96</text><text x="48" y="462">104</text><text x="522" y="462">104</text><text x="308" y="40">140</text>
+</g>
+<rect width="600" height="720" fill="url(#l)"/>
+</svg>

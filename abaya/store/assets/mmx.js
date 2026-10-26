@@ -1,8 +1,8 @@
 /* سيدة العباية — «التفصيل الخاص» previews: ?mm=1 atelier steps · ?mm=2 mini builder · ?mm=3 timeline */
 (function(){
 var m=location.search.match(/mm=([123])/),V=m?+m[1]:2;
-var D=document,L=MS.L,T=MS.T,old=D.querySelector('section.mm');
-var sec=D.createElement('section');sec.className='mx mx'+V;old.parentNode.replaceChild(sec,old);
+var D=document,L=MS.L,T=MS.T,old=D.querySelector('section.mm'),AT=(location.search.match(/at=([12])/)||[])[1];
+var sec=D.createElement('section');sec.className='mx mx'+V+(AT?' at'+AT:'');old.parentNode.replaceChild(sec,old);
 var PH=!/photos=1/.test(location.search);
 var ph=function(cls){return PH?'<span class="cph '+(cls||'t2')+'"><svg><use href="#s1"/></svg></span>':'<img src="img/detail2.webp" alt="" loading="lazy">'};
 var IC={
@@ -65,7 +65,7 @@ function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],t
    '<span class="tagf">'+d[i]+' · '+f[i]+' · '+c[l?1:2]+'</span></div>'+
   '<div class="pnl"><nav class="stp">'+STP.map(function(x,n){return '<button data-go="'+n+'" class="'+(n===S?'on':'')+(n<S?' dn':'')+'">'+x[l?1:2]+'</button>'}).join('')+'</nav>'+
    '<div class="pane'+(S!==lastS?' in':'')+'" style="--dx:'+(S>=lastS?1:-1)*(l?-1:1)+'"><div class="mph"><b>'+STP[S][l?3:4]+'</b>'+(val?'<em>'+val+'</em>':'')+'</div>'+P[STP[S][0]]()+'</div>'+
-   '<div class="mnx"><div class="pg2"><i style="width:'+((S+1)/6*100)+'%"></i></div><div class="nb">'+(S>0?'<button class="bk" data-go="'+(S-1)+'" aria-label="'+T('السابق','Back')+'">'+(l?'→':'←')+'</button>':'')+nxt+'</div></div></div></div></div>';
+   '<div class="mnx"><div class="pg2"><i style="width:'+((S+1)/6*100)+'%">'+(AT?'<span class="tn">'+Array.apply(null,Array(30)).map(function(_,n){return '<em style="--n:'+n+'">'+(n*10||'')+'</em>'}).join('')+'</span><b class="tip"></b>':'')+'</i></div><div class="nb">'+(S>0?'<button class="bk" data-go="'+(S-1)+'" aria-label="'+T('السابق','Back')+'">'+(l?'→':'←')+'</button>':'')+nxt+'</div></div></div></div></div>';
  lastS=S;
  var nv=sec.querySelector('.stp'),on=nv.querySelector('.on');nv.scrollLeft+=on.getBoundingClientRect().left-nv.getBoundingClientRect().left-(nv.clientWidth-on.offsetWidth)/2;
  [].forEach.call(sec.querySelectorAll('[data-k]'),function(b){b.onclick=function(){pick[b.dataset.k]=+b.dataset.n;keep(v2)}});

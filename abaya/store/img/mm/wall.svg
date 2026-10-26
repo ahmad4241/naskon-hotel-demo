@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3ECE1"/><stop offset="1" stop-color="#E8DDCC"/></linearGradient>
+<radialGradient id="l" cx=".3" cy=".15" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<g id="pn"><rect x="0" y="0" width="230" height="420" fill="none" stroke="#D6C8B2" stroke-width="3"/><rect x="2.5" y="2.5" width="225" height="415" fill="none" stroke="#FBF7F0" stroke-width="1.4"/><rect x="16" y="16" width="198" height="388" fill="none" stroke="#DDD0BC" stroke-width="1.2"/><rect x="18" y="18" width="194" height="384" fill="none" stroke="#FAF5EC" stroke-width="1"/></g>
+<g id="lp"><rect x="0" y="0" width="230" height="120" fill="none" stroke="#D6C8B2" stroke-width="3"/><rect x="2.5" y="2.5" width="225" height="115" fill="none" stroke="#FBF7F0" stroke-width="1.4"/></g>
+<g id="orn" fill="none" stroke="#D3C3AA" stroke-width="1.6" stroke-linecap="round"><path d="M0 0c-14-18-40-20-52-6-10 12-2 30 14 28 12-2 14-16 4-20"/><path d="M0 0c14-18 40-20 52-6 10 12 2 30-14 28-12-2-14-16-4-20"/><path d="M0 0c0-14 0-26 0-34M-8-26c4 2 6 6 8 10M8-26c-4 2-6 6-8 10"/><circle cx="0" cy="-38" r="3"/></g>
+</defs>
+<rect width="600" height="720" fill="url(#w)"/>
+<use href="#pn" x="50" y="50"/><use href="#pn" x="320" y="50"/>
+<use href="#orn" x="165" y="130"/><use href="#orn" x="435" y="130"/>
+<rect x="0" y="500" width="600" height="14" fill="#E2D5C1"/><rect x="0" y="500" width="600" height="2" fill="#FBF7F0"/><rect x="0" y="512" width="600" height="2" fill="#CDBDA4"/>
+<use href="#lp" x="50" y="545"/><use href="#lp" x="320" y="545"/>
+<rect x="0" y="690" width="600" height="30" fill="#DCCDB6"/><rect x="0" y="690" width="600" height="2" fill="#F7F1E7"/>
+<rect width="600" height="720" fill="url(#l)"/>
+</svg>
