@@ -34,7 +34,7 @@ function lift(hx,k){var n=parseInt(hx.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;r=
 function thc(){var t=TH[pick.t];return t[0]==='tone'?lift(CL[pick.c][0],.28):t[0]}
 function link(){return location.origin+location.pathname+'#atelier='+[pick.d,pick.f,pick.c,pick.t,pick.z].join('.')}
 var STP=[['d','التصميم','Design','اختاري التصميم','Choose your design'],['f','القماش','Fabric','اختاري القماش','Choose the fabric'],['c','اللون','Colour','اختاري اللون','Choose the colour'],['t','التطريز','Embroidery','اختاري لون خيط التطريز','Choose the embroidery thread'],['z','المقاس','Size','اختاري المقاس','Choose your size'],['r','طلبكِ','Your order','راجعي عباءتكِ','Review your abaya']];
-pick.s=0;var lastS=0;
+pick.s=2;var lastS=2;
 function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],th=TH[pick.t],S=pick.s;
  var szTxt=pick.z===9?T('حسب قياساتي','My measurements'):MS.SIZES[pick.z];
  var msg=T('مرحباً، أريد تفصيل عباءة:','Hello, I would like a made-to-measure abaya:')+'\n'+T('التصميم: ','Design: ')+d[i]+'\n'+T('القماش: ','Fabric: ')+f[i]+'\n'+T('اللون: ','Colour: ')+c[l?1:2]+'\n'+T('التطريز: ','Embroidery: ')+th[l?1:2]+'\n'+T('المقاس: ','Size: ')+szTxt+
