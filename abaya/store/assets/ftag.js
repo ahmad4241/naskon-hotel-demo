@@ -28,13 +28,12 @@ function render(){
     '<div class="tgface tgfront"><i class="tghole"></i><span class="tglogo"><svg><use href="#full"/></svg></span><span class="tgsub">'+T('صُنعت بعناية في كربلاء','Crafted with care in Karbala')+'</span></div>'+
     '<div class="tgface tgback"><i class="tghole"></i><span class="tgs"><svg><use href="#s2"/></svg></span>'+
      '<p class="tgty">'+T('شكراً لاختياركِ سيدة العباية. صُنعت كل قطعة بعناية لتكون جزءاً من أناقتكِ.','Thank you for choosing MS ABAYA. Every piece is crafted with care to become part of your elegance.')+'</p>'+
-     '<ul><li>'+T('كربلاء · حي النقيب','Karbala · Al-Naqeeb')+'</li><li>'+T('يومياً ١١ صباحاً – ١١ مساءً','Daily 11am – 11pm')+'</li><li dir="ltr">0774 480 7778</li></ul>'+
      '<a class="tgwa" target="_blank" rel="noopener" href="https://wa.me/'+WA+'">'+I.wa+'<span>'+T('راسلينا','Message us')+'</span></a></div>'+
    '</div></div><span class="tghint">'+T('اضغطي على البطاقة لقلبها','Tap the tag to flip it')+'</span></div>'+
   '<div class="tgcopy"><span class="tgk">'+T('الأتيليه','The atelier')+'</span><h3>'+T('عباءة تُصنع لكِ،<br>وتبقى معكِ','An abaya made for you,<br>that stays with you')+'</h3>'+
    '<p class="tglead">'+T('زوري بوتيكنا في كربلاء، أو تحدّثي مع الأتيليه مباشرة لتختاري قماشكِ ومقاسكِ.','Visit our boutique in Karbala, or talk to the atelier directly to choose your fabric and fit.')+'</p>'+
    '<div class="tgbtn"><a class="tgb1" target="_blank" rel="noopener" href="https://wa.me/'+WA+'">'+I.wa+'<span>'+T('تحدّثي مع الأتيليه','Talk to the atelier')+'</span></a><a class="tgb2" target="_blank" rel="noopener" href="'+MAP+'">'+IC.pin+'<span>'+T('زوري البوتيك','Visit the boutique')+'</span></a></div>'+
-   visit()+'</div>'+
+   '</div>'+
  '</div>'+
  '<div class="tgw tglinks">'+cols().map(function(c){return '<details class="tgcol"><summary><span>'+c[0]+'</span><i></i></summary><ul>'+c[1].map(function(x){return '<li><a href="'+x[0]+'">'+x[1]+'</a></li>'}).join('')+'</ul></details>'}).join('')+
   '<div class="tgcol tgsoc"><span class="tgh">'+T('تابعينا','Follow us')+'</span><div><a href="https://instagram.com/mss.abaya" target="_blank" rel="noopener" aria-label="Instagram">'+I.ig+'</a><a href="#" aria-label="Facebook">'+I.fb+'</a><a href="https://wa.me/'+WA+'" target="_blank" rel="noopener" aria-label="WhatsApp">'+I.wa+'</a></div></div></div>'+
@@ -64,10 +63,10 @@ var css=D.createElement('style');css.textContent=[
 '.tghole{position:absolute;top:16px;left:50%;width:44px;height:14px;margin-left:-22px;border-radius:8px;background:#f3ebdf;box-shadow:0 0 0 3px #c9c4bd,0 0 0 4px #8d8780,inset 0 2px 3px rgba(0,0,0,.25)}',
 '.tgfront{justify-content:flex-end;padding-bottom:40px}.tglogo{line-height:0}.tglogo svg{width:180px;height:111px}',
 '.tgsub{margin-top:22px;font-size:11.5px;color:rgba(242,231,216,.6);text-align:center}',
-'.tgback{transform:rotateY(180deg);text-align:center;gap:14px}.tgs{line-height:0;color:#d8b875}.tgs svg{width:40px;height:39px}',
-'.tgty{font-size:12px;line-height:1.85;color:rgba(242,231,216,.85)}',
+'.tgback{transform:rotateY(180deg);text-align:center;gap:22px;justify-content:center;padding-top:60px}.tgs{line-height:0;color:#f2e7d8}.tgs svg{width:40px;height:39px}',
+'.tgty{font-size:13px;line-height:1.9;color:rgba(242,231,216,.85)}',
 '.tgback ul{list-style:none;font-size:11.5px;color:rgba(242,231,216,.7);display:grid;gap:5px;border-top:1px solid rgba(242,231,216,.15);padding-top:12px;width:100%}',
-'.tgwa{margin-top:auto;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 18px;border:1px solid rgba(216,184,117,.7);color:#e2c58a;font-size:12px;border-radius:19px}.tgwa svg{width:15px;height:15px;fill:currentColor}',
+'.tgwa{margin-top:10px;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 18px;border:1px solid rgba(216,184,117,.7);color:#e2c58a;font-size:12px;border-radius:19px}.tgwa svg{width:15px;height:15px;fill:currentColor}',
 '.tghint{margin-top:16px;font-size:11.5px;color:var(--mute);display:flex;align-items:center;gap:8px}.tghint:before,.tghint:after{content:"";width:18px;height:1px;background:var(--gold)}',
 '.tgcopy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;max-width:520px}',
 '.tgk{font-size:12px;color:var(--gold)}html[lang=en] .tgk{font:400 10.5px var(--enb);letter-spacing:.24em!important;text-transform:uppercase}',
