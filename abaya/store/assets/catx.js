@@ -1,6 +1,6 @@
 /* سيدة العباية — categories previews: ?cat=1 editorial index · ?cat=2 arches · ?cat=3 mosaic */
 (function(){
-var m=location.search.match(/cat=([1-5])/);if(!m)return;var V=+m[1];
+var m=location.search.match(/cat=([1-5])/),V=m?+m[1]:5;
 var D=document,L=MS.L,T=MS.T,sec=D.getElementById('catSec'),ct=D.getElementById('ct');
 var PH=!/photos=1/.test(location.search);
 sec.classList.add('cx','cx'+V);ct.className='cxb';

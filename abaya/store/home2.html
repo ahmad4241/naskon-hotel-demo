@@ -109,6 +109,35 @@ html[dir=rtl] .prog i{inset:0 0 0 auto}
 .vb .ln{width:46px;height:1px;background:var(--gold2);margin:0 auto 18px}
 .vb p{max-width:24em;margin:0 auto 26px;color:rgba(243,231,211,.75);font-size:13.5px}
 .vb .lnk{color:var(--gold2)}
+/* VIP gateway */
+.vp{margin-top:100px;background:radial-gradient(ellipse at 70% 40%,rgba(0,0,0,0) 30%,rgba(10,0,2,.5) 100%),url(img/felt.webp) center/380px,#3e0610;color:#efe5d6;overflow:hidden}
+.vpw{max-width:var(--max);margin:auto;display:grid}
+.vpi{position:relative;display:block;aspect-ratio:4/4.3;overflow:hidden;margin:var(--pad) var(--pad) 0}
+.vpi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.vpi:hover img,.vpi:hover .phl svg{transform:scale(1.04)}
+.vpi .phl{background:#efe6da}
+.vpi .phl svg{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.vpi:after{content:"";position:absolute;inset:12px;border:1px solid rgba(176,135,74,.6);pointer-events:none}
+.vpt{position:absolute;z-index:2;top:22px;inset-inline-start:22px;padding:6px 10px;background:var(--wine);color:#efe5d6;font:500 10px/1 var(--enb);letter-spacing:.22em}
+.vpx{padding:40px var(--pad) 56px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.vpx .k{color:#e7c79a}
+.vpn{font:400 clamp(64px,19vw,128px)/1 var(--en);letter-spacing:.14em;padding-inline-start:.14em;color:#fff;margin:14px 0 16px;position:relative}
+.vpn:after{content:"";display:block;width:52px;height:1px;background:#e7c79a;margin:18px auto 0}
+.vpx p{max-width:26em;color:rgba(239,229,214,.8);font-size:14px;line-height:1.9}
+.vpl{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;width:100%;max-width:520px;margin:30px 0 32px;border-top:1px solid rgba(239,229,214,.18);border-bottom:1px solid rgba(239,229,214,.18)}
+.vpl li{padding:16px 6px;display:flex;flex-direction:column;gap:4px}
+.vpl li+li{border-inline-start:1px solid rgba(239,229,214,.18)}
+.vpl b{font:400 15px/1.3 var(--ar);color:#fff}
+html[lang=en] .vpl b{font-family:var(--en);font-size:16px}
+.vpl span{font-size:11px;color:rgba(239,229,214,.6);line-height:1.6}
+.vpb{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 34px;border:1px solid #e7c79a;color:#efe5d6;font-size:13.5px;letter-spacing:.02em;transition:all .35s}
+.vpb:hover{background:#efe5d6;color:var(--wine);border-color:#efe5d6}
+@media(min-width:900px){
+ .vpw{grid-template-columns:1fr 1fr;align-items:center;min-height:680px}
+ .vpi{margin:0;height:100%;aspect-ratio:auto;min-height:680px}
+ .vpi:after{inset:18px}
+ .vpx{padding:60px 70px}
+}
 /* made to measure */
 .mm{display:grid;margin-top:100px;max-width:var(--max);margin-inline:auto}
 .mm .ph{aspect-ratio:4/4.2;overflow:hidden;margin:0 var(--pad)}
@@ -568,13 +597,20 @@ html[lang=en] .t5x .nm{font-family:var(--en);font-size:19px}html[lang=en] .t5x.b
  <div class="ct" id="ct"></div>
 </section>
 
-<section class="vb">
- <div class="ph fade"><img src="img/detail.webp" alt="" loading="lazy"></div>
- <div class="tx fade">
-  <div class="k" data-ar="المجموعة الخاصة" data-en="THE PRIVATE COLLECTION">المجموعة الخاصة</div>
-  <h2>VIP</h2><div class="ln"></div>
-  <p data-ar="قطع محدودة بخامات حصرية لدى الدار، تُصنع بكميات قليلة لمن تبحث عن التفرّد." data-en="Limited pieces in fabrics exclusive to the house, made in small numbers for those who seek the extraordinary.">قطع محدودة بخامات حصرية لدى الدار، تُصنع بكميات قليلة لمن تبحث عن التفرّد.</p>
-  <a class="lnk" href="category.html?l=vip"><span data-ar="اكتشفي المجموعة" data-en="Explore the collection">اكتشفي المجموعة</span><i>←</i></a>
+<section class="vp">
+ <div class="vpw">
+  <a class="vpi fade" href="category.html?l=vip"><img src="img/detail.webp" alt="" loading="lazy"><span class="vpt">VIP</span></a>
+  <div class="vpx fade">
+   <div class="k" data-ar="المجموعة الخاصة" data-en="THE PRIVATE COLLECTION">المجموعة الخاصة</div>
+   <h2 class="vpn">VIP</h2>
+   <p data-ar="أرقى ما تصنعه الدار: قطع محدودة بخامات حصرية، لمن تبحث عن التفرّد." data-en="The finest the house makes: limited pieces in exclusive fabrics, for those who seek the extraordinary.">أرقى ما تصنعه الدار: قطع محدودة بخامات حصرية، لمن تبحث عن التفرّد.</p>
+   <ul class="vpl">
+    <li><b data-ar="قطع محدودة" data-en="Limited pieces">قطع محدودة</b><span data-ar="كميات قليلة من كل تصميم" data-en="Few made of each design">كميات قليلة من كل تصميم</span></li>
+    <li><b data-ar="أقمشة حصرية" data-en="Exclusive fabrics">أقمشة حصرية</b><span data-ar="بوكالة خاصة لدى الدار" data-en="Sourced exclusively by the house">بوكالة خاصة لدى الدار</span></li>
+    <li><b data-ar="تطريز يدوي" data-en="Hand embroidery">تطريز يدوي</b><span data-ar="كريستال ولؤلؤ بعناية" data-en="Crystal and pearl, by hand">كريستال ولؤلؤ بعناية</span></li>
+   </ul>
+   <a class="vpb" href="category.html?l=vip" data-ar="اكتشفي المجموعة" data-en="Explore the collection">اكتشفي المجموعة</a>
+  </div>
  </div>
 </section>
 
@@ -598,7 +634,7 @@ html[lang=en] .t5x .nm{font-family:var(--en);font-size:19px}html[lang=en] .t5x.b
 <script src="assets/store.js?v=3"></script>
 <script src="assets/hdx.js?v=15"></script>
 <script src="assets/newx.js?v=2"></script>
-<script src="assets/catx.js?v=7"></script>
+<script src="assets/catx.js?v=8"></script>
 <script src="assets/mnx.js?v=11"></script>
 <script>
 (function(){
