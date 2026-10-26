@@ -22,7 +22,7 @@ function v1(){var l=L()==='ar';
 
 var pick={d:0,f:0,c:0,z:0,file:'',ms:{}};
 var HK={d1:[438,187.5],d2:[441,193],d3:[397,198.5]};
-function place(id){if(AT!=='3')return '';var k=HK[id],H=62,W=H*k[0]/880;return ';left:'+(50-k[1]/k[0]*W).toFixed(2)+'%;top:'+(23.3-6/880*H).toFixed(2)+'%;width:'+W.toFixed(2)+'%;height:'+H+'%'}
+function place(id){if(AT!=='3')return '';var k=HK[id],H=62,W=H*k[0]/880;return ';left:'+(50-k[1]/k[0]*W).toFixed(2)+'%;top:'+(22.0-6/880*H).toFixed(2)+'%;width:'+W.toFixed(2)+'%;height:'+H+'%'}
 var DSN=[['البريق','Bareeq','d1'],['الورد الأسود','Black Rose','d2'],['الربيع','Spring','d3']],
  FB=[['كريب','Crepe','مطفي وانسيابي','Matte and fluid','fc'],['شيفون','Chiffon','خفيف وشفاف قليلاً','Light, softly sheer','fh'],['ليننو','Linen','ملمس طبيعي محبوك','Natural woven texture','fl'],['حرير','Silk','لمعة ناعمة','Soft sheen','fs']],
  CL=[['#141414','أسود','Black'],['#4C050D','عنابي','Wine'],['#3e2a20','بنّي','Brown'],['#b9a48c','بيج','Beige'],['#1c2a44','كحلي','Navy'],['#6b6f72','رمادي','Grey']];
@@ -43,11 +43,11 @@ function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],t
   (pick.z===9?'\n'+MSR.map(function(x){return x[l?1:2]+': '+(pick.ms[x[0]]||'-')+' cm'}).join('\n'):'')+(pick.note?'\n'+T('ملاحظات: ','Notes: ')+pick.note:'')+'\n'+link();
  var dye=last&&last.d===pick.d&&last.c!==pick.c?'<i class="c0" style="--c0:'+CL[last.c][0]+'"></i>':'',
   thr=last&&last.d===pick.d&&last.t!==pick.t?' thf':'';
- var emb=pick.t===0?'<i class="e"></i>':(d[2]==='d2'?'<i class="e ln" style="--e:url(img/mm/d2-ln.webp)"></i>':'')+'<i class="ec" style="--tc:'+thc()+'"></i><i class="ex"></i>';
+ var emb=pick.t===0?'<i class="e"></i>':(d[2]==='d2'?'<i class="e ln" style="--e:url(img/mm/d2-ln2.webp)"></i>':'')+'<i class="ec" style="--tc:'+thc()+'"></i><i class="ex"></i>';
  last={d:pick.d,c:pick.c,t:pick.t};
  var val=[d[i],f[i],c[l?1:2],th[l?1:2],szTxt,''][S];
  var P={
-  d:function(){return '<div class="dz">'+DSN.map(function(x,n){return '<button class="dsg'+(pick.d===n?' on':'')+'" data-k="d" data-n="'+n+'"><span class="dpv"><img src="img/mm/'+x[2]+'-em.webp" alt=""><span class="dsh" style="--m:url(img/mm/'+x[2]+'-sh.webp)"></span></span><b>'+x[i]+'</b></button>'}).join('')+'</div>'+
+  d:function(){return '<div class="dz">'+DSN.map(function(x,n){return '<button class="dsg'+(pick.d===n?' on':'')+'" data-k="d" data-n="'+n+'"><span class="dpv"><img src="img/mm/'+x[2]+'-em2.webp" alt=""><span class="dsh" style="--m:url(img/mm/'+x[2]+'-s2.webp)"></span></span><b>'+x[i]+'</b></button>'}).join('')+'</div>'+
    '<p class="idea">'+T('عندكِ فكرة مختلفة؟ ','Have a different idea? ')+'<a target="_blank" rel="noopener" href="https://wa.me/'+MS.WA+'?text='+encodeURIComponent(T('مرحباً، لديّ فكرة لعباءة وأودّ معرفة إمكانية تنفيذها.','Hello, I have an idea for an abaya and would like to know if it can be made.'))+'">'+T('أرسلي صورتها عبر واتساب','Send us a photo on WhatsApp')+'</a>'+T('، ويخبركِ الأتيليه بما يمكن تنفيذه.',', and the atelier will tell you what can be made.')+'</p>'},
   f:function(){return '<div class="fz">'+FB.map(function(x,n){return '<button class="fab'+(pick.f===n?' on':'')+'" data-k="f" data-n="'+n+'"><span class="ftx '+x[4]+'"></span><b>'+x[i]+'</b><span>'+x[i+2]+'</span></button>'}).join('')+'</div>'},
   c:function(){return '<div class="dots2">'+CL.map(function(x,n){return '<button class="dw'+(pick.c===n?' on':'')+'" data-k="c" data-n="'+n+'"><i style="--c:'+x[0]+'"></i><span>'+x[l?1:2]+'</span></button>'}).join('')+'</div>'},
@@ -63,7 +63,7 @@ function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],t
    '<button id="shLnk"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><b>'+T('رابط التصميم','Design link')+'</b></button></div></div>'+dur()+'</div>'}};
  var nxt=S<5?'<button class="btn nx2" data-go="'+(S+1)+'">'+(S<4?T('التالي: ','Next: ')+STP[S+1][l?1:2]:T('راجعي طلبكِ','Review your order'))+'</button>':'';
  sec.innerHTML='<div class="m2"><div class="m2h">'+head()+'<p>'+T('صمّمي عباءتكِ خطوة بخطوة، وشاهديها تتغيّر أمامكِ.','Design your abaya step by step, and watch it change before you.')+'</p></div>'+
-  '<div class="mbx"><div class="stage"><div class="scn"><div class="abp '+f[4]+thr+'" style="--m:url(img/mm/'+d[2]+'-sh.webp);--e:url(img/mm/'+d[2]+'-em.webp);--x:url(img/mm/'+d[2]+'-tx.webp);--c:'+c[0]+place(d[2])+'"><i class="c"></i>'+dye+'<i class="s"></i><i class="t"></i>'+emb+'</div></div>'+
+  '<div class="mbx"><div class="stage"><div class="scn"><div class="abp '+f[4]+thr+'" style="--m:url(img/mm/'+d[2]+'-s2.webp);--e:url(img/mm/'+d[2]+'-em2.webp);--x:url(img/mm/'+d[2]+'-tx2.webp);--h:url(img/mm/'+d[2]+'-hl.webp);--g:url(img/mm/'+d[2]+'-hg.webp);--c:'+c[0]+place(d[2])+'"><i class="c"></i>'+dye+'<i class="s"></i><i class="hl"></i><i class="t"></i>'+emb+'<i class="hg"></i></div></div>'+
    '<span class="tagf">'+d[i]+' · '+f[i]+' · '+c[l?1:2]+'</span></div>'+
   '<div class="pnl"><nav class="stp">'+STP.map(function(x,n){return '<button data-go="'+n+'" class="'+(n===S?'on':'')+(n<S?' dn':'')+'">'+x[l?1:2]+'</button>'}).join('')+'</nav>'+
    '<div class="pane'+(S!==lastS?' in':'')+'" style="--dx:'+(S>=lastS?1:-1)*(l?-1:1)+'"><div class="mph"><b>'+STP[S][l?3:4]+'</b>'+(val?'<em>'+val+'</em>':'')+'</div>'+P[STP[S][0]]()+'</div>'+
@@ -84,9 +84,9 @@ function img(src){return new Promise(function(ok,no){var m=new Image();m.onload=
 function story(){var b=D.getElementById('shImg');b.classList.add('busy');
  var l=L()==='ar',d=DSN[pick.d],own=false,W=1080,H=1920,cv=D.createElement('canvas');cv.width=W;cv.height=H;var x=cv.getContext('2d');
  var sym=D.getElementById('wmen'),wsv='<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+sym.getAttribute('viewBox')+'" style="color:#4C050D">'+sym.innerHTML+'</svg>';
- var need=[img('img/mm/'+d[2]+'-sh.webp'),img('img/mm/'+d[2]+'-em.webp'),img('img/mm/'+d[2]+'-tx.webp'),img(d[2]==='d2'?'img/mm/d2-ln.webp':'img/mm/'+d[2]+'-tx.webp'),img('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(wsv)),own&&pick.img?img(pick.img):Promise.resolve(null),
+ var need=[img('img/mm/'+d[2]+'-s2.webp'),img('img/mm/'+d[2]+'-hl.webp'),img('img/mm/'+d[2]+'-hg.webp'),img('img/mm/'+d[2]+'-em2.webp'),img('img/mm/'+d[2]+'-tx2.webp'),img(d[2]==='d2'?'img/mm/d2-ln2.webp':'img/mm/'+d[2]+'-tx2.webp'),img('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(wsv)),own&&pick.img?img(pick.img):Promise.resolve(null),
   D.fonts?Promise.all(['500 60px "Reem Kufi"','64px "Gilda Display"','400 34px "IBM Plex Sans Arabic"','400 34px Jost'].map(function(f){return D.fonts.load(f).catch(function(){})})):Promise.resolve()];
- Promise.all(need).then(function(r){var sh=r[0],em=r[1],tx=r[2],ln=r[3],wm=r[4],oi=r[5];
+ Promise.all(need).then(function(r){var sh=r[0],hl=r[1],hg=r[2];r=r.slice(2);var em=r[1],tx=r[2],ln=r[3],wm=r[4],oi=r[5];
   var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#F7F1E8');g.addColorStop(1,'#EADFCF');x.fillStyle=g;x.fillRect(0,0,W,H);
   x.strokeStyle='rgba(169,135,80,.55)';x.lineWidth=2;x.strokeRect(40,40,W-80,H-80);
   var ww=420,wh=ww*wm.height/wm.width||63;x.drawImage(wm,(W-ww)/2,120,ww,wh);
@@ -95,9 +95,9 @@ function story(){var b=D.getElementById('shImg');b.classList.add('busy');
   var ah=1080,top=120+wh+140;
   if(own&&oi){var s=Math.min(760/oi.width,ah/oi.height);x.save();x.shadowColor='rgba(0,0,0,.25)';x.shadowBlur=60;x.shadowOffsetY=30;x.drawImage(oi,(W-oi.width*s)/2,top+(ah-oi.height*s)/2,oi.width*s,oi.height*s);x.restore()}
   else{var iw=sh.width,ih=sh.height,o=D.createElement('canvas');o.width=iw;o.height=ih;var y=o.getContext('2d');
-   y.fillStyle=CL[pick.c][0];y.fillRect(0,0,iw,ih);y.globalCompositeOperation='destination-in';y.drawImage(sh,0,0);y.globalCompositeOperation='multiply';y.drawImage(sh,0,0);y.globalCompositeOperation='source-over';
+   y.fillStyle=CL[pick.c][0];y.fillRect(0,0,iw,ih);y.globalCompositeOperation='destination-in';y.drawImage(sh,0,0);y.globalCompositeOperation='multiply';y.drawImage(sh,0,0);y.globalCompositeOperation='screen';y.globalAlpha=.22;y.drawImage(hl,0,0);y.globalAlpha=1;y.globalCompositeOperation='source-over';
    if(pick.t===0)y.drawImage(em,0,0);else{if(d[2]==='d2')y.drawImage(ln,0,0);var o2=D.createElement('canvas');o2.width=iw;o2.height=ih;var z=o2.getContext('2d');z.fillStyle=thc();z.fillRect(0,0,iw,ih);z.globalCompositeOperation='destination-in';z.drawImage(tx,0,0);z.globalCompositeOperation='multiply';z.drawImage(tx,0,0);z.globalCompositeOperation='destination-in';z.drawImage(tx,0,0);y.drawImage(o2,0,0)}
-   var s2=ah/ih;x.save();x.shadowColor='rgba(60,30,20,.28)';x.shadowBlur=70;x.shadowOffsetY=40;x.drawImage(o,(W-iw*s2)/2,top,iw*s2,ah);x.restore()}
+   y.drawImage(hg,0,0);var s2=ah/ih;x.save();x.shadowColor='rgba(60,30,20,.28)';x.shadowBlur=70;x.shadowOffsetY=40;x.drawImage(o,(W-iw*s2)/2,top,iw*s2,ah);x.restore()}
   var ty=top+ah+110;x.fillStyle='#4C050D';x.font='500 64px '+AR;x.fillText(own?T('فكرتي الخاصة','My own idea'):d[l?0:1],W/2,ty);
   x.fillStyle='#6f6660';x.font='400 34px '+BD;x.fillText([FB[pick.f][l?0:1],CL[pick.c][l?1:2]].concat(own||pick.t===0?[]:[T('تطريز ','')+TH[pick.t][l?1:2]+T('',' embroidery')]).join('  ·  '),W/2,ty+70);
   x.fillStyle='#A98750';x.font='400 30px '+BD;x.fillText(T('التفصيل الخاص من سيدة العباية','Made to measure by MS ABAYA'),W/2,H-150);x.fillStyle='#4C050D';x.font='400 32px Jost';x.direction='ltr';x.fillText('@mss.abaya',W/2,H-100);
