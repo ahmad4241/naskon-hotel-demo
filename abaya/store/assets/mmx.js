@@ -1,7 +1,7 @@
 /* سيدة العباية — «التفصيل الخاص» previews: ?mm=1 atelier steps · ?mm=2 mini builder · ?mm=3 timeline */
 (function(){
 var m=location.search.match(/mm=([123])/),V=m?+m[1]:2;
-var D=document,L=MS.L,T=MS.T,old=D.querySelector('section.mm'),AT=(location.search.match(/at=([12])/)||[])[1];
+var D=document,L=MS.L,T=MS.T,old=D.querySelector('section.mm'),AT=(location.search.match(/at=([123])/)||[])[1]||'3';
 var sec=D.createElement('section');sec.className='mx mx'+V+(AT?' at'+AT:'');old.parentNode.replaceChild(sec,old);
 var PH=!/photos=1/.test(location.search);
 var ph=function(cls){return PH?'<span class="cph '+(cls||'t2')+'"><svg><use href="#s1"/></svg></span>':'<img src="img/detail2.webp" alt="" loading="lazy">'};
@@ -21,6 +21,8 @@ function v1(){var l=L()==='ar';
   '<div class="m1f">'+cta()+dur()+'</div></div>'}
 
 var pick={d:0,f:0,c:0,z:0,file:'',ms:{}};
+var HK={d1:[438,187.5],d2:[441,193],d3:[397,198.5]};
+function place(id){if(AT!=='3')return '';var k=HK[id],H=62,W=H*k[0]/880;return ';left:'+(50-k[1]/k[0]*W).toFixed(2)+'%;top:'+(23.3-6/880*H).toFixed(2)+'%;width:'+W.toFixed(2)+'%;height:'+H+'%'}
 var DSN=[['البريق','Bareeq','d1'],['الورد الأسود','Black Rose','d2'],['الربيع','Spring','d3']],
  FB=[['كريب','Crepe','مطفي وانسيابي','Matte and fluid','fc'],['شيفون','Chiffon','خفيف وشفاف قليلاً','Light, softly sheer','fh'],['ليننو','Linen','ملمس طبيعي محبوك','Natural woven texture','fl'],['حرير','Silk','لمعة ناعمة','Soft sheen','fs']],
  CL=[['#141414','أسود','Black'],['#4C050D','عنابي','Wine'],['#3e2a20','بنّي','Brown'],['#b9a48c','بيج','Beige'],['#1c2a44','كحلي','Navy'],['#6b6f72','رمادي','Grey']];
@@ -61,11 +63,11 @@ function v2(){var l=L()==='ar',i=l?0:1,d=DSN[pick.d],f=FB[pick.f],c=CL[pick.c],t
    '<button id="shLnk"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><b>'+T('رابط التصميم','Design link')+'</b></button></div></div>'+dur()+'</div>'}};
  var nxt=S<5?'<button class="btn nx2" data-go="'+(S+1)+'">'+(S<4?T('التالي: ','Next: ')+STP[S+1][l?1:2]:T('راجعي طلبكِ','Review your order'))+'</button>':'';
  sec.innerHTML='<div class="m2"><div class="m2h">'+head()+'<p>'+T('صمّمي عباءتكِ خطوة بخطوة، وشاهديها تتغيّر أمامكِ.','Design your abaya step by step, and watch it change before you.')+'</p></div>'+
-  '<div class="mbx"><div class="stage"><div class="abp '+f[4]+thr+'" style="--m:url(img/mm/'+d[2]+'-sh.webp);--e:url(img/mm/'+d[2]+'-em.webp);--x:url(img/mm/'+d[2]+'-tx.webp);--c:'+c[0]+'"><i class="c"></i>'+dye+'<i class="s"></i><i class="t"></i>'+emb+'</div>'+
+  '<div class="mbx"><div class="stage"><div class="scn"><div class="abp '+f[4]+thr+'" style="--m:url(img/mm/'+d[2]+'-sh.webp);--e:url(img/mm/'+d[2]+'-em.webp);--x:url(img/mm/'+d[2]+'-tx.webp);--c:'+c[0]+place(d[2])+'"><i class="c"></i>'+dye+'<i class="s"></i><i class="t"></i>'+emb+'</div></div>'+
    '<span class="tagf">'+d[i]+' · '+f[i]+' · '+c[l?1:2]+'</span></div>'+
   '<div class="pnl"><nav class="stp">'+STP.map(function(x,n){return '<button data-go="'+n+'" class="'+(n===S?'on':'')+(n<S?' dn':'')+'">'+x[l?1:2]+'</button>'}).join('')+'</nav>'+
    '<div class="pane'+(S!==lastS?' in':'')+'" style="--dx:'+(S>=lastS?1:-1)*(l?-1:1)+'"><div class="mph"><b>'+STP[S][l?3:4]+'</b>'+(val?'<em>'+val+'</em>':'')+'</div>'+P[STP[S][0]]()+'</div>'+
-   '<div class="mnx"><div class="pg2"><i style="width:'+((S+1)/6*100)+'%">'+(AT?'<span class="tn">'+Array.apply(null,Array(30)).map(function(_,n){return '<em style="--n:'+n+'">'+(n*10||'')+'</em>'}).join('')+'</span><b class="tip"></b>':'')+'</i></div><div class="nb">'+(S>0?'<button class="bk" data-go="'+(S-1)+'" aria-label="'+T('السابق','Back')+'">'+(l?'→':'←')+'</button>':'')+nxt+'</div></div></div></div></div>';
+   '<div class="mnx"><div class="pg2"><i style="width:'+((S+1)/6*100)+'%">'+(AT!=='3'?'<span class="tn">'+Array.apply(null,Array(30)).map(function(_,n){return '<em style="--n:'+n+'">'+(n*10||'')+'</em>'}).join('')+'</span><b class="tip"></b>':'')+'</i></div><div class="nb">'+(S>0?'<button class="bk" data-go="'+(S-1)+'" aria-label="'+T('السابق','Back')+'">'+(l?'→':'←')+'</button>':'')+nxt+'</div></div></div></div></div>';
  lastS=S;
  var nv=sec.querySelector('.stp'),on=nv.querySelector('.on');nv.scrollLeft+=on.getBoundingClientRect().left-nv.getBoundingClientRect().left-(nv.clientWidth-on.offsetWidth)/2;
  [].forEach.call(sec.querySelectorAll('[data-k]'),function(b){b.onclick=function(){pick[b.dataset.k]=+b.dataset.n;keep(v2)}});
