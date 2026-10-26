@@ -88,7 +88,7 @@ function lensInit(){var st=sec.querySelector('.stage'),sc=st&&st.querySelector('
  if(!touch){var h=D.createElement('span');h.className='lzh';h.textContent=T('مرّري المؤشر فوق العباية لرؤية القماش عن قرب','Hover over the abaya to see the fabric up close');st.appendChild(h)}else st.appendChild(b);
  st.appendChild(Lw);
  function at(x,y,abs){var r=st.getBoundingClientRect(),R=Lw.offsetWidth/2,px=abs?x:x-r.left,py=abs?y:y-r.top;px=Math.max(0,Math.min(r.width,px));py=Math.max(0,Math.min(r.height,py));
-  inr.style.width=r.width+'px';inr.style.height=r.height+'px';var ly=touch?Math.max(-R+10,py-R-80):py-R;
+  inr.style.width=r.width+'px';inr.style.height=r.height+'px';var ly=touch?Math.max(-R+10,py-R-60):py-R;
   Lw.style.transform='translate('+(px-R)+'px,'+ly+'px)';inr.style.transform='translate('+(R-px*Z)+'px,'+(R-py*Z+(py-R-ly)*0)+'px) scale('+Z+')';
   if(touch){inr.style.transform='translate('+(R-px*Z)+'px,'+(R-py*Z)+'px) scale('+Z+')'}lz.x=px;lz.y=py}
  if(!touch){st.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;Lw.classList.add('show');st.classList.add('lzon');at(e.clientX,e.clientY)});
